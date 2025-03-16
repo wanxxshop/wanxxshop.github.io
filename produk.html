@@ -7,26 +7,39 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
+            background-color: #696969;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
         }
 
+        /* Teks berjalan */
+        marquee {
+            background-color: #A0CCE0;
+            color: black;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        /* Kontainer produk */
         .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-between; /* Produk di kiri dan kanan */
+            align-items: flex-start;
+            gap: 10px;
             padding: 10px;
+            max-width: 600px; /* Batasi lebar agar tetap rapi */
+            margin: auto;
         }
 
         .produk {
             background-color: #A0CCE5;
             border-radius: 10px;
             padding: 10px;
-            margin: 5px;
-            width: 48%; /* Dua produk dalam satu baris */
+            width: calc(50% - 10px); /* 2 produk per baris */
+            box-sizing: border-box;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -40,24 +53,25 @@
         .produk img {
             width: 100%;
             border-radius: 5px;
+            display: block;
         }
 
         .produk h3 {
             margin: 5px 0;
             font-size: 16px;
-            color: #ffcc00;
+            color: #000000;
         }
 
         .harga {
             font-size: 14px;
-            color: #ff4444;
+            color: #ff0000;
             text-decoration: line-through;
         }
 
         .harga-diskon {
             font-size: 16px;
             font-weight: bold;
-            color: #00ff00;
+            color: #ffff00;
         }
 
         /* Efek saat ditekan */
@@ -66,56 +80,81 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
-        /* Untuk layar kecil (HP), ubah menjadi satu kolom */
+        /* Untuk layar kecil tetap dua kolom */
         @media (max-width: 600px) {
-            .container {
-                justify-content: center;
-            }
             .produk {
-                width: 90%; /* Satu kolom di layar kecil */
+                width: calc(50% - 10px); /* Pastikan tetap dua kolom */
             }
         }
     </style>
 </head>
 <body>
 
+    <marquee behavior="scroll" direction="left">Promo Terbatas! Beli akun sekarang sebelum kehabisan!</marquee>
+
     <h2>AKUN STOK FREE FIRE</h2>
 
     <div class="container">
-        <!-- Produk 1-10 -->
         <div class="produk">
             <a href="detailsepek1.html">
-                <img src="https://i.ibb.co.com/xKxdc8Bx/20250303-214217.png" alt="Produk 1">
-                <h3>Produk 1</h3>
+                <img src="https://i.ibb.co.com/sv3WKYgZ/photo-2025-03-16-21-47-12.jpg" alt="Produk 1">
+                <h3>STOK WANXX#1</h3>
+                <p class="harga">Rp 120.000</p>
+                <p class="harga-diskon">Rp 110.000</p>
+            </a>
+        </div>
+
+        <div class="produk">
+            <a href="detailsepek2.html">
+                <img src="https://i.ibb.co.com/WWd0sJmD/photo-2025-03-16-21-47-01.jpg" alt="Produk 2">
+                <h3>STOK WANXX#2</h3>
                 <p class="harga">Rp 150.000</p>
                 <p class="harga-diskon">Rp 140.000</p>
             </a>
         </div>
 
         <div class="produk">
-            <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20beli%20Produk%202">
-                <img src="https://via.placeholder.com/150" alt="Produk 2">
-                <h3>Produk 2</h3>
-                <p class="harga">Rp 900.000</p>
-                <p class="harga-diskon">Rp 700.000</p>
+            <a href="detailsepek3.html">
+                <img src="https://i.ibb.co.com/ymzmzKhV/photo-2025-03-16-21-47-08.jpg" alt="Produk 3">
+                <h3>STOK WANXX#3</h3>
+                <p class="harga">Rp 135.000</p>
+                <p class="harga-diskon">Rp 130.000</p>
             </a>
         </div>
 
         <div class="produk">
-            <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20beli%20Produk%203">
-                <img src="https://via.placeholder.com/150" alt="Produk 3">
-                <h3>Produk 3</h3>
-                <p class="harga">Rp 850.000</p>
-                <p class="harga-diskon">Rp 650.000</p>
+            <a href="detailsepek4.html">
+                <img src="https://i.ibb.co.com/DH428yzC/photo-2025-03-16-21-47-10.jpg" alt="Produk 4">
+                <h3>STOK WANXX#4</h3>
+                <p class="harga">Rp 130.000</p>
+                <p class="harga-diskon">Rp 130.000</p>
             </a>
         </div>
-
+        
         <div class="produk">
-            <a href="https://wa.me/628123456789?text=Halo%20saya%20ingin%20beli%20Produk%204">
-                <img src="https://via.placeholder.com/150" alt="Produk 4">
-                <h3>Produk 4</h3>
-                <p class="harga">Rp 750.000</p>
-                <p class="harga-diskon">Rp 600.000</p>
+            <a href="detailsepek5.html">
+                <img src="https://i.ibb.co.com/8DPmdmHT/photo-2025-03-16-21-47-13.jpg" alt="Produk 4">
+                <h3>STOK WANXX#5</h3>
+                <p class="harga">Rp 50.000</p>
+                <p class="harga-diskon">Rp 50.000</p>
+            </a>
+        </div>
+        
+        <div class="produk">
+            <a href="detailsepek6.html">
+                <img src="https://i.ibb.co.com/Rp5G98HT/photo-2025-03-16-22-14-57-2.jpg" alt="Produk 4">
+                <h3>STOK WANXX#6</h3>
+                <p class="harga">Rp 35.000</p>
+                <p class="harga-diskon">Rp 35.000</p>
+            </a>
+        </div>
+        
+        <div class="produk">
+            <a href="detailsepek7.html">
+                <img src="https://i.ibb.co.com/xSbVJhGg/photo-2025-03-16-22-14-57.jpg" alt="Produk 4">
+                <h3>STOK WANXX#7</h3>
+                <p class="harga">Rp 27.000</p>
+                <p class="harga-diskon">Rp 27.000</p>
             </a>
         </div>
     </div>
