@@ -5,55 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cari ID Akun</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { width: 50%; margin: auto; }
-        .akun { border: 1px solid #ddd; padding: 10px; margin: 10px; border-radius: 5px; }
-        .akun img { width: 100px; height: 100px; border-radius: 50%; }
+        @keyframes rgbGlow {
+            0% { border-color: red; box-shadow: 0 0 10px red; }
+            25% { border-color: blue; box-shadow: 0 0 10px blue; }
+            50% { border-color: green; box-shadow: 0 0 10px green; }
+            75% { border-color: yellow; box-shadow: 0 0 10px yellow; }
+            100% { border-color: red; box-shadow: 0 0 10px red; }
+        }
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #696969;
+            color: white;
+        }
+        
+        .container { 
+            width: 50%; 
+            margin: auto; 
+        }
+        
+        .akun { 
+            border: 2px solid; 
+            padding: 10px; 
+            margin: 10px; 
+            border-radius: 10px; 
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: rgbGlow 3s infinite alternate;
+            transition: transform 0.3s;
+        }
+        
+        .akun:hover {
+            transform: scale(1.05);
+        }
+        
+        .akun img { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            border: 3px solid white;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            animation: rgbGlow 3s infinite alternate;
+        }
     </style>
 </head>
 <body>
-    <h2>Cari ID Akun</h2>
+    <h2 style="animation: rgbGlow 3s infinite alternate;">Cari ID Akun</h2>
     <input type="text" id="cari" placeholder="Masukkan ID akun" onkeyup="cariAkun()">
     <div class="container" id="daftarAkun">
-        <div class="akun" data-id="123">
-            <img src="https://via.placeholder.com/100" alt="User 1">
-            <p>ID: 123</p>
-            <p>Nama: User 1</p>
+        <div class="akun" data-id="153365563">
+            <img src="https://i.ibb.co.com/HDpF7LzD/photo-2025-03-16-22-59-13.jpg" alt="User 1">
+            <p>ID: 153365563</p>
+            <p>Game : Free Fire</p>
         </div>
-        <div class="akun" data-id="456">
-            <img src="https://via.placeholder.com/100" alt="User 2">
-            <p>ID: 456</p>
-            <p>Nama: User 2</p>
+        <div class="akun" data-id="2876119225">
+            <img src="https://i.ibb.co.com/qFPwGdHF/photo-2025-03-16-22-59-09.jpg" alt="User 2">
+            <p>ID: 2876119225</p>
+            <p>Game : Free Fire</p>
         </div>
         <div class="akun" data-id="789">
             <img src="https://via.placeholder.com/100" alt="User 3">
-            <p>ID: 789</p>
-            <p>Nama: User 3</p>
+            <p>ID: kosong</p>
+            <p>kosong</p>
         </div>
         <div class="akun" data-id="101">
             <img src="https://via.placeholder.com/100" alt="User 4">
-            <p>ID: 101</p>
+            <p>ID: kosong</p>
             <p>Nama: User 4</p>
         </div>
         <div class="akun" data-id="202">
             <img src="https://via.placeholder.com/100" alt="User 5">
-            <p>ID: 202</p>
+            <p>ID: kosong</p>
             <p>Nama: User 5</p>
-        </div>
-        <div class="akun" data-id="303">
-            <img src="https://via.placeholder.com/100" alt="User 6">
-            <p>ID: 303</p>
-            <p>Nama: User 6</p>
-        </div>
-        <div class="akun" data-id="404">
-            <img src="https://via.placeholder.com/100" alt="User 7">
-            <p>ID: 404</p>
-            <p>Nama: User 7</p>
-        </div>
-        <div class="akun" data-id="505">
-            <img src="https://via.placeholder.com/100" alt="User 8">
-            <p>ID: 505</p>
-            <p>Nama: User 8</p>
         </div>
     </div>
     <script>
