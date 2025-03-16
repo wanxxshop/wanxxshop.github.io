@@ -18,17 +18,6 @@
             overflow-x: hidden;
         }
 
-        .banner-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 60px auto 20px;
-            overflow: hidden;
-            border-radius: 10px;
-            background: #87CEFA;
-            padding: 10px;
-        }
-
         .banner-container img {
             width: 100%;
             border-radius: 10px;
@@ -37,6 +26,11 @@
             left: 0;
             opacity: 0;
             transition: opacity 1s ease-in-out;
+        }
+
+        .banner-container img.active {
+            opacity: 1;
+            position: relative;
         }
 
         .banner-container img.active {
@@ -156,39 +150,50 @@
     position: absolute;
     left: 20px;
 }
-
 .search-box {
     display: flex;
     align-items: center;
     background: white;
     border-radius: 5px;
-    padding: 5px 10px;
-    width: 250px; /* Ukuran lebih kecil agar tidak terlalu besar */
+    padding: 8px;
+    width: 100%;
+    max-width: 250px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .search-box input {
+    flex-grow: 1;
     border: none;
     outline: none;
-    padding: 5px;
-    font-size: 14px; /* Lebih kecil dari sebelumnya */
-    flex-grow: 1;
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
 }
 
 .search-box button {
     background: #A0CCE5;
     border: none;
     color: white;
-    padding: 5px 8px;
+    padding: 8px 10px;
     cursor: pointer;
     border-radius: 3px;
     font-size: 14px;
 }
 
-.search-box button:hover {
-    background: #e03e00;
-    transform: scale(1.1);
+@media (max-width: 480px) {
+    .search-box {
+        width: 80%;
+    }
+    
+    .logo {
+        margin-bottom: 5px;
+    }
+
+    .search-box {
+        width: 90%; /* Lebar lebih fleksibel di HP */
+    }
 }
+
 
 }
 
@@ -207,7 +212,7 @@
 }
 
 .logo img {
-    height: 45px; /* Ukuran sedang */
+    height: 35px; /* Ukuran sedang */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -249,7 +254,12 @@
     </style>
 </head> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <body>
-  
+
+     <div class="preloader">
+    <div class="loader"></div>
+   </div>
+
+
      <div class="header">
     <div class="logo">
         <img src="https://i.ibb.co.com/pB68jHsR/photo-2025-02-16-12-08-59-removebg-preview.png" alt="">
@@ -318,15 +328,18 @@
 
     <script>
         let index = 0;
-        function gantiBanner() {
-            let banners = document.querySelectorAll(".banner-container img");
-            banners.forEach((img, i) => {
-                img.classList.remove("active");
-            });
-            banners[index].classList.add("active");
-            index = (index + 1) % banners.length;
-        }
-        setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
+function gantiBanner() {
+    let banners = document.querySelectorAll(".banner-container img");
+    banners.forEach((img, i) => {
+        img.classList.remove("active");
+        img.style.opacity = "0"; // Tambahkan efek fade out
+    });
+    banners[index].classList.add("active");
+    banners[index].style.opacity = "1"; // Tambahkan efek fade in
+    index = (index + 1) % banners.length;
+}
+setInterval(gantiBanner, 4000);
+
     </script>
 
 </body>
