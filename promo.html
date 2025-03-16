@@ -1,1 +1,91 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Produk Spesial!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            padding: 50px;
+        }
+        .promo-container {
+            background: linear-gradient(135deg, #4a90e2, #357ABD);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: white;
+        }
+        .promo-title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .promo-text {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .product-list {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product {
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .product:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-container">
+        <div class="promo-title">Promo Produk Spesial!</div>
+        <div class="promo-text">Produk terbaik dengan diskon hingga 50%! Penawaran terbatas, jangan sampai kehabisan!</div>
+    </div>
+    
+    <div class="product-list">
+        <div class="product">
+            <a href="https://wa.me/6281234567890" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Produk 1">
+            </a>
+            <h3>Produk A</h3>
+            <p>Diskon 50%! Harga spesial hanya hari ini.</p>
+        </div>
+        <div class="product">
+            <a href="https://wa.me/6281234567890" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Produk 2">
+            </a>
+            <h3>Produk B</h3>
+            <p>Penawaran terbatas! Segera miliki.</p>
+        </div>
+        <div class="product">
+            <a href="https://wa.me/6281234567890" target="_blank">
+                <img src="https://via.placeholder.com/200" alt="Produk 3">
+            </a>
+            <h3>Produk C</h3>
+            <p>Harga terbaik untuk produk unggulan.</p>
+        </div>
+    </div>
+</body>
+</html>
