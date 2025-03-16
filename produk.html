@@ -3,34 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produk</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>stok ff</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            text-align: center;
+            background-color: #504e4e;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .produk {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .produk img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .produk:hover img {
+            transform: scale(1.05);
+        }
+
+        .produk h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: white;
+            text-shadow: 0 0 10px #00FF00;
+        }
+
+        .produk p {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px #FF1493;
+        }
+
+        .beli-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #00bfff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        .beli-btn:hover {
+            background: #008fb3;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            .produk-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Produk Kami</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="produk.html">Produk</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-            <li><a href="about.html">Tentang</a></li>
-        </ul>
-    </nav>
-
-    <section class="produk-list">
+    <div class="produk-container">
         <div class="produk">
-            <img src="assets/produk1.jpg" alt="Produk 1">
-            <h2>Produk 1</h2>
-            <p>Rp 100.000</p>
-            <a href="detail-produk.html" class="beli">Lihat Detail</a>
+            <img src="https://i.ibb.co.com/xKxdc8Bx/20250303-214217.png" alt="Produk 1">
+            <h3>STOK 1</h3>
+            <p>Rp 150.000</p>
+            <a href="https://wa.me/6281234567890" class="beli-btn">Cek Detail</a>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Toko Online</p>
-    </footer>
+        <div class="produk">
+            <img src="https://i.ibb.co.com/jZB27crL/20250305-230419.png" alt="Produk 2">
+            <h3>STOK 2</h3>
+            <p>Rp 135.000</p>
+            <a href="https://wa.me/6281234567890" class="beli-btn">Cek Detail</a>
+        </div>
+        <div class="produk">
+            <img src="https://i.ibb.co.com/tTfJbdsv/20250226-110637.png" alt="Produk 3">
+            <h3>STOK 3</h3>
+            <p>Rp 120.000</p>
+            <a href="https://wa.me/6281234567890" class="beli-btn">Cek Detail</a>
+        </div>
+        <div class="produk">
+            <img src="https://i.ibb.co.com/BVRFqkpj/photo-2025-03-10-11-36-35.jpg" alt="Produk 4">
+            <h3>STOK 4</h3>
+            <p>Rp 130.000</p>
+            <a href="https://wa.me/6281234567890" class="beli-btn">Cek Detail</a>
+        </div>
+        <div class="produk">
+            <img src="https://i.ibb.co.com/ccD82tdM/photo-2025-03-12-20-54-02.jpg" alt="Produk 5">
+            <h3>STOK 5</h3>
+            <p>Rp 50.000</p>
+            <a href="https://wa.me/6281234567890" class="beli-btn">Cek Detail</a>
+        </div>
+        <div class="produk">
+            <img src="" alt="Produk 6">
+            <h3>SOLD OUT</h3>
+            <p>Rp 50.000</p>
+            <a href="https://wa.me/6281234567890" class="beli-btn">Cek Detail</a>
+        </div>
+    </div>
 </body>
 </html>
