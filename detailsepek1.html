@@ -1,162 +1,161 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Stok</title>
+    <title>Detail Produk</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-            background-color: #504e4e;
-            color: white;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            border: 1px solid #ddd;
+
+        body {
+            background-color: #696969;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-container {
+            background: #A0CCE5;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #696969;
+            width: 90%;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .image-container {
-            position: relative;
-        }
-        .main-image {
+
+        .product-image {
             width: 100%;
-            max-height: 300px;
-            object-fit: cover;
+            height: auto;
             border-radius: 10px;
-            border: 1px solid #ddd;
         }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #A0CCE5;
+
+        .buttons {
+            margin-top: 15px;
+        }
+
+        .buttons button {
+            background: #ff4500;
             color: white;
             border: none;
             padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
-        }
-        .dots {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-        }
-        .dot {
-            width: 10px;
-            height: 10px;
-            background-color: #bbb;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .dot.active {
-            background-color: #000;
-        }
-        .buttons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .buttons a {
-            flex: 1;
-            text-align: center;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
             margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
         }
-        .whatsapp {
-            background-color: #A0CCE5;
+
+        .buttons button:hover {
+            background: #A0CCE5;
         }
-        .buy {
-            background-color: #A0CCE5;
+
+        .order-form {
+            margin-top: 20px;
+            background: #A0CCE5;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form input, .order-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .order-form button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .order-form button:hover {
+            background: #218838;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 12px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="image-container">
-        <button class="prev" onclick="prevImage()">&#10094;</button>
-        <img id="mainImage" src="https://i.ibb.co/nqJXqbr/photo-2025-03-12-23-09-53.jpg" alt="Produk" class="main-image">
-        <button class="next" onclick="nextImage()">&#10095;</button>
+    <div class="product-container">
+        <h2>Detail Produk</h2>
+        <img id="productImage" src="https://down-id.img.susercontent.com/file/c05291a81b65e76f7dad6430918fafae" alt="Produk" class="product-image">
+        
+        <div class="buttons">
+            <button onclick="changeImage(0)">sepek 1</button>
+            <button onclick="changeImage(1)">sepek 2</button>
+            <button onclick="changeImage(2)">sepek 3</button>
+        </div>
     </div>
-    <div class="dots">
-        <span class="dot active" onclick="selectImage(0)"></span>
-        <span class="dot" onclick="selectImage(1)"></span>
-        <span class="dot" onclick="selectImage(2)"></span>
-        <span class="dot" onclick="selectImage(3)"></span>
-        <span class="dot" onclick="selectImage(4)"></span>
+
+    <div class="order-form">
+        <h3>Pesan Sekarang</h3>
+        <form onsubmit="return sendToWhatsApp(event)">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Nomor Telepon" required>
+            
+            <label for="payment">Pilih Metode Pembayaran:</label>
+            <select id="payment" required>
+                <option value="" disabled selected>Pilih</option>
+                <option value="qris">QRIS</option>
+                <option value="dana">Dana</option>
+                <option value="gopay">GoPay</option>
+            </select>
+
+            <p class="note">Note: Transaksi Di WhatsApp Dan Di Telegram</p>
+
+            <button type="submit">Beli Sekarang</button>
+        </form>
     </div>
-    <p>
-        Deskripsi lengkap tentang produk ini. Jelaskan fitur, spesifikasi, dan manfaatnya agar pelanggan lebih tertarik.
-    </p>
-    <div class="buttons">
-        <a id="whatsappInquiry" class="whatsapp">Tanya-tanya</a>
-        <a id="whatsappBuy" class="buy">Beli Sekarang</a>
-    </div>
-</div>
 
-<script>
-    const images = [
-        "https://i.ibb.co.com/nqJXqbrD/photo-2025-03-12-23-09-53.jpg",
-        "https://i.ibb.co.com/LhkXFxBG/photo-2025-03-12-22-19-37.jpg",
-        "https://i.ibb.co.com/VdYSDJG/photo-2025-03-12-22-19-49.jpg",
-        "https://i.ibb.co.com/5Wykc4j8/photo-2025-03-12-22-20-01.jpg",
-        "https://i.ibb.co/XYZxyz/photo-2025-03-12-22-20-15.jpg"
-    ];
+    <script>
+        let images = [
+            "https://down-id.img.susercontent.com/file/c05291a81b65e76f7dad6430918fafae",
+            "https://down-id.img.susercontent.com/file/00a7221fa34535aa5b414888412d7e9e",
+            "https://pbs.twimg.com/media/F0fxI9LaQAAAn-3.jpg:large"
+        ];
 
-    let currentIndex = 0;
-    const mainImage = document.getElementById("mainImage");
-    const dots = document.querySelectorAll(".dot");
+        function changeImage(index) {
+            document.getElementById("productImage").src = images[index];
+        }
 
-    function updateImage(index) {
-        mainImage.src = images[index];
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[index].classList.add("active");
-        currentIndex = index;
-    }
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let paymentMethod = document.getElementById("payment").value;
+            let paymentText = "";
 
-    function prevImage() {
-        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-        updateImage(currentIndex);
-    }
+            if (paymentMethod === "qris") {
+                paymentText = "QRIS (Silakan scan kode QR).";
+            } else if (paymentMethod === "dana") {
+                paymentText = "Dana: 083134115994 A.N [ONAH SAHRONAH]";
+            } else if (paymentMethod === "gopay") {
+                paymentText = "GoPay: 083134115994 A.N [WANXX MARKET]";
+            }
 
-    function nextImage() {
-        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-        updateImage(currentIndex);
-    }
-
-    function selectImage(index) {
-        updateImage(index);
-    }
-
-    // Preload gambar agar lebih cepat saat berganti
-    images.forEach(img => {
-        const preloadImg = new Image();
-        preloadImg.src = img;
-    });
-
-    // Set WhatsApp links dengan benar
-    const nomorWhatsApp = "628XXXXXXXXXX"; // Ganti dengan nomor yang benar
-    document.getElementById("whatsappInquiry").href = `https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20ini.`;
-    document.getElementById("whatsappBuy").href = `https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20membeli%20produk%20ini.`;
-</script>
+            let message = `Halo, saya ingin memesan. Berikut detail saya:\n\nEmail: ${email}\nNomor HP: ${phone}\nMetode Pembayaran: ${paymentText}\n\n*Jangan lupa kirim bukti transfer setelah pembayaran!*`;
+            let url = `https://wa.me/62895416131918?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
 
 </body>
 </html>
