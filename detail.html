@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="detail.js"></script>
+</head>
+<body>
+    <div id="produk-detail"></div>
+    <p id="stok-notifikasi" class="stok-terbatas"></p>
+    <h3>Tambahkan Ulasan:</h3>
+    <select id="rating">
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+    </select>
+    <input type="text" id="review-text" placeholder="Tulis ulasan...">
+    <button onclick="tambahUlasan()">Kirim</button>
+    <div id="review-list"></div>
+</body>
+</html>
