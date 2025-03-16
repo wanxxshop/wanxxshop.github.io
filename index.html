@@ -18,29 +18,6 @@
             overflow-x: hidden;
         }
 
-        .marquee {
-            background: #87CEFA;
-            color: black;
-            padding: 10px 0;
-            font-weight: bold;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .marquee div {
-            display: inline-block;
-            animation: marquee 10s linear infinite;
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-
         .banner-container {
             position: relative;
             width: 100%;
@@ -165,12 +142,54 @@
             color: white;
         }
         
-        .live-chat-container {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 1000;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #A0CCE5;
+    padding: 15px 20px;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 250px; /* Ukuran lebih kecil agar tidak terlalu besar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px; /* Lebih kecil dari sebelumnya */
+    flex-grow: 1;
+}
+
+.search-box button {
+    background: #A0CCE5;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.search-box button:hover {
+    background: #e03e00;
+    transform: scale(1.1);
+}
+
 }
 
 .live-chat-button {
@@ -187,23 +206,60 @@
     gap: 8px;
 }
 
+.logo img {
+    height: 45px; /* Ukuran sedang */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.live-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.live-chat-button {
+    display: flex;
+    align-items: center;
+    background-color: #A0CCE5;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
 .live-chat-button:hover {
-    background-color: #1EBE5D;
+    background-color: #e03e00;
 }
 
 .chat-logo {
-    width: 20px;
-    height: 20px;
+    width: 30px; /* Ukuran logo */
+    height: 30px;
+    margin-right: 10px;
 }
+
 
     </style>
 </head>
 <body>
-
-    <div class="marquee">
-        <div>SELAMAT DATANG DI TOKO JUAL BELI AKUN FREE FIRE WANXX STORE26!</div>
+  
+     <div class="header">
+    <div class="logo">
+        <img src="https://i.ibb.co.com/pB68jHsR/photo-2025-02-16-12-08-59-removebg-preview.png" alt="">
     </div>
-
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari...">
+        <button onclick="searchMenu()">🔍</button>
+       </div>
+    </div>
+    
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
         <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
