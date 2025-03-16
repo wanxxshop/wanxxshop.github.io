@@ -3,33 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Jualan</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Toko Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            text-align: center;
+            background-color: #504e4e;
+            overflow-x: hidden;
+        }
+
+        .marquee {
+            background: #87CEFA;
+            color: black;
+            padding: 10px 0;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .marquee div {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .banner-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 60px auto 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #87CEFA;
+            padding: 10px;
+        }
+
+        .banner-container img {
+            width: 100%;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .banner-container img.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .menu-container {
+            background: #696969;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .menu-container h2 {
+            font-size: 24px;
+            color: black;
+            text-shadow: 0 0 10px #ff4500;
+            margin-bottom: 10px;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 350px;
+            margin: auto;
+        }
+
+        .menu-item {
+            background: #A0CCE5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .menu-item div {
+            color: black;
+        }
+
+        .menu-item div h3 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .menu-item div p {
+            font-size: 12px;
+            color: black;
+            margin: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-container {
+            background: #696969;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-container h2 {
+            font-size: 20px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .contact-container a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #A0CCE5;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-container a:hover {
+            background-color: #ff4500;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Selamat Datang di Toko Online</h1>
-        <marquee>Promo Spesial Hari Ini! Jangan Sampai Ketinggalan!</marquee>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="produk.html">Produk</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-            <li><a href="about.html">Tentang</a></li>
-        </ul>
-    </nav>
+    <div class="marquee">
+        <div>SELAMAT DATANG DI TOKO JUAL BELI AKUN FREE FIRE WANXX STORE26!</div>
+    </div>
 
-    <section class="slider">
-        <img src="assets/slider1.jpg" alt="Promo 1">
-        <img src="assets/slider2.jpg" alt="Promo 2" style="display:none;">
-    </section>
+    <div class="banner-container">
+        <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
+        <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
+        <img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 3">
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Toko Online</p>
-    </footer>
+    <div class="menu-container">
+        <h2>🔥Pilih Menu🔥</h2>
+        <div class="menu">
+            <a href="https://www.wanxxstore26.shop/home/stock-akun" class="menu-item">
+                <img src="https://i.ibb.co.com/whVW4rV3/photo-2025-03-15-21-44-26.jpg" alt="Free Fire">
+                <div>
+                    <h3>Free Fire</h3>
+                    <p>Akun Stok</p>
+                </div>
+            </a>
+            <a href="https://wa.me/6283134115994" class="menu-item">
+                <img src="https://i.ibb.co.com/jKBHRxg/photo-2025-03-15-21-52-15.jpg" alt="Jual Akun">
+                <div>
+                    <h3>Jual Akun</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+            <a href="https://www.wanxxstore26.shop/home/promo-stok" class="menu-item">
+                <img src="https://i.ibb.co.com/3YMJPFjV/photo-2025-03-15-22-00-00.jpg" alt="Promo">
+                <div>
+                    <h3>Info Promo</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+            <a href="https://www.wanxxstore26.shop/home/cek-akun-bermasalah" class="menu-item">
+                <img src="https://i.ibb.co.com/278DL4xT/photo-2025-03-15-21-59-59.jpg" alt="Cek Akun">
+                <div>
+                    <h3>Info HB + SCAM</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+        </div>
+    </div>
 
-    <script src="js/script.js"></script>
+    <div class="contact-container">
+        <h2>INFO WANXX STORE26</h2>
+        <a href="https://wa.me/6283134115994">WA ADMIN</a>
+        <a href="https://t.me/wanxxstore26">TELEGRAM ADMIN</a>
+        <a href="https://t.me/stokwanxx26">GRUP STOK WANXX26</a>
+        <a href="https://t.me/jbwanxxstore26">JB WANXX26 #1</a>
+        <a href="https://t.me/jualbeliakunffmllbb">JB WANXX26 #2</a>
+        <a href="https://www.instagram.com/wanxxstore26?igsh=MW12bnhjbW93bnNxZw==">INSTAGRAM ADMIN</a>
+    </div>
+
+    <script>
+        let index = 0;
+        function gantiBanner() {
+            let banners = document.querySelectorAll(".banner-container img");
+            banners.forEach((img, i) => {
+                img.classList.remove("active");
+            });
+            banners[index].classList.add("active");
+            index = (index + 1) % banners.length;
+        }
+        setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
+    </script>
+
 </body>
 </html>
