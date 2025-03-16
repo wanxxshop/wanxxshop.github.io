@@ -1,0 +1,13 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background: #007bff; color: white; text-align: center; padding: 20px; }
+nav ul { display: flex; list-style: none; background: #333; padding: 10px; justify-content: center; }
+nav ul li { margin: 0 15px; }
+nav ul li a { color: white; text-decoration: none; }
+footer { text-align: center; padding: 10px; background: #007bff; color: white; }
+.produk { text-align: center; margin: 20px; }
+.produk img { width: 150px; border-radius: 10px; }
+.beli { display: block; background: green; color: white; padding: 10px; text-decoration: none; border-radius: 5px; }
+.slider img { width: 100%; height: 300px; object-fit: cover; }
+.detail-produk { text-align: center; margin: 20px; }
+.detail-produk img { width: 200px; margin: 5px; border-radius: 10px; }
+.pesan { display: block; background: red; color: white; padding: 10px; text-decoration: none; border-radius: 5px; }
