@@ -164,6 +164,38 @@
             background-color: #ff4500;
             color: white;
         }
+        
+        .live-chat-container {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.live-chat-button {
+    background-color: #A0CCE5;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px 0 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-chat-button:hover {
+    background-color: #1EBE5D;
+}
+
+.chat-logo {
+    width: 20px;
+    height: 20px;
+}
+
     </style>
 </head>
 <body>
@@ -176,6 +208,12 @@
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
         <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
         <img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 3">
+    </div>
+
+    <div class="live-chat-container">
+        <a href="https://wa.me/6283134115994" target="_blank" class="live-chat-button">
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/customer-service-118.png" alt="Live Chat" class="chat-logo">Butuh Bantua?
+        </a>
     </div>
 
     <div class="menu-container">
