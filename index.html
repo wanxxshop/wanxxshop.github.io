@@ -208,7 +208,6 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            cursor: grab;
         }
         .produk-container {
             display: flex;
@@ -221,7 +220,7 @@
             border: 1px solid #ddd;
             text-align: center;
             flex-shrink: 0;
-            background: #f9f9f9;
+            background: #A0CCE5;
             position: relative;
             cursor: pointer;
         }
@@ -240,6 +239,14 @@
             border-radius: 5px;
         }
 
+    </style>
+</head> 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Detail Produk</title>
+    <style>
+        /* CSS Anda di sini */
     </style>
 </head>
 <body>
@@ -344,14 +351,11 @@
     </script>
         <script>
         let container = document.getElementById("produkContainer");
-        let wrapper = document.getElementById("produkWrapper");
         let scrollSpeed = 1;
         let scrolling = true;
-        let isDragging = false;
-        let startX, scrollLeft;
         
         function scrollProducts() {
-            if (!scrolling || isDragging) return;
+            if (!scrolling) return;
             container.style.transform = `translateX(-${scrollSpeed}px)`;
             scrollSpeed += 1;
             if (scrollSpeed >= container.scrollWidth / 2) {
@@ -365,31 +369,6 @@
         function stopScrolling() {
             scrolling = false;
         }
-        
-        wrapper.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            startX = e.pageX - wrapper.offsetLeft;
-            scrollLeft = wrapper.scrollLeft;
-            wrapper.style.cursor = "grabbing";
-        });
-        
-        wrapper.addEventListener("mouseleave", () => {
-            isDragging = false;
-            wrapper.style.cursor = "grab";
-        });
-        
-        wrapper.addEventListener("mouseup", () => {
-            isDragging = false;
-            wrapper.style.cursor = "grab";
-        });
-        
-        wrapper.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - wrapper.offsetLeft;
-            const walk = (x - startX) * 2;
-            wrapper.scrollLeft = scrollLeft - walk;
-        });
         
         requestAnimationFrame(scrollProducts);
     </script>
