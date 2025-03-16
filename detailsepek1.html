@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             text-align: center;
-            background-color: #504e4e; /* Warna latar belakang luar */
+            background-color: #504e4e;
             color: white;
         }
         .container {
@@ -19,7 +19,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #696969; /* Warna kontainer */
+            background-color: #696969;
         }
         .image-container {
             position: relative;
@@ -30,7 +30,6 @@
             object-fit: cover;
             border-radius: 10px;
             border: 1px solid #ddd;
-            max-width: 100%;
         }
         .prev, .next {
             position: absolute;
@@ -63,7 +62,7 @@
             cursor: pointer;
         }
         .dot.active {
-            background-color: #000000;
+            background-color: #000;
         }
         .buttons {
             margin-top: 20px;
@@ -94,7 +93,7 @@
 <div class="container">
     <div class="image-container">
         <button class="prev" onclick="prevImage()">&#10094;</button>
-        <img id="mainImage" src="gambar1.jpg" alt="Produk" class="main-image">
+        <img id="mainImage" src="https://i.ibb.co/nqJXqbr/photo-2025-03-12-23-09-53.jpg" alt="Produk" class="main-image">
         <button class="next" onclick="nextImage()">&#10095;</button>
     </div>
     <div class="dots">
@@ -114,11 +113,18 @@
 </div>
 
 <script>
-    const images = ["150bangbang.jpg", "130bangbang.jpg", "gambar3.jpg", "gambar4.jpg", "gambar5.jpg"];
+    const images = [
+        "https://i.ibb.co.com/nqJXqbrD/photo-2025-03-12-23-09-53.jpg",
+        "https://i.ibb.co.com/LhkXFxBG/photo-2025-03-12-22-19-37.jpg",
+        "https://i.ibb.co.com/VdYSDJG/photo-2025-03-12-22-19-49.jpg",
+        "https://i.ibb.co.com/5Wykc4j8/photo-2025-03-12-22-20-01.jpg",
+        "https://i.ibb.co/XYZxyz/photo-2025-03-12-22-20-15.jpg"
+    ];
+
     let currentIndex = 0;
     const mainImage = document.getElementById("mainImage");
     const dots = document.querySelectorAll(".dot");
-    
+
     function updateImage(index) {
         mainImage.src = images[index];
         dots.forEach(dot => dot.classList.remove("active"));
@@ -134,7 +140,9 @@
     function nextImage() {
         currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
         updateImage(currentIndex);
-    }function selectImage(index) {
+    }
+
+    function selectImage(index) {
         updateImage(index);
     }
 
@@ -144,10 +152,10 @@
         preloadImg.src = img;
     });
 
-    // Set WhatsApp links
+    // Set WhatsApp links dengan benar
     const nomorWhatsApp = "628XXXXXXXXXX"; // Ganti dengan nomor yang benar
-    document.getElementById("whatsappInquiry").href = https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20ini.;
-    document.getElementById("whatsappBuy").href = https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20membeli%20produk%20ini.;
+    document.getElementById("whatsappInquiry").href = `https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20ini.`;
+    document.getElementById("whatsappBuy").href = `https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20membeli%20produk%20ini.`;
 </script>
 
 </body>
