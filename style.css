@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header dengan teks berjalan */
+header {
+    background: #ff9800;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Navigasi Menu */
+nav {
+    background: #333;
+    padding: 10px;
+}
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Banner Slider */
+.slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.slides img {
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+/* Produk */
+.produk-container {
+    text-align: center;
+    padding: 20px;
+}
+.produk {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.item {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+.item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.item .btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
