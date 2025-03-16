@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Stok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #504e4e; /* Warna latar belakang luar */
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #696969; /* Warna kontainer */
+        }
+        .image-container {
+            position: relative;
+        }
+        .main-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            max-width: 100%;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #A0CCE5;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .dots {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #000000;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+        }
+        .whatsapp {
+            background-color: #A0CCE5;
+        }
+        .buy {
+            background-color: #A0CCE5;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <div class="image-container">
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <img id="mainImage" src="gambar1.jpg" alt="Produk" class="main-image">
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+    <div class="dots">
+        <span class="dot active" onclick="selectImage(0)"></span>
+        <span class="dot" onclick="selectImage(1)"></span>
+        <span class="dot" onclick="selectImage(2)"></span>
+        <span class="dot" onclick="selectImage(3)"></span>
+        <span class="dot" onclick="selectImage(4)"></span>
+    </div>
+    <p>
+        Deskripsi lengkap tentang produk ini. Jelaskan fitur, spesifikasi, dan manfaatnya agar pelanggan lebih tertarik.
+    </p>
+    <div class="buttons">
+        <a id="whatsappInquiry" class="whatsapp">Tanya-tanya</a>
+        <a id="whatsappBuy" class="buy">Beli Sekarang</a>
+    </div>
+</div>
+
+<script>
+    const images = ["150bangbang.jpg", "130bangbang.jpg", "gambar3.jpg", "gambar4.jpg", "gambar5.jpg"];
+    let currentIndex = 0;
+    const mainImage = document.getElementById("mainImage");
+    const dots = document.querySelectorAll(".dot");
+    
+    function updateImage(index) {
+        mainImage.src = images[index];
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+        currentIndex = index;
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        updateImage(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        updateImage(currentIndex);
+    }function selectImage(index) {
+        updateImage(index);
+    }
+
+    // Preload gambar agar lebih cepat saat berganti
+    images.forEach(img => {
+        const preloadImg = new Image();
+        preloadImg.src = img;
+    });
+
+    // Set WhatsApp links
+    const nomorWhatsApp = "628XXXXXXXXXX"; // Ganti dengan nomor yang benar
+    document.getElementById("whatsappInquiry").href = https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20ini.;
+    document.getElementById("whatsappBuy").href = https://wa.me/${nomorWhatsApp}?text=Halo,%20saya%20ingin%20membeli%20produk%20ini.;
+</script>
+
+</body>
+</html>
