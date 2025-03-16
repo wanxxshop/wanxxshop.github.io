@@ -18,6 +18,40 @@
             overflow-x: hidden;
         }
 
+        .marquee {
+            background: #87CEFA;
+            color: black;
+            padding: 10px 0;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .marquee div {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .banner-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 60px auto 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #87CEFA;
+            padding: 10px;
+        }
+
         .banner-container img {
             width: 100%;
             border-radius: 10px;
@@ -26,11 +60,6 @@
             left: 0;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-        }
-
-        .banner-container img.active {
-            opacity: 1;
-            position: relative;
         }
 
         .banner-container img.active {
@@ -136,65 +165,12 @@
             color: white;
         }
         
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #A0CCE5;
-    padding: 15px 20px;
-    position: relative;
-    backdrop-filter: blur(10px);
-}
-
-.logo {
-    position: absolute;
-    left: 20px;
-}
-.search-box {
-    display: flex;
-    align-items: center;
-    background: white;
-    border-radius: 5px;
-    padding: 8px;
-    width: 100%;
-    max-width: 250px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.search-box input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 8px;
-    font-size: 14px;
-    width: 100%;
-}
-
-.search-box button {
-    background: #A0CCE5;
-    border: none;
-    color: white;
-    padding: 8px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 14px;
-}
-
-@media (max-width: 480px) {
-    .search-box {
-        width: 80%;
-    }
-    
-    .logo {
-        margin-bottom: 5px;
-    }
-
-    .search-box {
-        width: 90%; /* Lebar lebih fleksibel di HP */
-    }
-}
-
-
+        .live-chat-container {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
 }
 
 .live-chat-button {
@@ -211,65 +187,66 @@
     gap: 8px;
 }
 
-.logo img {
-    height: 35px; /* Ukuran sedang */
-    transition: transform 0.3s ease-in-out;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-.live-chat-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.live-chat-button {
-    display: flex;
-    align-items: center;
-    background-color: #A0CCE5;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-}
-
 .live-chat-button:hover {
-    background-color: #e03e00;
+    background-color: #1EBE5D;
 }
 
 .chat-logo {
-    width: 30px; /* Ukuran logo */
-    height: 30px;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+  
 }
-
+        .judul {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .produk-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .produk-container {
+            display: flex;
+            transition: transform 0.5s linear;
+        }
+        .produk {
+            width: 200px;
+            margin: 0 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            flex-shrink: 0;
+            background: #A0CCE5;
+            position: relative;
+            cursor: pointer;
+        }
+        .produk img {
+            width: 100%;
+            height: auto;
+        }
+        .diskon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
 
     </style>
-</head> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+</head>
 <body>
 
-     <div class="preloader">
-    <div class="loader"></div>
-   </div>
-
-
-     <div class="header">
-    <div class="logo">
-        <img src="https://i.ibb.co.com/pB68jHsR/photo-2025-02-16-12-08-59-removebg-preview.png" alt="">
+    <div class="marquee">
+        <div>SELAMAT DATANG DI TOKO JUAL BELI AKUN FREE FIRE WANXX STORE26!</div>
     </div>
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Cari...">
-        <button onclick="searchMenu()">🔍</button>
-       </div>
-    </div>
-    
+
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
         <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
@@ -315,6 +292,32 @@
             </a>
         </div>
     </div>
+    
+    <div class="judul">Daftar Produk</div>
+    <div class="produk-wrapper">
+        <div class="produk-container" id="produkContainer">
+            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
+                <span class="diskon">Diskon 8,3%</span>
+                <img src="https://i.ibb.co.com/sv3WKYgZ/photo-2025-03-16-21-47-12.jpg" alt="Produk 1">
+                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp120.000</s></span> <strong>Rp110.000</strong></p>
+            </div>
+            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
+                <span class="diskon">Diskon 6,6%</span>
+                <img src="https://i.ibb.co.com/WWd0sJmD/photo-2025-03-16-21-47-01.jpg" alt="Produk 2">
+                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp150.000</s></span> <strong>Rp140.000</strong></p>
+            </div>
+            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
+                <span class="diskon">Diskon 3,7%</span>
+                <img src="https://i.ibb.co.com/ymzmzKhV/photo-2025-03-16-21-47-08.jpg" alt="Produk 3">
+                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp135.000</s></span> <strong>Rp130.000</strong></p>
+            </div>
+            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
+                <span class="diskon">Diskon 0%</span>
+                <img src="https://i.ibb.co.com/DH428yzC/photo-2025-03-16-21-47-10.jpg" alt="Produk 4">
+                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp130.000</s></span> <strong>Rp130.000</strong></p>
+            </div>
+        </div>
+    </div>
 
     <div class="contact-container">
         <h2>INFO WANXX STORE26</h2>
@@ -325,21 +328,41 @@
         <a href="https://t.me/jualbeliakunffmllbb">JB WANXX26 #2</a>
         <a href="https://www.instagram.com/wanxxstore26?igsh=MW12bnhjbW93bnNxZw==">INSTAGRAM ADMIN</a>
     </div>
-
+    
     <script>
         let index = 0;
-function gantiBanner() {
-    let banners = document.querySelectorAll(".banner-container img");
-    banners.forEach((img, i) => {
-        img.classList.remove("active");
-        img.style.opacity = "0"; // Tambahkan efek fade out
-    });
-    banners[index].classList.add("active");
-    banners[index].style.opacity = "1"; // Tambahkan efek fade in
-    index = (index + 1) % banners.length;
-}
-setInterval(gantiBanner, 4000);
-
+        function gantiBanner() {
+            let banners = document.querySelectorAll(".banner-container img");
+            banners.forEach((img, i) => {
+                img.classList.remove("active");
+            });
+            banners[index].classList.add("active");
+            index = (index + 1) % banners.length;
+        }
+        setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
+    </script>
+        <script>
+        let container = document.getElementById("produkContainer");
+        let scrollSpeed = 1;
+        let scrolling = true;
+        
+        function scrollProducts() {
+            if (!scrolling) return;
+            container.style.transform = `translateX(-${scrollSpeed}px)`;
+            scrollSpeed += 1;
+            if (scrollSpeed >= container.scrollWidth / 2) {
+                container.appendChild(container.firstElementChild);
+                scrollSpeed = 1;
+                container.style.transform = "translateX(0)";
+            }
+            requestAnimationFrame(scrollProducts);
+        }
+        
+        function stopScrolling() {
+            scrolling = false;
+        }
+        
+        requestAnimationFrame(scrollProducts);
     </script>
 
 </body>
