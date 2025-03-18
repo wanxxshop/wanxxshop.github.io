@@ -165,38 +165,75 @@
             color: white;
         }
         
-        .live-chat-container {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-
-.live-chat-button {
-    background-color: #A0CCE5;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px 0 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.live-chat-button:hover {
-    background-color: #1EBE5D;
-    transform: scale(1.05);
-}
-
-.chat-logo {
-    width: 20px;
-    height: 20px;
   
-}
+  .live-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-button {
+            background-color: #1EBE5D;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #158f4c;
+        }
+
+        .chat-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chat-options {
+            position: absolute;
+            bottom: 70px;
+            right: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            width: 180px;
+        }
+
+        .chat-options a {
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .chat-options a:hover {
+            background: #f0f0f0;
+        }
+
+        .chat-options img {
+            width: 25px;
+            height: 25px;
+        }
+  
         .judul {
             font-size: 24px;
             font-weight: bold;
@@ -240,35 +277,6 @@
             border-radius: 5px;
         }
         
-        .cara-beli-container {
-            background: #696969;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            color: white;
-            text-align: left;
-            max-width: 800px;
-            margin: 20px auto;
-        }
-        .cara-beli-container h2 {
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 10px;
-            color: #ff4500;
-        }
-        .cara-beli-container ol {
-            padding-left: 20px;
-        }
-        .cara-beli-container ol li {
-            margin-bottom: 10px;
-        }
-        .cara-beli-container ul {
-            padding-left: 20px;
-        }
-        .cara-beli-container ul li {
-            color: #A0CCE5;
-        }>
-        
         .container {
             max-width: 800px;
             margin: auto;
@@ -279,8 +287,15 @@
         h1 {
             color: #ff4500;
         }
-        p {
-            line-height: 1.6;
+        .steps {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .step {
+            background: #87CEFA;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
         .contact {
             margin-top: 20px;
@@ -304,7 +319,76 @@
             font-size: 14px;
             border-radius: 5px;
         }
+        
+        .live-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
 
+        .chat-button {
+            background-color: #ffffff;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #ffffff;
+        }
+
+        .chat-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chat-options {
+            position: absolute;
+            bottom: 70px;
+            right: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            width: 180px;
+        }
+
+        .chat-options a {
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .chat-options a:hover {
+            background: #ffffff;
+        }
+
+        .chat-options img {
+            width: 25px;
+            height: 25px;
+        }
+        
+        
     </style>
 </head> 
   <head>
@@ -316,6 +400,7 @@
     </style>
 </head>
 <body>
+  
 
     <div class="marquee">
         <div>SELAMAT DATANG DI TOKO JUAL BELI AKUN FREE FIRE WANXX STORE26!</div>
@@ -325,12 +410,6 @@
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
         <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
         <img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 3">
-    </div>
-
-    <div class="live-chat-container">
-        <a href="https://wa.me/6283134115994" target="_blank" class="live-chat-button">
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/customer-service-118.png" alt="Live Chat" class="chat-logo">Butuh Bantua?
-        </a>
     </div>
 
     <div class="menu-container">
@@ -403,41 +482,68 @@
         <a href="https://www.instagram.com/wanxxstore26?igsh=MW12bnhjbW93bnNxZw==">INSTAGRAM ADMIN</a>
     </div>
     
-    <div class="cara-beli-container">
-        <h2>🔹 Cara Beli Akun 🔹</h2>
-        <ol>
-            <li><strong>Pilih Akun</strong> – Pilih akun Free Fire yang tersedia di daftar produk.</li>
-            <li><strong>Hubungi Admin</strong> – Klik tombol WhatsApp atau Telegram untuk menghubungi admin.</li>
-            <li><strong>Konfirmasi Harga & Ketersediaan</strong> – Pastikan akun masih tersedia dan harga sesuai.</li>
-            <li><strong>Lakukan Pembayaran</strong> – Transfer sesuai nominal ke rekening atau e-wallet yang diberikan admin.</li>
-            <li><strong>Terima Akun</strong> – Setelah pembayaran dikonfirmasi, admin akan mengirimkan detail akun.</li>
-            <li><strong>Login & Selesai</strong> – Coba login ke akun yang diberikan. Jika ada masalah, segera hubungi admin.</li>
-        </ol>
-        <p><strong>🔥 Catatan Penting 🔥</strong></p>
-        <ul>
-            <li>✅ Pastikan berkomunikasi langsung dengan admin resmi.</li>
-            <li>✅ Jangan pernah memberikan data pribadi atau login akun lama.</li>
-            <li>✅ Semua transaksi hanya melalui kontak yang ada di website ini.</li>
-        </ul>
-    </div>
-    
     <div class="container">
-        <h1>Tentang Kami</h1>
-        <p>Selamat datang di <strong>WANXX STORE26</strong>! Kami adalah toko terpercaya yang menyediakan jual beli akun Free Fire dengan harga terbaik dan pelayanan cepat.</p>
-        <p>WANXX STORE26 berkomitmen untuk memberikan pengalaman transaksi yang aman dan nyaman bagi semua pelanggan.</p>
-        <p>Kami selalu menyediakan akun-akun terbaik dengan berbagai pilihan harga dan spesifikasi sesuai kebutuhan Anda.</p>
+        <h1>Cara Beli Akun</h1>
+        <p>Ikuti langkah-langkah berikut untuk membeli akun di <strong>WANXX STORE26</strong> dengan mudah dan aman.</p>
         
+        <div class="steps">
+            <div class="step">
+                <h3>1. Pilih Akun</h3>
+                <p>Kunjungi daftar akun yang tersedia di website atau hubungi admin untuk rekomendasi.</p>
+            </div>
+            <div class="step">
+                <h3>2. Hubungi Admin</h3>
+                <p>Chat admin melalui <a href="https://wa.me/6283134115994" target="_blank">WhatsApp</a> atau <a href="https://t.me/wanxxstore26" target="_blank">Telegram</a> untuk memastikan ketersediaan akun.</p>
+            </div>
+            <div class="step">
+                <h3>3. Lakukan Pembayaran</h3>
+                <p>Admin akan memberikan detail pembayaran. Gunakan metode pembayaran yang tersedia.</p>
+            </div>
+            <div class="step">
+                <h3>4. Terima Akun</h3>
+                <p>Setelah pembayaran dikonfirmasi, admin akan mengirimkan akun yang sudah Anda beli.</p>
+            </div>
+            <div class="step">
+                <h3>5. Ubah Data Akun</h3>
+                <p>Segera ubah password dan email akun untuk keamanan Anda.</p>
+            </div>
+        </div>
+
         <div class="contact">
-            <h2>Hubungi Kami</h2>
-            <p>Jika ada pertanyaan atau ingin membeli akun, silakan hubungi kami:</p>
+            <h2>Butuh Bantuan?</h2>
+            <p>Silakan hubungi admin:</p>
             <p>📲 <a href="https://wa.me/6283134115994" target="_blank">WhatsApp Admin</a></p>
             <p>📢 <a href="https://t.me/wanxxstore26" target="_blank">Telegram Admin</a></p>
-            <p>📷 <a href="https://www.instagram.com/wanxxstore26" target="_blank">Instagram Kami</a></p>
         </div>
     </div>
     <div class="footer">
         <p>&copy; 2025 WANXX STORE26. Semua Hak Dilindungi.</p>
     </div>
+    
+    <div class="live-chat-container">
+        <div class="chat-options" id="chatOptions">
+            <a href="https://wa.me/6283134115994" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"> CS Bantuan WA
+            </a>
+            <a href="https://t.me/wanxxstore26" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> CS Bantuan Telegram
+            </a>
+        </div>
+        <div class="chat-button" onclick="toggleChat()">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.YyDl0xTeGeLc5taKCX4J7AHaHa&pid=Api&P=0&h=180" alt="Chat" class="chat-icon">
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            var chatBox = document.getElementById("chatOptions");
+            if (chatBox.style.display === "flex") {
+                chatBox.style.display = "none";
+            } else {
+                chatBox.style.display = "flex";
+            }
+        }
+    </script>
     
     <script>
         let index = 0;
