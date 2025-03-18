@@ -14,8 +14,31 @@
 
         body {
             text-align: center;
-            background-color: #0000ff;
+            background-color: #504e4e;
             overflow-x: hidden;
+        }
+
+        .marquee {
+            background: #87CEFA;
+            color: black;
+            padding: 10px 0;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .marquee div {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
         }
 
         .banner-container {
@@ -25,7 +48,7 @@
             margin: 60px auto 20px;
             overflow: hidden;
             border-radius: 10px;
-            background: #ffffff;
+            background: #87CEFA;
             padding: 10px;
         }
 
@@ -45,7 +68,7 @@
         }
 
         .menu-container {
-            background: #ffffff;
+            background: #696969;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -113,7 +136,7 @@
         }
 
         .contact-container {
-            background: #ffffff;
+            background: #696969;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -257,7 +280,7 @@
         .container {
             max-width: 800px;
             margin: auto;
-            background: #ffffff;
+            background: #696969;
             padding: 20px;
             border-radius: 10px;
         }
@@ -365,131 +388,10 @@
             height: 25px;
         }
         
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #A0CCE5;
-            padding: 15px 30px;
-            color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 50%;
-            border: none;
-            background: transparent;
-        }
-        .site-name {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .search-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .search-bar {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 20px;
-            width: 200px;
-            outline: none;
-        }
-        .search-button {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            background-color: white;
-            color: #007bff;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .search-button:hover {
-            background-color: #0056b3;
-            color: white;
-        }
-        .nav-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .nav-buttons button {
-            padding: 8px 15px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            background-color: white;
-            color: #007bff;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .nav-buttons button:hover {
-            background-color: #0056b3;
-            color: white;
-        }
-        .logo-container, .search-container, .nav-buttons {
-            flex: 1;
-        }
-        .logo-container {
-            justify-content: flex-start;
-        }
-        .search-container {
-            justify-content: center;
-        }
-        .nav-buttons {
-            justify-content: flex-end;
-        }
-        
-        /* Responsif untuk layar kecil */
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px;
-            }
-            .logo-container {
-                justify-content: center;
-                margin-bottom: 10px;
-            }
-            .search-container {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .search-bar {
-                width: 100%;
-                max-width: 300px;
-            }
-            .nav-buttons {
-                justify-content: center;
-            }
-        
         
     </style>
 </head> 
   <head>
-    
-    <header class="header">
-        <div class="logo-container">
-            <img src="https://i.ibb.co.com/SXjBDK01/photo-2025-03-18-23-25-14.jpg" alt="Logo" class="logo">
-            <span class="site-name">WANXX STORE26</span>
-        </div>
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-bar" placeholder="Cari sesuatu...">
-            <button class="search-button" onclick="searchFunction()">Cari</button>
-        </div>
-    </header>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
     <title>Detail Produk</title>
@@ -498,6 +400,11 @@
     </style>
 </head>
 <body>
+  
+
+    <div class="marquee">
+        <div>SELAMAT DATANG DI TOKO JUAL BELI AKUN FREE FIRE WANXX STORE26!</div>
+    </div>
 
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
@@ -669,12 +576,6 @@
         
         function stopScrolling() {
             scrolling = false;
-        }
-        
-        function searchFunction() {
-            let query = document.getElementById("searchInput").value;
-            console.log("Pencarian: " + query);
-            alert("Anda mencari: " + query);
         }
         
         requestAnimationFrame(scrollProducts);
