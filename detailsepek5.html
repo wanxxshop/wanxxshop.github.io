@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - Gaming Style</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #696969;
+            color: black;
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #A0CCE5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slides img {
+            width: 100%;
+            display: none;
+            border-radius: 8px;
+        }
+        .slides img.active {
+            display: block;
+        }
+        .btn-group {
+            margin-top: 10px;
+        }
+        .btn {
+            background: gray;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: darkgray;
+        }
+        button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔥 Detail Akun 🔥</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="https://i.ibb.co.com/rfqLH8kZ/photo-2025-03-18-17-04-19.jpg" class="active" alt="Gambar Produk 1">
+                <img src="https://i.ibb.co.com/VWTdG6pf/photo-2025-03-18-17-04-26.jpg" alt="Gambar Produk 2">
+                <img src="https://i.ibb.co.com/DHFwm1h2/photo-2025-03-18-17-04-27.jpg" alt="Gambar Produk 3">
+                <img src="https://i.ibb.co.com/qFdY3zc1/photo-2025-03-18-17-04-18-2.jpg"alt="Gambar Produk 4">
+                <img src="https://i.ibb.co.com/tPQ2BTLG/photo-2025-03-18-17-04-18.jpg" alt="Gambar Produk 5">
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="prevSlide()">kembali sepek awal</button>
+                <button class="btn" onclick="nextSlide()">berikut sepek lain</button>
+            </div>
+        </div>
+        <div class="product-info">
+            <p><strong>Kode Akun:</strong> wanxx-0005</p>
+            <p><strong>Deskripsi:</strong> Log Google V2l on Free Ceein Sg 3 rasa Vault TW 120 Bundel White Shadow Nyeker on Bundel BP ada Kece" Pemm Ce Cakep" Set Ce Co Cakep" Emot 20 kece" Animasi 1 Katana loby 1 Skywing 2 Aura Kece BP 1× Tas Kelinci biru Senjata Allroff Incu Mayan An94 Dart Electric Kingfiser song of hama G36 Fiery Mp5 Achiever Mp40 Robust Charge Buster GOOD JOB👍 M82B Vampire Awm Titanum + Aurora Batu 20× CN on 1</p>
+        </div>
+        <hr>
+        <h3>Formulir Pemesanan</h3>
+        <form class="order-form" onsubmit="orderNow(event)">
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="payment">Pilih Pembayaran:</label>
+            <select id="payment" name="payment" required>
+                <option value="qris">QRIS</option>
+            </select>
+            
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+    </div>
 
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll(".slides img");
+
+        function showSlide(i) {
+            images.forEach(img => img.classList.remove("active"));
+            images[i].classList.add("active");
+        }
+
+        function nextSlide() {
+            index = (index + 1) % images.length;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            showSlide(index);
+        }
+
+        function orderNow(event) {
+            event.preventDefault();
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const payment = document.getElementById("payment").value;
+            
+            const message = `Halo, saya ingin memesan stok akun free fire (Kode: wanxx-0005).%0A` +
+                            `Nomor Telepon: ${phone}%0A` +
+                            `Email: ${email}%0A` +
+                            `Metode Pembayaran: ${payment}`;
+            
+            window.location.href = `https://wa.me/62895416131918?text=${message}`;
+        }
+    </script>
+</body>
+</html>
