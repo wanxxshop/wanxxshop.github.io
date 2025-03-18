@@ -1,161 +1,151 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Produk</title>
+    <title>Detail Produk - Gaming Style</title>
     <style>
-        * {
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
             background-color: #696969;
+            color: black;
             text-align: center;
-            padding: 20px;
         }
-
-        .product-container {
+        .container {
+            max-width: 700px;
+            margin: auto;
             background: #A0CCE5;
             padding: 20px;
             border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            margin: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-
-        .product-image {
+        .slider {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slides img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            display: none;
+            border-radius: 8px;
         }
-
-        .buttons {
-            margin-top: 15px;
+        .slides img.active {
+            display: block;
         }
-
-        .buttons button {
-            background: #ff4500;
-            color: white;
+        .btn-group {
+            margin-top: 10px;
+        }
+        .btn {
+            background: gray;
             border: none;
-            padding: 10px;
+            padding: 8px 16px;
             margin: 5px;
             cursor: pointer;
+            font-size: 14px;
             border-radius: 5px;
             transition: 0.3s;
         }
-
-        .buttons button:hover {
-            background: #A0CCE5;
+        .btn:hover {
+            background: darkgray;
         }
-
-        .order-form {
-            margin-top: 20px;
-            background: #A0CCE5;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .order-form input, .order-form select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .order-form button {
-            background: #28a745;
+        button {
+            background-color: #000000;
             color: white;
             border: none;
             padding: 10px;
             width: 100%;
-            cursor: pointer;
             border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .order-form button:hover {
-            background: #218838;
-        }
-
-        .note {
+            cursor: pointer;
+            font-size: 18px;
             margin-top: 10px;
-            font-size: 12px;
-            color: red;
-            font-weight: bold;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
             text-align: center;
         }
     </style>
 </head>
 <body>
-
-    <div class="product-container">
-        <h2>Detail Produk</h2>
-        <img id="productImage" src="https://down-id.img.susercontent.com/file/c05291a81b65e76f7dad6430918fafae" alt="Produk" class="product-image">
-        
-        <div class="buttons">
-            <button onclick="changeImage(0)">sepek 1</button>
-            <button onclick="changeImage(1)">sepek 2</button>
-            <button onclick="changeImage(2)">sepek 3</button>
+    <div class="container">
+        <h2>🔥 Detail Akun 🔥</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="https://down-id.img.susercontent.com/file/c05291a81b65e76f7dad6430918fafae" class="active" alt="Gambar Produk 1">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.6q0oL-9lIKU0zXRooUDc3wHaJQ&pid=Api&P=0&h=180" alt="Gambar Produk 2">
+                <img src="produk3.jpg" alt="Gambar Produk 3">
+                <img src="produk4.jpg" alt="Gambar Produk 4">
+                <img src="produk5.jpg" alt="Gambar Produk 5">
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="prevSlide()">kembali</button>
+                <button class="btn" onclick="nextSlide()">berikutnya</button>
+            </div>
         </div>
-    </div>
-
-    <div class="order-form">
-        <h3>Pesan Sekarang</h3>
-        <form onsubmit="return sendToWhatsApp(event)">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="tel" id="phone" placeholder="Nomor Telepon" required>
+        <div class="product-info">
+            <p><strong>Nama Produk:</strong> Gaming Gear XYZ</p>
+            <p><strong>Kode Produk:</strong> GG-XYZ123</p>
+            <p><strong>Deskripsi:</strong> Perangkat gaming terbaik dengan performa luar biasa!</p>
+        </div>
+        <hr>
+        <h3>Formulir Pemesanan</h3>
+        <form class="order-form" onsubmit="orderNow(event)">
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required>
             
-            <label for="payment">Pilih Metode Pembayaran:</label>
-            <select id="payment" required>
-                <option value="" disabled selected>Pilih</option>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="payment">Pilih Pembayaran:</label>
+            <select id="payment" name="payment" required>
                 <option value="qris">QRIS</option>
-                <option value="dana">Dana</option>
-                <option value="gopay">GoPay</option>
+                <option value="transfer">Transfer Bank</option>
             </select>
-
-            <p class="note">Note: Transaksi Di WhatsApp Dan Di Telegram</p>
-
-            <button type="submit">Beli Sekarang</button>
+            
+            <button type="submit">Pesan Sekarang via WhatsApp</button>
         </form>
     </div>
 
     <script>
-        let images = [
-            "https://down-id.img.susercontent.com/file/c05291a81b65e76f7dad6430918fafae",
-            "https://down-id.img.susercontent.com/file/00a7221fa34535aa5b414888412d7e9e",
-            "https://pbs.twimg.com/media/F0fxI9LaQAAAn-3.jpg:large"
-        ];
+        let index = 0;
+        const images = document.querySelectorAll(".slides img");
 
-        function changeImage(index) {
-            document.getElementById("productImage").src = images[index];
+        function showSlide(i) {
+            images.forEach(img => img.classList.remove("active"));
+            images[i].classList.add("active");
         }
 
-        function sendToWhatsApp(event) {
+        function nextSlide() {
+            index = (index + 1) % images.length;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            showSlide(index);
+        }
+
+        function orderNow(event) {
             event.preventDefault();
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            let paymentMethod = document.getElementById("payment").value;
-            let paymentText = "";
-
-            if (paymentMethod === "qris") {
-                paymentText = "QRIS (Silakan scan kode QR).";
-            } else if (paymentMethod === "dana") {
-                paymentText = "Dana: 083134115994 A.N [ONAH SAHRONAH]";
-            } else if (paymentMethod === "gopay") {
-                paymentText = "GoPay: 083134115994 A.N [WANXX MARKET]";
-            }
-
-            let message = `Halo, saya ingin memesan. Berikut detail saya:\n\nEmail: ${email}\nNomor HP: ${phone}\nMetode Pembayaran: ${paymentText}\n\n*Jangan lupa kirim bukti transfer setelah pembayaran!*`;
-            let url = `https://wa.me/62895416131918?text=${encodeURIComponent(message)}`;
-            window.open(url, "_blank");
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const payment = document.getElementById("payment").value;
+            
+            const message = `Halo, saya ingin memesan produk Gaming Gear XYZ (Kode: GG-XYZ123).%0A` +
+                            `Nomor Telepon: ${phone}%0A` +
+                            `Email: ${email}%0A` +
+                            `Metode Pembayaran: ${payment}`;
+            
+            window.location.href = `https://wa.me/62895416131918?text=${message}`;
         }
     </script>
-
 </body>
 </html>
