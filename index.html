@@ -14,31 +14,8 @@
 
         body {
             text-align: center;
-            background-color: #504e4e;
+            background-color: #0000ff;
             overflow-x: hidden;
-        }
-
-        .marquee {
-            background: #87CEFA;
-            color: black;
-            padding: 10px 0;
-            font-weight: bold;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .marquee div {
-            display: inline-block;
-            animation: marquee 10s linear infinite;
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
         }
 
         .banner-container {
@@ -48,7 +25,7 @@
             margin: 60px auto 20px;
             overflow: hidden;
             border-radius: 10px;
-            background: #87CEFA;
+            background: #ffffff;
             padding: 10px;
         }
 
@@ -68,7 +45,7 @@
         }
 
         .menu-container {
-            background: #696969;
+            background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -136,7 +113,7 @@
         }
 
         .contact-container {
-            background: #696969;
+            background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -280,7 +257,7 @@
         .container {
             max-width: 800px;
             margin: auto;
-            background: #696969;
+            background: #ffffff;
             padding: 20px;
             border-radius: 10px;
         }
@@ -388,10 +365,131 @@
             height: 25px;
         }
         
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #A0CCE5;
+            padding: 15px 30px;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+        }
+        .site-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .search-bar {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            width: 200px;
+            outline: none;
+        }
+        .search-button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: white;
+            color: #007bff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .nav-buttons button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: white;
+            color: #007bff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-buttons button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .logo-container, .search-container, .nav-buttons {
+            flex: 1;
+        }
+        .logo-container {
+            justify-content: flex-start;
+        }
+        .search-container {
+            justify-content: center;
+        }
+        .nav-buttons {
+            justify-content: flex-end;
+        }
+        
+        /* Responsif untuk layar kecil */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            .logo-container {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .search-bar {
+                width: 100%;
+                max-width: 300px;
+            }
+            .nav-buttons {
+                justify-content: center;
+            }
+        
         
     </style>
 </head> 
   <head>
+    
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://i.ibb.co.com/SXjBDK01/photo-2025-03-18-23-25-14.jpg" alt="Logo" class="logo">
+            <span class="site-name">WANXX STORE26</span>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Cari sesuatu...">
+            <button class="search-button" onclick="searchFunction()">Cari</button>
+        </div>
+    </header>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
     <title>Detail Produk</title>
@@ -400,11 +498,6 @@
     </style>
 </head>
 <body>
-  
-
-    <div class="marquee">
-        <div>SELAMAT DATANG DI TOKO JUAL BELI AKUN FREE FIRE WANXX STORE26!</div>
-    </div>
 
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
@@ -416,28 +509,28 @@
         <h2>🔥Pilih Menu🔥</h2>
         <div class="menu">
             <a href="produk.html" class="menu-item">
-                <img src="https://i.ibb.co.com/whVW4rV3/photo-2025-03-15-21-44-26.jpg" alt="Free Fire">
+                <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Free Fire">
                 <div>
                     <h3>Free Fire</h3>
                     <p>Akun Stok</p>
                 </div>
             </a>
             <a href="https://wa.me/6283134115994" class="menu-item">
-                <img src="https://i.ibb.co.com/jKBHRxg/photo-2025-03-15-21-52-15.jpg" alt="Jual Akun">
+                <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun">
                 <div>
                     <h3>Jual Akun</h3>
                     <p>Ke Sini</p>
                 </div>
             </a>
             <a href="promo.html" class="menu-item">
-                <img src="https://i.ibb.co.com/3YMJPFjV/photo-2025-03-15-22-00-00.jpg" alt="Promo">
+                <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Promo">
                 <div>
                     <h3>Info Promo</h3>
                     <p>Ke Sini</p>
                 </div>
             </a>
             <a href="cekakunhb.html" class="menu-item">
-                <img src="https://i.ibb.co.com/278DL4xT/photo-2025-03-15-21-59-59.jpg" alt="Cek Akun">
+                <img src="https://i.ibb.co.com/Q7YLnK8L/photo-2025-03-18-22-43-53-3.jpg" alt="Cek Akun">
                 <div>
                     <h3>Info HB + SCAM</h3>
                     <p>Ke Sini</p>
@@ -576,6 +669,12 @@
         
         function stopScrolling() {
             scrolling = false;
+        }
+        
+        function searchFunction() {
+            let query = document.getElementById("searchInput").value;
+            console.log("Pencarian: " + query);
+            alert("Anda mencari: " + query);
         }
         
         requestAnimationFrame(scrollProducts);
