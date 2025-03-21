@@ -388,6 +388,57 @@
             height: 25px;
         }
         
+                /* Produk Section */
+        .product-section {
+            text-align: center;
+            padding: 50px 5%;
+        }
+
+        .product-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 10px;
+            cursor: grab;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .product-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product {
+            min-width: 250px;
+            max-width: 250px;
+            background: #A0CCE5;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .product .price {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .product .original-price {
+            text-decoration: line-through;
+            color: red;
+            font-size: 12px;
+        }
         
     </style>
 </head> 
@@ -446,41 +497,39 @@
         </div>
     </div>
     
-    <div class="judul">Daftar Produk</div>
-    <div class="produk-wrapper">
-        <div class="produk-container" id="produkContainer">
-            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
-                <span class="diskon">Diskon 8,3%</span>
-                <img src="https://i.ibb.co.com/sv3WKYgZ/photo-2025-03-16-21-47-12.jpg" alt="Produk 1">
-                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp120.000</s></span> <strong>Rp110.000</strong></p>
+    <!-- PRODUK SLIDER -->
+    <section class="product-section">
+        <h2>STOK FREE FIRE</h2>
+        <div class="product-slider" id="slider">
+            <div class="product" onclick="redirectToWhatsApp('Sepatu Sport', 350000)">
+                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 1">
+                <h3>Sepatu Sport</h3>
+                <p class="original-price">Rp 500.000</p>
+                <p class="price">Rp 350.000</p>
             </div>
-            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
-                <span class="diskon">Diskon 6,6%</span>
-                <img src="https://i.ibb.co.com/WWd0sJmD/photo-2025-03-16-21-47-01.jpg" alt="Produk 2">
-                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp150.000</s></span> <strong>Rp140.000</strong></p>
+            <div class="product" onclick="redirectToWhatsApp('Jam Tangan', 500000)">
+                <img src="https://source.unsplash.com/250x200/?watch" alt="Produk 2">
+                <h3>Jam Tangan</h3>
+                <p class="original-price">Rp 700.000</p>
+                <p class="price">Rp 500.000</p>
             </div>
-            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
-                <span class="diskon">Diskon 7,6%</span>
-                <img src="https://i.ibb.co.com/vvsTbtkS/photo-2025-03-21-17-48-03.jpg" alt="Produk 3">
-                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp130.000</s></span> <strong>Rp120.000</strong></p>
+            <div class="product" onclick="redirectToWhatsApp('Tas Branded', 750000)">
+                <img src="https://source.unsplash.com/250x200/?bag" alt="Produk 3">
+                <h3>Tas Branded</h3>
+                <p class="original-price">Rp 1.000.000</p>
+                <p class="price">Rp 750.000</p>
             </div>
-            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
-                <span class="diskon">Diskon 0%</span>
-                <img src="https://i.ibb.co.com/DH428yzC/photo-2025-03-16-21-47-10.jpg" alt="Produk 4">
-                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp130.000</s></span> <strong>Rp130.000</strong></p>
-                </div>
-            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
-                <span class="diskon">Diskon 14,2%</span>
-                <img src="https://i.ibb.co.com/hFcMwn8H/photo-2025-03-21-17-48-48.jpg" alt="Produk 4">
-                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp70.000</s></span> <strong
-                >Rp60.000</strong></p>
-                </div>
-            <div class="produk" onclick="stopScrolling(); window.location.href='produk.html'">
-                <span class="diskon">Diskon 14,2%</span>
-                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 4">
-                <p>Harga: <span style='display:block; font-size:14px; color:gray;'><s>Rp55.999</s></span> <strong
-                >Rp50.000</strong></p>
-                
+            <div class="product" onclick="redirectToWhatsApp('Kacamata Stylish', 250000)">
+                <img src="https://source.unsplash.com/250x200/?sunglasses" alt="Produk 4">
+                <h3>Kacamata Stylish</h3>
+                <p class="original-price">Rp 350.000</p>
+                <p class="price">Rp 250.000</p>
+            </div>
+            <div class="product" onclick="redirectToWhatsApp('Headphone Bass', 1200000)">
+                <img src="https://source.unsplash.com/250x200/?headphones" alt="Produk 5">
+                <h3>Headphone Bass</h3>
+                <p class="original-price">Rp 1.500.000</p>
+                <p class="price">Rp 1.200.000</p>
             </div>
         </div>
     </div>
@@ -592,6 +641,24 @@
         }
         
         requestAnimationFrame(scrollProducts);
+    </script>
+    
+    <script>
+        let slider = document.getElementById("slider");
+
+        function scrollLeft() {
+            slider.scrollBy({ left: -250, behavior: "smooth" });
+        }
+
+        function scrollRight() {
+            slider.scrollBy({ left: 250, behavior: "smooth" });
+        }
+
+        function redirectToWhatsApp(productName, price) {
+            let message = `Halo, saya tertarik dengan produk ${productName} seharga Rp ${price.toLocaleString('id-ID')}. Bisa saya dapatkan informasi lebih lanjut?`;
+            let whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+            window.location.href = whatsappUrl;
+        }
     </script>
 
 </body>
