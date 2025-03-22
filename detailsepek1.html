@@ -145,16 +145,19 @@
             </div>
         </div>
         <div class="product-info">
-            <p><strong>Kode Akun:</strong> WANXX-0001</p>
+            <p><strong>Kode Akun:</strong> WANXX-0004</p>
         </div>
         <hr>
         <h3>Formulir Pemesanan</h3>
         <form onsubmit="showPopup(event)">
-            <label for="phone">Nomor Telepon:</label>
+            <label for="phone">Nomor:</label>
             <input type="tel" id="phone" name="phone" required>
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+            
+            <label for="tele">User Telegram:</label>
+            <input type="tele" id="tele" name="tele" required>
             
             <button type="submit">Pesan Sekarang</button>
         </form>
@@ -203,10 +206,12 @@
         function confirmPayment() {
             const phone = document.getElementById("phone").value;
             const email = document.getElementById("email").value;
+            const tele = document.getElementById("tele").value;
 
-            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0001).%0A` +
+            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0004).%0A` +
                             `Nomor Telepon: ${phone}%0A` +
                             `Email: ${email}%0A` +
+                            `Email: ${tele}%0A` +
                             `Mohon dicek dan kirim akun.`;
             
             window.location.href = `https://wa.me/62895416131918?text=${message}`;
