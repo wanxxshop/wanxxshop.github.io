@@ -82,6 +82,7 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(5px);
+            z-index: 10;
         }
         .popup {
             display: none;
@@ -96,6 +97,7 @@
             width: 90%;
             max-width: 320px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 11;
         }
         .popup img {
             max-width: 180px;
@@ -132,17 +134,14 @@
         <h2>🔥 Detail Akun 🔥</h2>
         <div class="slider">
             <div class="slides">
-                <img src="https://i.ibb.co.com/x8dB3s89/photo-2025-03-13-01-02-45.jpg" class="active" alt="Gambar Produk 1">
-                <img src="https://i.ibb.co.com/MxGJM10N/photo-2025-03-13-01-03-00.jpg" alt="Gambar Produk 2">
-                <img src="https://i.ibb.co.com/57T8ggJ/photo-2025-03-13-01-03-09.jpg" alt="Gambar Produk 3">
-                <img src="https://i.ibb.co.com/N6wkwghb/photo-2025-03-13-01-03-18.jpg" alt="Gambar Produk 4">
-                <img src="https://i.ibb.co.com/cSrYn3t1/photo-2025-03-13-01-03-27.jpg" alt="Gambar Produk 5">
-               </div>
-            <div class="btn-group">
-                <button class="btn" onclick="prevSlide()">kembali sepek awal</button>
-                <button class="btn" onclick="nextSlide()">berikut sepek lain</button>
+                <img src="https://i.ibb.co/x8dB3s89/photo-2025-03-13-01-02-45.jpg" class="active" alt="Gambar Produk 1">
+                <img src="https://i.ibb.co/MxGJM10N/photo-2025-03-13-01-03-00.jpg" alt="Gambar Produk 2">
+                <img src="https://i.ibb.co/57T8ggJ/photo-2025-03-13-01-03-09.jpg" alt="Gambar Produk 3">
             </div>
-            
+            <div class="btn-group">
+                <button class="btn" onclick="prevSlide()">Kembali Sepek Awal</button>
+                <button class="btn" onclick="nextSlide()">Berikut Sepek Lain</button>
+            </div>
         </div>
         <div class="product-info">
             <p><strong>Kode Akun:</strong> WANXX-0001</p>
@@ -161,11 +160,11 @@
     </div>
 
     <!-- Overlay dan Popup QRIS -->
-    <div id="overlay" class="overlay"></div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
     <div id="qrisPopup" class="popup">
         <button class="close-btn" onclick="closePopup()">X</button>
         <h3>Scan QRIS untuk Bayar</h3>
-        <img src="https://i.ibb.co.com/FbxzGpSF/photo-2025-03-22-21-38-20.jpg" alt="QRIS Payment">
+        <img src="https://i.ibb.co/YbFkqkV/qris-example.png" alt="QRIS Payment">
         <p>Silakan scan QRIS ini dan lakukan pembayaran.</p>
         <button onclick="confirmPayment()">Konfirmasi Pembayaran</button>
     </div>
@@ -204,12 +203,12 @@
             const phone = document.getElementById("phone").value;
             const email = document.getElementById("email").value;
 
-            const message = Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0001).%0A +
-                            Nomor Telepon: ${phone}%0A +
-                            Email: ${email}%0A +
-                            Mohon dicek dan kirim akun.;
+            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0001).%0A` +
+                            `Nomor Telepon: ${phone}%0A` +
+                            `Email: ${email}%0A` +
+                            `Mohon dicek dan kirim akun.`;
             
-            window.location.href = https://wa.me/62895416131918?text=${message};
+            window.location.href = `https://wa.me/62895416131918?text=${message}`;
         }
     </script>
 </body>
