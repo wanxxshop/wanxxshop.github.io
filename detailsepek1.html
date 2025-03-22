@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Stok</title>
+    <title>Detail Stock</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -134,10 +134,9 @@
         <h2>🔥 Detail Akun 🔥</h2>
         <div class="slider">
             <div class="slides">
-                <img src="https://i.ibb.co.com/My9kmPsz/photo-2025-03-22-22-49-32.jpg" class="active" alt="Gambar Produk 1">
-                <img src="https://i.ibb.co.com/B5mWJP86/photo-2025-03-22-22-49-33.jpg" alt="Gambar Produk 2">
-                <img src="https://i.ibb.co.com/TDZQYHPx/photo-2025-03-22-22-49-35.jpg" alt="Gambar Produk 3">
-                <img src="https://i.ibb.co.com/93Th7HmW/photo-2025-03-22-22-49-35.jpg" alt="Gambar Produk 4">
+                <img src="https://i.ibb.co/x8dB3s89/photo-2025-03-13-01-02-45.jpg" class="active" alt="Gambar Produk 1">
+                <img src="https://i.ibb.co/MxGJM10N/photo-2025-03-13-01-03-00.jpg" alt="Gambar Produk 2">
+                <img src="https://i.ibb.co/57T8ggJ/photo-2025-03-13-01-03-09.jpg" alt="Gambar Produk 3">
             </div>
             <div class="btn-group">
                 <button class="btn" onclick="prevSlide()">Kembali Sepek Awal</button>
@@ -145,16 +144,16 @@
             </div>
         </div>
         <div class="product-info">
-            <p><strong>Kode Akun:</strong> WANXX-0004</p>
+            <p><strong>Kode Akun:</strong> WANXX-0001</p>
         </div>
         <hr>
         <h3>Formulir Pemesanan</h3>
         <form onsubmit="showPopup(event)">
-            <label for="phone">Nomor Wa:</label>
+            <label for="phone">Nomor Telepon:</label>
             <input type="tel" id="phone" name="phone" required>
             
-            <label for="phone">User Telegram:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <label for="telegram">Username Telegram:</label>
+            <input type="text" id="telegram" name="telegram" placeholder="@username" required>
             
             <button type="submit">Pesan Sekarang</button>
         </form>
@@ -165,8 +164,8 @@
     <div id="qrisPopup" class="popup">
         <button class="close-btn" onclick="closePopup()">X</button>
         <h3>Scan QRIS untuk Bayar</h3>
-        <img src="https://i.ibb.co.com/FbNqpd1N/photo-2025-03-22-22-20-28.jpg" alt="QRIS Payment">
-        <p>TOTAL BAYAR Rp: 60.000</p>
+        <img src="https://i.ibb.co/YbFkqkV/qris-example.png" alt="QRIS Payment">
+        <p>Silakan scan QRIS ini dan lakukan pembayaran.</p>
         <button onclick="confirmPayment()">Konfirmasi Pembayaran</button>
     </div>
 
@@ -202,11 +201,11 @@
 
         function confirmPayment() {
             const phone = document.getElementById("phone").value;
-            const email = document.getElementById("email").value;
+            const telegram = document.getElementById("telegram").value;
 
-            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0004).%0A` +
+            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0001).%0A` +
                             `Nomor Telepon: ${phone}%0A` +
-                            `User Telegram: ${phone}%0A` +
+                            `Username Telegram: ${telegram}%0A` +
                             `Mohon dicek dan kirim akun.`;
             
             window.location.href = `https://wa.me/62895416131918?text=${message}`;
