@@ -14,10 +14,10 @@
             text-align: center;
         }
         .container {
-            max-width: 700px;
+            max-width: 90%;
             margin: auto;
             background: #A0CCE5;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -72,6 +72,59 @@
             border: none;
             text-align: center;
         }
+        /* Popup QRIS */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 320px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup img {
+            max-width: 180px;
+            border-radius: 5px;
+        }
+        .popup button {
+            background-color: #007bff;
+            border: none;
+            padding: 8px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            margin-top: 10px;
+        }
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+        .close-btn {
+            background: red;
+            color: white;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -84,32 +137,37 @@
                 <img src="https://i.ibb.co.com/57T8ggJ/photo-2025-03-13-01-03-09.jpg" alt="Gambar Produk 3">
                 <img src="https://i.ibb.co.com/N6wkwghb/photo-2025-03-13-01-03-18.jpg" alt="Gambar Produk 4">
                 <img src="https://i.ibb.co.com/cSrYn3t1/photo-2025-03-13-01-03-27.jpg" alt="Gambar Produk 5">
-            </div>
+               </div>
             <div class="btn-group">
                 <button class="btn" onclick="prevSlide()">kembali sepek awal</button>
                 <button class="btn" onclick="nextSlide()">berikut sepek lain</button>
             </div>
+            
         </div>
         <div class="product-info">
-            <p><strong>Kode Akun:</strong> wanxx-0001</p>
-            <p><strong>Deskripsi:</strong> Log Google V2l on Free Ceein Safe Sg Trompet 3 rasa Vault TW 180 Bundel Mad Brickman Bunde Ep ada Bundel kece" Gantenk Serba biru Rambut Stinger Anggel Ce on Set Ce Co Cakep" Emot 27 Kece" Katana loby 1 Tas Kelinci biru Ep 2× Senjata allroff Incu Rame Aug Nebulan Thompson Firehound Vector HayperCore Awm Titanum BOK 100+ CN on 1</p>
+            <p><strong>Kode Akun:</strong> WANXX-0001</p>
         </div>
         <hr>
         <h3>Formulir Pemesanan</h3>
-        <form class="order-form" onsubmit="orderNow(event)">
+        <form onsubmit="showPopup(event)">
             <label for="phone">Nomor Telepon:</label>
             <input type="tel" id="phone" name="phone" required>
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             
-            <label for="payment">Pilih Pembayaran:</label>
-            <select id="payment" name="payment" required>
-                <option value="qris">QRIS</option>
-            </select>
-            
             <button type="submit">Pesan Sekarang</button>
         </form>
+    </div>
+
+    <!-- Overlay dan Popup QRIS -->
+    <div id="overlay" class="overlay"></div>
+    <div id="qrisPopup" class="popup">
+        <button class="close-btn" onclick="closePopup()">X</button>
+        <h3>Scan QRIS untuk Bayar</h3>
+        <img src="https://i.ibb.co.com/FbxzGpSF/photo-2025-03-22-21-38-20.jpg" alt="QRIS Payment">
+        <p>Silakan scan QRIS ini dan lakukan pembayaran.</p>
+        <button onclick="confirmPayment()">Konfirmasi Pembayaran</button>
     </div>
 
     <script>
@@ -131,18 +189,27 @@
             showSlide(index);
         }
 
-        function orderNow(event) {
+        function showPopup(event) {
             event.preventDefault();
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("qrisPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("qrisPopup").style.display = "none";
+        }
+
+        function confirmPayment() {
             const phone = document.getElementById("phone").value;
             const email = document.getElementById("email").value;
-            const payment = document.getElementById("payment").value;
+
+            const message = Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0001).%0A +
+                            Nomor Telepon: ${phone}%0A +
+                            Email: ${email}%0A +
+                            Mohon dicek dan kirim akun.;
             
-            const message = `Halo, saya ingin memesan stok akun free fire (Kode: wanxx-0001).%0A` +
-                            `Nomor Telepon: ${phone}%0A` +
-                            `Email: ${email}%0A` +
-                            `Metode Pembayaran: ${payment}`;
-            
-            window.location.href = `https://wa.me/62895416131918?text=${message}`;
+            window.location.href = https://wa.me/62895416131918?text=${message};
         }
     </script>
 </body>
