@@ -153,8 +153,8 @@
             <label for="phone">Nomor Wa:</label>
             <input type="tel" id="phone" name="phone" required>
             
-            <label for="email">User Telegram:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="phone">User Telegram:</label>
+            <input type="tel" id="phone" name="phone" required>
             
             <button type="submit">Pesan Sekarang</button>
         </form>
@@ -203,11 +203,10 @@
         function confirmPayment() {
             const phone = document.getElementById("phone").value;
             const email = document.getElementById("email").value;
-            const tele = document.getElementById("tele").value;
 
             const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0004).%0A` +
                             `Nomor Telepon: ${phone}%0A` +
-                            `Email: ${email}%0A` +
+                            `User Telegram: ${phone}%0A` +
                             `Mohon dicek dan kirim akun.`;
             
             window.location.href = `https://wa.me/62895416131918?text=${message}`;
