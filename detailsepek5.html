@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Produk - Gaming Style</title>
+    <title>Detail Stock</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -14,10 +14,10 @@
             text-align: center;
         }
         .container {
-            max-width: 700px;
+            max-width: 90%;
             margin: auto;
             background: #A0CCE5;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -72,6 +72,61 @@
             border: none;
             text-align: center;
         }
+        /* Popup QRIS */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 10;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 320px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 11;
+        }
+        .popup img {
+            max-width: 180px;
+            border-radius: 5px;
+        }
+        .popup button {
+            background-color: #007bff;
+            border: none;
+            padding: 8px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            margin-top: 10px;
+        }
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+        .close-btn {
+            background: red;
+            color: white;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -79,37 +134,41 @@
         <h2>🔥 Detail Akun 🔥</h2>
         <div class="slider">
             <div class="slides">
-                <img src="https://i.ibb.co.com/rfqLH8kZ/photo-2025-03-18-17-04-19.jpg" class="active" alt="Gambar Produk 1">
-                <img src="https://i.ibb.co.com/VWTdG6pf/photo-2025-03-18-17-04-26.jpg" alt="Gambar Produk 2">
-                <img src="https://i.ibb.co.com/DHFwm1h2/photo-2025-03-18-17-04-27.jpg" alt="Gambar Produk 3">
-                <img src="https://i.ibb.co.com/qFdY3zc1/photo-2025-03-18-17-04-18-2.jpg"alt="Gambar Produk 4">
-                <img src="https://i.ibb.co.com/tPQ2BTLG/photo-2025-03-18-17-04-18.jpg" alt="Gambar Produk 5">
+                <img src="https://i.ibb.co.com/qMJdJCwL/photo-2025-03-23-00-46-21.jpg" class="active" alt="Gambar Produk 1">
+                <img src="https://i.ibb.co.com/hN5JWP6/photo-2025-03-23-00-46-21-2.jpg" alt="Gambar Produk 2">
+                <img src="https://i.ibb.co.com/0yNBBPg5/photo-2025-03-23-00-46-22.jpg" alt="Gambar Produk 3">
+                <img src="https://i.ibb.co.com/84L8DQZV/photo-2025-03-23-00-46-22-2.jpg" alt="Gambar Produk 4">
+                <img src="https://i.ibb.co.com/Q7KbzQNy/photo-2025-03-23-00-46-22-3.jpg" alt="Gambar Produk 5">
             </div>
             <div class="btn-group">
-                <button class="btn" onclick="prevSlide()">kembali sepek awal</button>
-                <button class="btn" onclick="nextSlide()">berikut sepek lain</button>
+                <button class="btn" onclick="prevSlide()">Kembali Sepek Awal</button>
+                <button class="btn" onclick="nextSlide()">Berikut Sepek Lain</button>
             </div>
         </div>
         <div class="product-info">
-            <p><strong>Kode Akun:</strong> wanxx-0005</p>
-            <p><strong>Deskripsi:</strong> Log Google V2l on Free Ceein Sg 3 rasa Vault TW 120 Bundel White Shadow Nyeker on Bundel BP ada Kece" Pemm Ce Cakep" Set Ce Co Cakep" Emot 20 kece" Animasi 1 Katana loby 1 Skywing 2 Aura Kece BP 1× Tas Kelinci biru Senjata Allroff Incu Mayan An94 Dart Electric Kingfiser song of hama G36 Fiery Mp5 Achiever Mp40 Robust Charge Buster GOOD JOB👍 M82B Vampire Awm Titanum + Aurora Batu 20× CN on 1</p>
+            <p><strong>Kode Akun:</strong> WANXX-0006</p>
         </div>
         <hr>
         <h3>Formulir Pemesanan</h3>
-        <form class="order-form" onsubmit="orderNow(event)">
+        <form onsubmit="showPopup(event)">
             <label for="phone">Nomor Telepon:</label>
             <input type="tel" id="phone" name="phone" required>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="payment">Pilih Pembayaran:</label>
-            <select id="payment" name="payment" required>
-                <option value="qris">QRIS</option>
-            </select>
+            <label for="telegram">Username Telegram:</label>
+            <input type="text" id="telegram" name="telegram" placeholder="@username" required>
             
             <button type="submit">Pesan Sekarang</button>
         </form>
+    </div>
+
+    <!-- Overlay dan Popup QRIS -->
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="qrisPopup" class="popup">
+        <button class="close-btn" onclick="closePopup()">X</button>
+        <h3>Scan QRIS untuk Bayar Jangan Lupa Bukti Transfer</h3>
+        <img src="https://i.ibb.co.com/FbNqpd1N/photo-2025-03-22-22-20-28.jpg" alt="QRIS Payment">
+        <p>Total Bayar Rp: 60.000</p>
+        <button onclick="confirmPayment()">Konfirmasi Pembayaran</button>
     </div>
 
     <script>
@@ -131,16 +190,25 @@
             showSlide(index);
         }
 
-        function orderNow(event) {
+        function showPopup(event) {
             event.preventDefault();
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("qrisPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("qrisPopup").style.display = "none";
+        }
+
+        function confirmPayment() {
             const phone = document.getElementById("phone").value;
-            const email = document.getElementById("email").value;
-            const payment = document.getElementById("payment").value;
-            
-            const message = `Halo, saya ingin memesan stok akun free fire (Kode: wanxx-0005).%0A` +
+            const telegram = document.getElementById("telegram").value;
+
+            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0006).%0A` +
                             `Nomor Telepon: ${phone}%0A` +
-                            `Email: ${email}%0A` +
-                            `Metode Pembayaran: ${payment}`;
+                            `Username Telegram: ${telegram}%0A` +
+                            `Mohon dicek dan kirim akun.`;
             
             window.location.href = `https://wa.me/62895416131918?text=${message}`;
         }
