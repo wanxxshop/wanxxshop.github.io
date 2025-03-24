@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Paket</title>
+    <script>
+        function pilihPromo(promo) {
+            // Simpan jenis promo di browser
+            sessionStorage.setItem("promo", promo);
+            // Arahkan ke Payment Link Midtrans
+            window.location.href = "https://app.sandbox.midtrans.com/payment-links/1742821261262"; 
+        }
+    </script>
+</head>
+<body>
+    <h1>Pilih Paket</h1>
+    <button onclick="pilihPromo('promoA')">Beli Promo A</button>
+    <button onclick="pilihPromo('promoB')">Beli Promo B</button>
+</body>
+</html>
