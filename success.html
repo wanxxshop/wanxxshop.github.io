@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Berhasil</title>
+    <script>
+        window.onload = function() {
+            let promo = sessionStorage.getItem("promo") || "default";
+            let message = "Pembayaran berhasil!";
+            let buttonLink = "https://yourwebsite.com/";
+
+            if (promo === "promoA") {
+                message = "Selamat! Anda berhasil membeli Promo A!";
+                buttonLink = "https://yourwebsite.com/data_akun_promoA.html";
+            } else if (promo === "promoB") {
+                message = "Terima kasih telah membeli Paket B!";
+                buttonLink = "https://yourwebsite.com/data_akun_promoB.html";
+            }
+
+            document.getElementById("message").innerText = message;
+            document.getElementById("button").setAttribute("href", buttonLink);
+            
+            // Hapus sessionStorage setelah redirect supaya data tidak tertinggal
+            sessionStorage.removeItem("promo");
+        };
+    </script>
+</head>
+<body>
+    <h1 id="message">Pembayaran berhasil!</h1>
+    <a id="button" href="https://yourwebsite.com/" class="button">Lanjut</a>
+</body>
+</html>
