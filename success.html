@@ -3,31 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran Berhasil</title>
-    <script>
-        window.onload = function() {
-            let promo = sessionStorage.getItem("promo") || "default";
-            let message = "Pembayaran berhasil!";
-            let buttonLink = "https://yourwebsite.com/";
-
-            if (promo === "promoA") {
-                message = "Selamat! Anda berhasil membeli Promo A!";
-                buttonLink = "https://yourwebsite.com/data_akun_promoA.html";
-            } else if (promo === "promoB") {
-                message = "Terima kasih telah membeli Paket B!";
-                buttonLink = "https://yourwebsite.com/data_akun_promoB.html";
-            }
-
-            document.getElementById("message").innerText = message;
-            document.getElementById("button").setAttribute("href", buttonLink);
-            
-            // Hapus sessionStorage setelah redirect supaya data tidak tertinggal
-            sessionStorage.removeItem("promo");
-        };
-    </script>
+    <title>Pembayaran Sukses</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+            max-width: 90%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .icon {
+            font-size: 60px;
+            color: #4CAF50;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        h1 {
+            color: #2E7D32;
+            font-size: 22px;
+        }
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+            background: #f1f8e9;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+            max-width: 100%;
+        }
+        .button {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+        }
+        .button-wa {
+            background: #25D366;
+        }
+        .button-wa:hover {
+            background: #1EBE5D;
+            transform: scale(1.05);
+        }
+        .button-tg {
+            background: #0088cc;
+        }
+        .button-tg:hover {
+            background: #0077b5;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <h1 id="message">Pembayaran berhasil!</h1>
-    <a id="button" href="https://yourwebsite.com/" class="button">Lanjut</a>
+    <div class="container">
+        <div class="icon">✔️</div>
+        <h1>Pembayaran Berhasil!</h1>
+        <p>Terima kasih! Pembayaran Anda telah berhasil diproses.</p>
+        <div class="note">
+            <strong>Note Baca:</strong> DATA AKUN KALIAN BISA CHAT ADMIN DI BAWAH KALIAN BISA CHAT AJA : BANG SAYA SUDAH BAYAR TOLONG DI KOFIRMASIH SAYA INGIN AKUN IMPAN SAYA 😁
+        </div>
+        <a href="https://wa.me/62895416131918" class="button button-wa">DATA AKUN VIA WHATSAPP</a>
+        <a href="https://t.me/wanxxstore26" class="button button-tg">DATA AKUN VIA TELEGRAM</a>
+    </div>
 </body>
 </html>
