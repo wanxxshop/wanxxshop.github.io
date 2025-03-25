@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Form Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Responsif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Form Order</h2>
-    <form id="orderForm">
-        Nama: <input type="text" id="nama" required><br>
-        Produk: <input type="text" id="produk" required><br>
-        Jumlah: <input type="number" id="jumlah" required><br>
-        Harga: <input type="number" id="harga" required><br>
-        <button type="submit">Kirim Order</button>
-    </form>
-
-    <p id="status"></p>
-
+<body class="bg-gray-100">
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg p-4 flex items-center justify-between fixed w-full top-0 z-50">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="logo.png" alt="Logo" class="w-12 h-12 mr-2 rounded-full shadow-md">
+            <span class="text-xl font-bold text-gray-700">Brand</span>
+        </div>
+        
+        <!-- Pencarian -->
+        <div class="hidden md:flex items-center bg-gray-200 px-4 py-2 rounded-full shadow-inner">
+            <input type="text" placeholder="Cari..." class="bg-transparent outline-none w-40 md:w-60">
+            <svg class="w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 2a8 8 0 1 1-4.9 14.32l-4.3 4.3a1 1 0 0 1-1.4-1.4l4.3-4.3A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4Z"/>
+            </svg>
+        </div>
+        
+        <!-- Menu -->
+        <button id="menu-toggle" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+            ☰
+        </button>
+    </nav>
+    
+    <!-- Input Pencarian untuk Mobile -->
+    <div class="p-4 mt-16 md:hidden">
+        <div class="flex items-center bg-gray-200 px-4 py-2 rounded-full shadow-inner">
+            <input type="text" placeholder="Cari..." class="bg-transparent outline-none w-full">
+            <svg class="w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 2a8 8 0 1 1-4.9 14.32l-4.3 4.3a1 1 0 0 1-1.4-1.4l4.3-4.3A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4Z"/>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- Menu Navigasi -->
+    <div id="menu" class="hidden md:block bg-white shadow-md absolute top-16 right-4 rounded-lg w-40 p-2 transition-all duration-300">
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">🏠 Beranda</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">📄 Tentang</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">📞 Kontak</a>
+    </div>
+    
     <script>
-        document.getElementById("orderForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var data = {
-                nama: document.getElementById("nama").value,
-                produk: document.getElementById("produk").value,
-                jumlah: document.getElementById("jumlah").value,
-                harga: document.getElementById("harga").value
-            };
-
-            fetch("https://script.google.com/home/projects/127XKF4GG_u1BJ-tTGyUwNvFrJA-V5n6dqfElDSiIA8DLC8vDr0l4FtJI/edit", {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.text())
-            .then(result => {
-                document.getElementById("status").innerText = result;
-            })
-            .catch(error => {
-                document.getElementById("status").innerText = "Gagal mengirim data.";
-            });
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('hidden');
         });
     </script>
 </body>
