@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Gagal</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #D32F2F, #B71C1C);
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+            max-width: 90%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .icon {
+            font-size: 60px;
+            color: #D32F2F;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            from { transform: translateX(-5px); }
+            to { transform: translateX(5px); }
+        }
+        h1 {
+            color: #B71C1C;
+            font-size: 22px;
+        }
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+            background: #ffebee;
+            padding: 10px;
+            border-left: 5px solid #D32F2F;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+            max-width: 100%;
+        }
+        .button {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+        }
+        .button-wa {
+            background: #25D366;
+        }
+        .button-wa:hover {
+            background: #1EBE5D;
+            transform: scale(1.05);
+        }
+        .button-tg {
+            background: #0088cc;
+        }
+        .button-tg:hover {
+            background: #0077b5;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pembayaran Gagal!</h1>
+        <p>Mohon maaf! Pembayaran Anda tidak berhasil diproses.</p>
+        <div class="note">
+            <strong>Catatan:</strong> Silakan coba lagi atau hubungi kami jika mengalami masalah.
+        </div>
+        <a href="https://wa.me/62895416131918" class="button button-wa">Hubungi Kami di WhatsApp</a>
+        <a href="https://t.me/wanxxstore26" class="button button-tg">Hubungi Kami di Telegram</a>
+    </div>
+</body>
+</html>
