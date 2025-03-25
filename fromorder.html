@@ -15,12 +15,16 @@
         
         <!-- Pencarian (Tengah) -->
         <div class="flex-grow flex justify-center">
-            <div class="flex items-center bg-gray-200 px-3 py-1 rounded-full shadow-inner w-9/12 max-w-xs">
-                <input type="text" placeholder="Cari..." class="bg-transparent outline-none w-full text-sm p-1">
-                <svg class="w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 2a8 8 0 1 1-4.9 14.32l-4.3 4.3a1 1 0 0 1-1.4-1.4l4.3-4.3A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4Z"/>
-                </svg>
-            </div>
+            <form action="#" method="GET" class="w-9/12 max-w-xs">
+                <div class="flex items-center bg-gray-200 px-3 py-1 rounded-full shadow-inner">
+                    <input type="text" name="q" placeholder="Cari..." class="bg-transparent outline-none w-full text-sm p-1" required>
+                    <button type="submit">
+                        <svg class="w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 1 1-4.9 14.32l-4.3 4.3a1 1 0 0 1-1.4-1.4l4.3-4.3A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 10 4Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
         </div>
         
         <!-- Menu -->
@@ -31,9 +35,9 @@
 
     <!-- Menu Navigasi -->
     <div id="menu" class="hidden md:block bg-white shadow-md absolute top-16 right-4 rounded-lg w-40 p-2 transition-all duration-300">
-        <a href="#" class="index.html">🏠 Beranda</a>
-        <a href="#" class="index.html">📄 Tentang</a>
-        <a href="#" class="index.html">📞 Kontak</a>
+        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">🏠 Beranda</a>
+        <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">📄 Tentang</a>
+        <a href="https://wa.me/6281234567890" target="_blank" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md">📞 Kontak</a>
     </div>
 
     <script>
