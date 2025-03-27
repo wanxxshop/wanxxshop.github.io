@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .product-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .product-title {
+            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .product-price {
+            font-size: 22px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-description {
+            margin-bottom: 25px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .main-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .thumbnail-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #3498db;
+            box-shadow: 0 4px 8px rgba(52,152,219,0.3);
+            transform: translateY(-3px);
+        }
+        .purchase-info {
+            font-size: 16px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .buy-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .buy-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 14px 0;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            max-width: 300px;
+            width: 100%;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .buy-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41,128,185,0.3);
+        }
+    </style>
+</head>
+<body>
+        <!-- Gambar Utama -->
+        <div class="product-images">
+            <img id="mainImage" class="main-image" src="https://i.ibb.co.com/cKh3gCPB/710b5b76-cd1e-4954-9f99-b1e4fd8f4d77.jpg" alt="Tampak Depan">
+        </div>
+    <!-- Thumbnail Gambar -->
+        <div class="thumbnail-container">
+            <img class="thumbnail active" src="https://i.ibb.co.com/cKh3gCPB/710b5b76-cd1e-4954-9f99-b1e4fd8f4d77.jpg" alt="Tampak Depan" 
+                 onclick="changeImage('https://i.ibb.co.com/cKh3gCPB/710b5b76-cd1e-4954-9f99-b1e4fd8f4d77.jpg', this)">
+            <img class="thumbnail" src="https://i.ibb.co.com/Mk4N8b0W/c72b5779-835e-4be8-b193-6c002e927daa.jpg" alt="Tampak Belakang" 
+                 onclick="changeImage('https://i.ibb.co.com/Mk4N8b0W/c72b5779-835e-4be8-b193-6c002e927daa.jpg', this)">
+            <img class="thumbnail" src="https://i.ibb.co.com/C57nqTH7/b2d9aae2-330d-44fc-b985-99f0a0041704.jpg" alt="Aksesoris
+                 onclick="changeImage('https://i.ibb.co.com/C57nqTH7/b2d9aae2-330d-44fc-b985-99f0a0041704.jpg', this)">
+        </div>
+
+<!-- Deskripsi di atas tombol beli -->
+        <p class="purchase-info">
+Log Google V2l on Free Ceein Sg Mambah,PeluruSuci Vault TW 160 Bundel Chekmate Bundel kece" Nyeker on Pemm Ce Cakep" Set Ce Co Cakep" Emot 15 kece" Cobra ada 3 Skywing 1 Ep 2× Senjata allroff Incu utama ada Ak47 Flaming Groza Operand Famas Wibu An94 Ruby Bride M1014 Wasteland  </p>
+
+        <!-- Tombol Beli Sekarang -->
+        <div class="buy-button-container">
+            <a href="http://lynk.id/wanxxgames/4eyw8e04lwe6/checkout" class="buy-button" target="_blank">Beli Sekarang</a>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(newImageSrc, clickedThumbnail) {
+            // Ubah gambar utama
+            document.getElementById('mainImage').src = newImageSrc;
+            
+            // Update status aktif thumbnail
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            clickedThumbnail.classList.add('active');
+        }
+    </script>
+</body>
+</html>
