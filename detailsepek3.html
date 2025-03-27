@@ -3,214 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Stock</title>
+    <title>Detail Produk</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #696969;
-            color: black;
-            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
         }
-        .container {
-            max-width: 90%;
-            margin: auto;
-            background: #A0CCE5;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .slider {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .slides img {
-            width: 100%;
-            display: none;
-            border-radius: 8px;
-        }
-        .slides img.active {
-            display: block;
-        }
-        .btn-group {
-            margin-top: 10px;
-        }
-        .btn {
-            background: gray;
-            border: none;
-            padding: 8px 16px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: darkgray;
-        }
-        button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #cc0000;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: none;
-            text-align: center;
-        }
-        /* Popup QRIS */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 10;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .product-container {
+            max-width: 600px;
+            margin: 0 auto;
             background: white;
-            padding: 15px;
+            padding: 25px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-            width: 90%;
-            max-width: 320px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 11;
         }
-        .popup img {
-            max-width: 180px;
-            border-radius: 5px;
+        .product-title {
+            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
-        .popup button {
-            background-color: #007bff;
-            border: none;
-            padding: 8px;
+        .product-price {
+            font-size: 22px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-description {
+            margin-bottom: 25px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .main-image {
             width: 100%;
-            border-radius: 5px;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        .thumbnail-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
             cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #3498db;
+            box-shadow: 0 4px 8px rgba(52,152,219,0.3);
+            transform: translateY(-3px);
+        }
+        .purchase-info {
             font-size: 16px;
-            color: white;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .buy-button-container {
+            display: flex;
+            justify-content: center;
             margin-top: 10px;
         }
-        .popup button:hover {
-            background-color: #0056b3;
-        }
-        .close-btn {
-            background: red;
+        .buy-button {
+            background-color: #3498db;
             color: white;
-            padding: 5px;
             border: none;
+            padding: 14px 0;
+            font-size: 18px;
+            border-radius: 8px;
             cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            font-size: 14px;
+            max-width: 300px;
+            width: 100%;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .buy-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41,128,185,0.3);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>🔥 Detail Akun 🔥</h2>
-        <div class="slider">
-            <div class="slides">
-                <img src="https://i.ibb.co.com/v4YBbfjk/photo-2025-03-23-00-35-46.jpg" class="active" alt="Gambar Produk 1">
-                <img src="https://i.ibb.co.com/Ps6Bqhf2/photo-2025-03-23-00-35-46-2.jpg" alt="Gambar Produk 2">
-                <img src="https://i.ibb.co.com/tpSbz24F/photo-2025-03-23-00-35-47.jpg" alt="Gambar Produk 3">
-                <img src="https://i.ibb.co.com/jk2qrpPy/photo-2025-03-23-00-35-47-2.jpg" alt="Gambar Produk 4">
-                <img src="https://i.ibb.co.com/QFtTtfbF/photo-2025-03-23-00-35-47-3.jpg" alt="Gambar Produk 5">
-            </div>
-            <div class="btn-group">
-                <button class="btn" onclick="prevSlide()">Kembali Sepek Awal</button>
-                <button class="btn" onclick="nextSlide()">Berikut Sepek Lain</button>
-            </div>
+        <!-- Gambar Utama -->
+        <div class="product-images">
+            <img id="mainImage" class="main-image" src="https://i.ibb.co.com/qMJdJCwL/photo-2025-03-23-00-46-21.jpg" alt="Tampak Depan">
         </div>
-        <div class="product-info">
-            <p><strong>Kode Akun:</strong> WANXX-0005</p>
+    <!-- Thumbnail Gambar -->
+        <div class="thumbnail-container">
+            <img class="thumbnail active" src="https://i.ibb.co.com/qMJdJCwL/photo-2025-03-23-00-46-21.jpg" alt="Tampak Depan" 
+                 onclick="changeImage('https://i.ibb.co.com/qMJdJCwL/photo-2025-03-23-00-46-21.jpg', this)">
+            <img class="thumbnail" src="https://i.ibb.co.com/0yNBBPg5/photo-2025-03-23-00-46-22.jpg" alt="Tampak Belakang" 
+                 onclick="changeImage('https://i.ibb.co.com/0yNBBPg5/photo-2025-03-23-00-46-22.jpg', this)">
+            <img class="thumbnail" src="https://i.ibb.co.com/Q7KbzQNy/photo-2025-03-23-00-46-22-3.jpg" alt="Aksesoris
+                 onclick="changeImage('https://i.ibb.co.com/Q7KbzQNy/photo-2025-03-23-00-46-22-3.jpg', this)">
         </div>
-        <hr>
-        <h3>Formulir Pemesanan</h3>
-        <form onsubmit="showPopup(event)">
-            <label for="phone">Nomor Telepon:</label>
-            <input type="tel" id="phone" name="phone" required>
-            
-            <label for="telegram">Username Telegram:</label>
-            <input type="text" id="telegram" name="telegram" placeholder="@username" required>
-            
-            <button type="submit">Pesan Sekarang</button>
-        </form>
-    </div>
 
-    <!-- Overlay dan Popup QRIS -->
-    <div id="overlay" class="overlay" onclick="closePopup()"></div>
-    <div id="qrisPopup" class="popup">
-        <button class="close-btn" onclick="closePopup()">X</button>
-        <h3>Scan QRIS untuk Bayar Jangan Lupa Bukti Transfer</h3>
-        <img src="https://i.ibb.co.com/FbNqpd1N/photo-2025-03-22-22-20-28.jpg" alt="QRIS Payment">
-        <p>Total Bayar Rp: 60.000</p>
-        <button onclick="confirmPayment()">Konfirmasi Pembayaran</button>
+<!-- Deskripsi di atas tombol beli -->
+        <p class="purchase-info">
+Log Google V2l on Free Ceein Sg Mambah,PeluruSuci Vault TW 210 Bundel Toxicatomy Bundel kece" Nyeker on Pem Ce Cakep" Set Ce Co Cakep" Emot 25 kece" Katana biasa 2 Skywing 1 Tas Kelinci biru Senjata allroff Parah Incu Utama ada Groza Flames An94 Bliss Thompson Firehound Vector Cobble Bizon Wraith Awm Iron Level up pas blm di buka Skin Mobil Neonligt </p>
+
+        <!-- Tombol Beli Sekarang -->
+        <div class="buy-button-container">
+            <a href="http://lynk.id/wanxxgames/jj06ynw48mry/checkout" class="buy-button" target="_blank">Beli Sekarang</a>
+        </div>
     </div>
 
     <script>
-        let index = 0;
-        const images = document.querySelectorAll(".slides img");
-
-        function showSlide(i) {
-            images.forEach(img => img.classList.remove("active"));
-            images[i].classList.add("active");
-        }
-
-        function nextSlide() {
-            index = (index + 1) % images.length;
-            showSlide(index);
-        }
-
-        function prevSlide() {
-            index = (index - 1 + images.length) % images.length;
-            showSlide(index);
-        }
-
-        function showPopup(event) {
-            event.preventDefault();
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("qrisPopup").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("qrisPopup").style.display = "none";
-        }
-
-        function confirmPayment() {
-            const phone = document.getElementById("phone").value;
-            const telegram = document.getElementById("telegram").value;
-
-            const message = `Halo, saya sudah bayar untuk akun Free Fire (Kode: WANXX-0005).%0A` +
-                            `Nomor Telepon: ${phone}%0A` +
-                            `Username Telegram: ${telegram}%0A` +
-                            `Mohon dicek dan kirim akun.`;
+        function changeImage(newImageSrc, clickedThumbnail) {
+            // Ubah gambar utama
+            document.getElementById('mainImage').src = newImageSrc;
             
-            window.location.href = `https://wa.me/62895416131918?text=${message}`;
+            // Update status aktif thumbnail
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            clickedThumbnail.classList.add('active');
         }
     </script>
 </body>
