@@ -8,110 +8,97 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .product-container {
-            max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 400px;
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
         }
         .product-title {
-            font-size: 26px;
+            font-size: 22px;
             color: #2c3e50;
             margin-bottom: 10px;
             font-weight: 600;
         }
         .product-price {
-            font-size: 22px;
+            font-size: 20px;
             color: #e74c3c;
             font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .product-description {
-            margin-bottom: 25px;
-            color: #7f8c8d;
-            line-height: 1.6;
+            margin-bottom: 10px;
         }
         .product-images {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
         .main-image {
             width: 100%;
-            max-height: 400px;
+            max-height: 300px;
             object-fit: contain;
-            margin-bottom: 15px;
-            border: 1px solid #ecf0f1;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         .thumbnail-container {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
+            margin-top: 10px;
         }
         .thumbnail {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
             cursor: pointer;
-            border: 2px solid transparent;
             border-radius: 6px;
             transition: all 0.3s ease;
         }
         .thumbnail:hover, .thumbnail.active {
-            border-color: #3498db;
-            box-shadow: 0 4px 8px rgba(52,152,219,0.3);
-            transform: translateY(-3px);
+            border: 2px solid #3498db;
         }
-        .purchase-info {
-            font-size: 16px;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 15px;
-            font-weight: 500;
+        .status-date {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
         }
-        .buy-button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+        .status {
+            font-weight: bold;
+            color: green;
         }
         .buy-button {
             background-color: #3498db;
             color: white;
             border: none;
-            padding: 14px 0;
-            font-size: 18px;
+            padding: 12px 0;
+            font-size: 16px;
             border-radius: 8px;
             cursor: pointer;
-            max-width: 300px;
             width: 100%;
             transition: all 0.3s;
-            text-align: center;
             text-decoration: none;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            display: inline-block;
         }
         .buy-button:hover {
             background-color: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(41,128,185,0.3);
         }
     </style>
 </head>
 <body>
-        <!-- Gambar Utama -->
+    <div class="product-container">
         <div class="product-images">
             <img id="mainImage" class="main-image" src="https://i.ibb.co.com/dwXQJysN/photo-2025-03-23-00-20-01.jpg" alt="Tampak Depan">
         </div>
-    <!-- Thumbnail Gambar -->
         <div class="thumbnail-container">
             <img class="thumbnail active" src="https://i.ibb.co.com/dwXQJysN/photo-2025-03-23-00-20-01.jpg" alt="Tampak Depan" 
                  onclick="changeImage('https://i.ibb.co.com/dwXQJysN/photo-2025-03-23-00-20-01.jpg', this)">
@@ -119,28 +106,12 @@
                  onclick="changeImage('https://i.ibb.co.com/rfk9GbNz/photo-2025-03-23-00-20-01-2.jpg', this)">
             <img class="thumbnail" src="https://i.ibb.co.com/7dSZQmxX/photo-2025-03-23-00-20-03-2.jpg" alt="1"
                  onclick="changeImage('https://i.ibb.co.com/7dSZQmxX/photo-2025-03-23-00-20-03-2.jpg', this)">
-            </div>
-
-<!-- Deskripsi di atas tombol beli -->
-        <p class="purchase-info">
-Log Google V2l on Safe Free Ceein Evo 3 Xm8 lvl 3 Mp5 lvl 2 Ak lvl 1 SG Terompet 4 rasa Vault TW 160 Kakasih on Bundel Tech Flow Bundel kece" Jordan Kw Celana Anggel Merah Ce Co on  Gagah" Pemm Ce Cakep" Set Ce Co Cakep" Emot 26 Kece" Rock Paper Katana loby  1 Skywing 2 Kuda Tas Kelinci biru Ep 1 Bp 1 Senjata allroff Incu Rame M41A Red Griffin UMP Zebra P90 Bunyy M1014 Enhanced Charge Buster Lava Lustre Awm Titanum Level up pas blm di buka </p>
-
-        <!-- Tombol Beli Sekarang -->
-        <div class="buy-button-container">
-            <a href="http://lynk.id/wanxxgames/eq8m151r8dv8/checkout" class="buy-button" target="_blank">Beli Sekarang</a>
         </div>
+        <p class="status-date">Status: <span class="status">Tersedia</span> | Tanggal Posting: <span id="postDate"></span></p>
+        <a href="http://lynk.id/wanxxgames/eq8m151r8dv8/checkout" class="buy-button" target="_blank">Beli Sekarang</a>
     </div>
-
     <script>
-        function changeImage(newImageSrc, clickedThumbnail) {
-            // Ubah gambar utama
-            document.getElementById('mainImage').src = newImageSrc;
-            
-            // Update status aktif thumbnail
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            thumbnails.forEach(thumb => thumb.classList.remove('active'));
-            clickedThumbnail.classList.add('active');
-        }
+        document.getElementById("postDate").innerText = new Date().toLocaleDateString("id-ID");
     </script>
 </body>
 </html>
