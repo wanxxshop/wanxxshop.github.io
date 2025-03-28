@@ -8,138 +8,117 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .product-container {
-            max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 400px;
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
         }
         .product-title {
-            font-size: 26px;
+            font-size: 22px;
             color: #2c3e50;
             margin-bottom: 10px;
             font-weight: 600;
         }
         .product-price {
-            font-size: 22px;
+            font-size: 20px;
             color: #e74c3c;
             font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .product-description {
-            margin-bottom: 25px;
-            color: #7f8c8d;
-            line-height: 1.6;
+            margin-bottom: 10px;
         }
         .product-images {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
         .main-image {
             width: 100%;
-            max-height: 400px;
+            max-width: 100%;
+            max-height: 300px;
             object-fit: contain;
-            margin-bottom: 15px;
-            border: 1px solid #ecf0f1;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         .thumbnail-container {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
+            margin-top: 10px;
         }
         .thumbnail {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
             cursor: pointer;
-            border: 2px solid transparent;
             border-radius: 6px;
             transition: all 0.3s ease;
         }
         .thumbnail:hover, .thumbnail.active {
-            border-color: #3498db;
-            box-shadow: 0 4px 8px rgba(52,152,219,0.3);
-            transform: translateY(-3px);
+            border: 2px solid #3498db;
         }
-        .purchase-info {
-            font-size: 16px;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 15px;
-            font-weight: 500;
+        .status-date {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
         }
-        .buy-button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+        .status {
+            font-weight: bold;
+            color: green;
         }
         .buy-button {
             background-color: #3498db;
             color: white;
             border: none;
-            padding: 14px 0;
-            font-size: 18px;
+            padding: 12px 0;
+            font-size: 16px;
             border-radius: 8px;
             cursor: pointer;
-            max-width: 300px;
             width: 100%;
             transition: all 0.3s;
-            text-align: center;
             text-decoration: none;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            display: inline-block;
         }
         .buy-button:hover {
             background-color: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(41,128,185,0.3);
         }
     </style>
 </head>
 <body>
-        <!-- Gambar Utama -->
+    <div class="product-container">
         <div class="product-images">
-            <img id="mainImage" class="main-image" src="https://i.ibb.co.com/DHZ37Wfz/66928a36-4b8e-42b5-93e6-bb08bbd76f40.jpg" alt="Tampak Depan">
+            <img id="mainImage" class="main-image" src="https://i.ibb.co.com/DHZ37Wfz/66928a36-4b8e-42b5-93e6-bb08bbd76f40.jpg" 
+                 onerror="this.onerror=null; this.src='https://i.ibb.co.com/DHZ37Wfz/66928a36-4b8e-42b5-93e6-bb08bbd76f40.jpg';" alt="Tampak Depan">
         </div>
-    <!-- Thumbnail Gambar -->
         <div class="thumbnail-container">
             <img class="thumbnail active" src="https://i.ibb.co.com/DHZ37Wfz/66928a36-4b8e-42b5-93e6-bb08bbd76f40.jpg" alt="Tampak Depan" 
                  onclick="changeImage('https://i.ibb.co.com/DHZ37Wfz/66928a36-4b8e-42b5-93e6-bb08bbd76f40.jpg', this)">
             <img class="thumbnail" src="https://i.ibb.co.com/WvjwywVM/169119ea-a322-48be-a2ac-e6fee6d4f61a.jpg" alt="Tampak Belakang" 
                  onclick="changeImage('https://i.ibb.co.com/WvjwywVM/169119ea-a322-48be-a2ac-e6fee6d4f61a.jpg', this)">
-            <img class="thumbnail" src="https://i.ibb.co.com/Vc6fnpNz/cf473e6f-021d-418a-a12e-b4b7819b162a.jpg" alt="Aksesoris
+            <img class="thumbnail" src="https://i.ibb.co.com/Vc6fnpNz/cf473e6f-021d-418a-a12e-b4b7819b162a.jpg" alt="1"
                  onclick="changeImage('https://i.ibb.co.com/Vc6fnpNz/cf473e6f-021d-418a-a12e-b4b7819b162a.jpg', this)">
         </div>
-
-<!-- Deskripsi di atas tombol beli -->
-        <p class="purchase-info">
-Log Bind V2l on Free Ceein Evo UMP lvl 2 Sg Mambah Vault TW 170 Bundel Thorny Desire Bundel BTS 2  Kece" Gagah Nyeker on Pemm Ce Mayan Cakep Set Ce Co Cakep" Emot 27 Kece" Bluelock + Alok Animas Bola 1 Katana loby 1 Tas Kelinci biru Ep 1× Senjata allroff Incu Mayan Groza Jewel Ak47 Unicorn An94 Bliss Mac10 Enflamed Awm Duke swallowtail Mini Uzi Space Batu 17× Skin Motor + Mobil Kece"  </p>
-
-        <!-- Tombol Beli Sekarang -->
-        <div class="buy-button-container">
-            <a href="http://lynk.id/wanxxgames/r6mengvdv3l3/checkout" class="buy-button" target="_blank">Beli Sekarang</a>
-        </div>
+        <p class="status-date">Status: <span class="status">Tersedia</span> | Tanggal Posting: <span id="postDate"></span></p>
+        <a href="http://lynk.id/wanxxgames/r6mengvdv3l3/checkout" class="buy-button" target="_blank">Beli Sekarang</a>
     </div>
-
     <script>
-        function changeImage(newImageSrc, clickedThumbnail) {
-            // Ubah gambar utama
-            document.getElementById('mainImage').src = newImageSrc;
-            
-            // Update status aktif thumbnail
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            thumbnails.forEach(thumb => thumb.classList.remove('active'));
-            clickedThumbnail.classList.add('active');
+        document.getElementById("postDate").innerText = new Date().toLocaleDateString("id-ID");
+
+        function changeImage(imageSrc, element) {
+            document.getElementById("mainImage").src = imageSrc;
+            document.querySelectorAll(".thumbnail").forEach(img => img.classList.remove("active"));
+            element.classList.add("active");
         }
     </script>
 </body>
