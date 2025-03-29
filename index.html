@@ -473,8 +473,70 @@
                 font-size: 9px;
             }
         }
-
-        
+        .slider-container {
+            width: 90%;
+            max-width: 400px;
+            overflow: hidden;
+            position: relative;
+            padding: 10px;
+            background: #35aeeb;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .slider-container h2 {
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: #A0CCE5;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        .price {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #ff4d4d;
+            margin-right: 5px;
+        }
+        .discounted-price {
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 16px;
+            border-radius: 50%;
+        }
+        .prev { left: 5px; }
+        .next { right: 5px; }
     </style>
 </head> 
   <head>
@@ -486,6 +548,7 @@
     </style>
 </head>
 <body>
+    
     <meta name="google-site-verification" content="A6bm4Sbbh2s__tk5UzhJnDcZfEelaVCHlXL9LQclFHY" />
 
     <div class="marquee">
@@ -496,6 +559,37 @@
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
         <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
         <img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 3">
+    </div>
+    
+    <div class="slider-container">
+        <h2>FLASH SALE⚡️ </h2>
+        <div class="slider-wrapper">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slider" id="slider">
+                <div class="slide" onclick="window.location.href='detailsepek1.html'">
+                    STOK #1
+                    <div class="price">
+                        <span class="original-price">Rp1000.000</span>
+                        <span class="discounted-price">Rp750.000</span>
+                    </div>
+                </div>
+                <div class="slide" onclick="window.location.href='detailsepek8.html'">
+                    STOK #8
+                    <div class="price">
+                        <span class="original-price">Rp250.000</span>
+                        <span class="discounted-price">Rp220.000</span>
+                    </div>
+                </div>
+                <div class="slide" onclick="window.location.href='detailsepek2.html'">
+                    STOK #2
+                    <div class="price">
+                        <span class="original-price">Rp150.000</span>
+                        <span class="discounted-price">Rp140.000</span>
+                    </div>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
     </div>
 
     <div class="menu-container">
@@ -688,6 +782,24 @@
         <div class="chat-button" onclick="toggleChat()">
             <img src="https://tse1.mm.bing.net/th?id=OIP.YyDl0xTeGeLc5taKCX4J7AHaHa&pid=Api&P=0&h=180" alt="Chat" class="chat-icon">
         </div>
+        
+        <script>
+        let currentIndex = 0;
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        setInterval(() => moveSlide(1), 3000); // Auto geser tiap 3 detik
+    </script>
 
     <script>
         function toggleChat() {
@@ -753,6 +865,24 @@
         function redirectToPage(pageUrl) {
             window.location.href = pageUrl;
         }
+    </script>
+    
+       <script>
+        let currentIndex = 0;
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        setInterval(() => moveSlide(1), 3000); // Auto geser tiap 3 detik
     </script>
 </body>
 </html>
