@@ -1,304 +1,918 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <meta name="google-site-verification" content="A6bm4Sbbh2s__tk5UzhJnDcZfEelaVCHlXL9LQclFHY" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Stock</title>
+    <meta name="wanxxstore26" content="width=device-width, initial-scale=1.0">
+    <head>
+    <title>Wanxxstore26 - Pengusaha Jual Beli Akun Game</title>
+    <meta name="wanxx26" content="Wanxx adalah pengusaha muda yang bergerak di bidang jual beli akun game, pemilik WANXX STORE26.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wanxx26",
+      "url": "https://wanxxstore26.shop",
+      "description": "Pengusaha muda di bidang jual beli akun game, pemilik WANXX STORE26.",
+      "sameAs": [
+        "https://www.instagram.com/wanxxstore26",
+        "https://t.me/wanxxstore26"
+      ]
+    }
+    </script>
+</head>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #696969;
-            color: black;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
             text-align: center;
+            background-color: #35aeeb;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 90%;
-            margin: auto;
-            background: #A0CCE5;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .slider {
-            position: relative;
-            max-width: 100%;
+
+        .marquee {
+            background: #87CEFA;
+            color: black;
+            padding: 10px 0;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
             overflow: hidden;
         }
-        .slides img {
+
+        .marquee div {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .banner-container {
+            position: relative;
             width: 100%;
-            display: none;
-            border-radius: 8px;
-        }
-        .slides img.active {
-            display: block;
-        }
-        .btn-group {
-            margin-top: 10px;
-        }
-        .btn {
-            background: gray;
-            border: none;
-            padding: 8px 16px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: darkgray;
-        }
-        button {
-            background-color: #000000;
-            color: white;
-            border: none;
+            max-width: 800px;
+            margin: 60px auto 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #87CEFA;
             padding: 10px;
+        }
+
+        .banner-container img {
             width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #cc0000;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: none;
-            text-align: center;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
+            border-radius: 10px;
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 10;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 15px;
+
+        .banner-container img.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .menu-container {
+            background: #35aeeb;
+            padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            width: 90%;
-            max-width: 320px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 11;
+            margin-top: 20px;
         }
-        .popup img {
-            max-width: 180px;
+
+        .menu-container h2 {
+            font-size: 24px;
+            color: black;
+            text-shadow: 0 0 10px #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 350px;
+            margin: auto;
+        }
+
+        .menu-item {
+            background: #A0CCE5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 50px;
+            height: 50px;
             border-radius: 5px;
         }
-        .popup button {
-            background-color: #007bff;
-            border: none;
-            padding: 8px;
-            width: 100%;
+
+        .menu-item div {
+            color: black;
+        }
+
+        .menu-item div h3 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .menu-item div p {
+            font-size: 12px;
+            color: black;
+            margin: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-container {
+            background: #;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-container h2 {
+            font-size: 20px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .contact-container a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #A0CCE5;
+            color: black;
+            text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-container a:hover {
+            background-color: #ff4500;
             color: white;
-            margin-top: 10px;
         }
-        .popup button:hover {
-            background-color: #0056b3;
+        
+  
+  .live-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
         }
-        .close-btn {
+
+        .chat-button {
+            background-color:#35aeeb;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #158f4c;
+        }
+
+        .chat-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chat-options {
+            position: absolute;
+            bottom: 70px;
+            right: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            width: 180px;
+        }
+
+        .chat-options a {
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .chat-options a:hover {
+            background: #f0f0f0;
+        }
+
+        .chat-options img {
+            width: 25px;
+            height: 25px;
+        }
+  
+        .judul {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .produk-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .produk-container {
+            display: flex;
+            transition: transform 0.5s linear;
+        }
+        .produk {
+            width: 200px;
+            margin: 0 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            flex-shrink: 0;
+            background: #A0CCE5;
+            position: relative;
+            cursor: pointer;
+        }
+        .produk img {
+            width: 100%;
+            height: auto;
+        }
+        .diskon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             background: red;
             color: white;
             padding: 5px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
             font-size: 14px;
+            border-radius: 5px;
         }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>🔥 Detail Akun 🔥</h2>
-        <div class="slider">
-            <div class="slides">
-                <img src="https://i.ibb.co.com/My9kmPsz/photo-2025-03-22-22-49-32.jpg" class="active" alt="Gambar Produk 1">
-                <img src="https://i.ibb.co.com/B5mWJP86/photo-2025-03-22-22-49-33.jpg" alt="Gambar Produk 2">
-                <img src="https://i.ibb.co.com/TDZQYHPx/photo-2025-03-22-22-49-35.jpg" alt="Gambar Produk 3">
-                <img src="https://i.ibb.co.com/93Th7HmW/photo-2025-03-22-22-49-35.jpg" alt="Gambar Produk 4">
-            </div>
-            <div class="btn-group">
-                <button class="btn" onclick="prevSlide()">Kembali Sepek Awal</button>
-                <button class="btn" onclick="nextSlide()">Berikut Sepek Lain</button>
-            </div>
-        </div>
-        <div class="product-info">
-            <p><strong>Kode Akun:</strong> WANXX-0004</p>
-        </div>
-        <button onclick="window.location.href='<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Stock</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #696969;
-            color: black;
-            text-align: center;
-        }
+        
         .container {
-            max-width: 90%;
+            max-width: 800px;
             margin: auto;
-            background: #A0CCE5;
-            padding: 15px;
+            background: #35aeeb;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #ff4500;
+        }
+        .steps {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .step {
+            background: #87CEFA;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .contact {
+            margin-top: 20px;
+            background: #87CEFA;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .contact a {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            color: white;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        
+        .live-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-button {
+            background-color: #ffffff;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #ffffff;
+        }
+
+        .chat-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .chat-options {
+            position: absolute;
+            bottom: 70px;
+            right: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            width: 180px;
+        }
+
+        .chat-options a {
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .chat-options a:hover {
+            background: #ffffff;
+        }
+
+        .chat-options img {
+            width: 25px;
+            height: 25px;
+        }
+        
+                /* Produk Section */
+        .product-section {
+            text-align: center;
+            padding: 50px 5%;
+        }
+
+        .product-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding: 10px;
+            white-space: nowrap;
+        }
+
+        .product-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product {
+            display: inline-block;
+            background: #A0CCE5;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .product .price {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .product .original-price {
+            text-decoration: line-through;
+            color: red;
+            font-size: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .product {
+                min-width: 180px;
+                max-width: 180px;
+                padding: 8px;
+            }
+            .product h3 {
+                font-size: 14px;
+            }
+            .product .price {
+                font-size: 10px;
+            }
+            .product .original-price {
+                font-size: 9px;
+            }
+        }
+        .slider-container {
+            width: 90%;
+            max-width: 400px;
+            overflow: hidden;
+            position: relative;
+            padding: 10px;
+            background: #35aeeb;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .slider-container h2 {
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
         }
         .slider {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
         }
-        .slides img {
-            width: 100%;
-            display: none;
-            border-radius: 8px;
-        }
-        .slides img.active {
-            display: block;
-        }
-        .btn-group {
-            margin-top: 10px;
-        }
-        .btn {
-            background: gray;
-            border: none;
-            padding: 8px 16px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: darkgray;
-        }
-        button {
-            background-color: #000000;
-            color: white;
-            border: none;
+        .slide {
+            min-width: 100%;
+            text-align: center;
             padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
+            background: #A0CCE5;
+            color: white;
             font-size: 18px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #cc0000;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: none;
-            text-align: center;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 10;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            width: 90%;
-            max-width: 320px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 11;
-        }
-        .popup img {
-            max-width: 180px;
-            border-radius: 5px;
-        }
-        .popup button {
-            background-color: #007bff;
-            border: none;
-            padding: 8px;
-            width: 100%;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            color: white;
-            margin-top: 10px;
+            border-radius: 20px;
         }
-        .popup button:hover {
-            background-color: #0056b3;
-        }
-        .close-btn {
-            background: red;
-            color: white;
-            padding: 5px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 10px;
+        .price {
             font-size: 14px;
+            margin-top: 5px;
         }
+        .original-price {
+            text-decoration: line-through;
+            color: #ff4d4d;
+            margin-right: 5px;
+        }
+        .discounted-price {
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 16px;
+            border-radius: 50%;
+        }
+        .prev { left: 5px; }
+        .next { right: 5px; }
+        
+header {
+            display: flex;
+            align-items: center;
+            background: #A0CEE5;
+            padding: 10px 20px;
+            color: white;
+        }
+        header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        nav {
+            margin-left: auto;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+    </style>
+</head> 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Detail Produk</title>
+    <style>
+        /* CSS Anda di sini */
     </style>
 </head>
 <body>
+    
+    <header>
+        <img src="https://i.ibb.co.com/TqmM8Mk6/78ee5c07-e1c4-41c5-ba98-f358fba410fd.jpg" alt="Logo">
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="tentang.html">Tentang Kami</a>
+            <a href="kontak.html">Kontak Kami</a>
+        </nav>
+    </header>
+
+    
+    <meta name="google-site-verification" content="A6bm4Sbbh2s__tk5UzhJnDcZfEelaVCHlXL9LQclFHY" />
+
+    <div class="banner-container">
+        <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
+        <img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2">
+        <img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 3">
+    </div>
+    
+    <div class="slider-container">
+        <h2>FLASH SALE⚡️ </h2>
+        <div class="slider-wrapper">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slider" id="slider">
+                <div class="slide" onclick="window.location.href='detailsepek1.html'">
+                    STOK #1
+                    <div class="price">
+                        <span class="original-price">Rp1000.000</span>
+                        <span class="discounted-price">Rp750.000</span>
+                    </div>
+                </div>
+                <div class="slide" onclick="window.location.href='detailsepek8.html'">
+                    STOK #8
+                    <div class="price">
+                        <span class="original-price">Rp250.000</span>
+                        <span class="discounted-price">Rp220.000</span>
+                    </div>
+                </div>
+                <div class="slide" onclick="window.location.href='detailsepek2.html'">
+                    STOK #2
+                    <div class="price">
+                        <span class="original-price">Rp150.000</span>
+                        <span class="discounted-price">Rp140.000</span>
+                    </div>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <h2>🔥List Menu🔥</h2>
+        <div class="menu">
+            <a href="produk.html" class="menu-item">
+                <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Free Fire">
+                <div>
+                    <h3>Free Fire</h3>
+                    <p>Akun Stok</p>
+                </div>
+            </a>
+            <a href="https://wa.me/6283134115994" class="menu-item">
+                <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun">
+                <div>
+                    <h3>Jual Akun</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+            <a href="promo.html" class="menu-item">
+                <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Promo">
+                <div>
+                    <h3>Info Promo</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+            <a href="cekakunhb.html" class="menu-item">
+                <img src="https://i.ibb.co.com/Q7YLnK8L/photo-2025-03-18-22-43-53-3.jpg" alt="Cek Akun">
+                <div>
+                    <h3>Info HB + SCAM</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <!-- PRODUK SLIDER -->
+    <section class="product-section">
+        <h2>Stok Populer😎</h2>
+        <div class="product-slider" id="slider">
+            <div class="product" onclick="redirectToPage('detailsepek1.html')">
+                <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 4">
+                <h3>STOK #1</h3>
+                <p class="original-price">Rp 1008.600</p>
+                <p class="price">Rp 800.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek2.html')">
+                <img src="https://i.ibb.co.com/WWd0sJmD/photo-2025-03-16-21-47-01.jpg" alt="Produk 1">
+                <h3>STOK #2</h3>
+                <p class="original-price">Rp 150.500</p>
+                <p class="price">Rp 140.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek3.html')">
+                <img src="https://i.ibb.co.com/dsPCC2LK/a995d7fb-e1dc-464d-bebf-66d36fbc2b55.jpg" alt="Produk 2">
+                <h3>STOK #3</h3>
+                <p class="original-price">Rp 80.000</p>
+                <p class="price">Rp 65.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detaiksepek4.html')">
+                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 3">
+                <h3>STOK #4</h3>
+                <p class="original-price">Rp 55.999</p>
+                <p class="price">Rp 50.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek5.html')">
+                <img src="https://i.ibb.co.com/DH428yzC/photo-2025-03-16-21-47-10.jpg" alt="Produk 4">
+                <h3>STOK #5</h3>
+                <p class="original-price">Rp 140.999</p>
+                <p class="price">Rp 130.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek6.html')">
+                <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 5">
+                <h3>STOK #6</h3>
+                <p class="original-price">Rp 67.900</p>
+                <p class="price"> 50.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek7.html')">
+                <img src="https://i.ibb.co.com/VW0FJmVV/Whats-App-Image-2025-03-24-at-00-35-33-01a2c477.jpg" alt="Produk 4">
+                <h3>STOK #7</h3>
+                <p class="original-price">Rp 60.999</p>
+                <p class="price">Rp 55.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek8.html')">
+                <img src="https://i.ibb.co.com/sp04sj07/df929dac-8d0f-499f-a50e-5923251275f4.jpg" alt="Produk 5">
+                <h3>STOK #8</h3>
+                <p class="original-price">Rp 250.800</p>
+                <p class="price">Rp 220.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek9.html')">
+                <img src="https://i.ibb.co.com/35g0fjPt/a8b3fb4e-9de3-4607-89d9-46a9d0a2cbcb.jpg" alt="Produk 4">
+                <h3>STOK #9</h3>
+                <p class="original-price">Rp 55.100</p>
+                <p class="price">Rp 40.000</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek10.html')">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
+                <h3>STOK #10</h3>
+                <p class="original-price">Rp kosong</p>
+                <p class="price">Rp kosong</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek11.html')">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
+                <h3>STOK #11</h3>
+                <p class="original-price">Rp kosong</p>
+                <p class="price">Rp kosong</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek12.html')">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
+                <h3>STOK #12</h3>
+                <p class="original-price">Rp kosong</p>
+                <p class="price">Rp kosong</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek13.html')">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
+                <h3>STOK #13</h3>
+                <p class="original-price">Rp kosong</p>
+                <p class="price">Rp kosong</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek14.html')">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
+                <h3>STOK #14</h3>
+                <p class="original-price">Rp kosong</p>
+                <p class="price">Rp kosong</p>
+            </div>
+            <div class="product" onclick="redirectToPage('detailsepek15.html')">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
+                <h3>STOK #15</h3>
+                <p class="original-price">Rp kosong</p>
+                <p class="price">Rp kosong</p>
+            </div>
+          </div>
+
+    <div class="contact-container">
+        <h2>INFO WANXX STORE26</h2>
+        <a href="https://wa.me/6283134115994">WA ADMIN</a>
+        <a href="https://t.me/wanxxstore26">TELEGRAM ADMIN</a>
+        <a href="https://t.me/stokwanxx26">GRUP STOK WANXX26</a>
+        <a href="https://t.me/jbwanxxstore26">JB WANXX26 #1</a>
+        <a href="https://t.me/jualbeliakunffmllbb">JB WANXX26 #2</a>
+        <a href="https://www.instagram.com/wanxxstore26?igsh=MW12bnhjbW93bnNxZw==">INSTAGRAM ADMIN</a>
+    </div>
+    
     <div class="container">
-        <h2>🔥 Detail Akun 🔥</h2>
-        <div class="slider">
-            <div class="slides">
-                <img src="https://i.ibb.co/My9kmPsz/photo-2025-03-22-22-49-32.jpg" class="active" alt="Gambar Produk 1">
-                <img src="https://i.ibb.co/B5mWJP86/photo-2025-03-22-22-49-33.jpg" alt="Gambar Produk 2">
-                <img src="https://i.ibb.co/TDZQYHPx/photo-2025-03-22-22-49-35.jpg" alt="Gambar Produk 3">
-                <img src="https://i.ibb.co/93Th7HmW/photo-2025-03-22-22-49-35.jpg" alt="Gambar Produk 4">
+        <h1>Cara Beli Akun</h1>
+        <p>Ikuti langkah-langkah berikut untuk membeli akun di <strong>WANXX STORE26</strong> dengan mudah dan aman.</p>
+        
+        <div class="steps">
+            <div class="step">
+                <h3>1. Pilih Akun</h3>
+                <p>Kunjungi daftar akun yang tersedia di website atau hubungi admin untuk rekomendasi.</p>
             </div>
-            <div class="btn-group">
-                <button class="btn" onclick="prevSlide()">Kembali Sepek Awal</button>
-                <button class="btn" onclick="nextSlide()">Berikut Sepek Lain</button>
+            <div class="step">
+                <h3>2. Hubungi Admin</h3>
+                <p>Chat admin melalui <a href="https://wa.me/6283134115994" target="_blank">WhatsApp</a> atau <a href="https://t.me/wanxxstore26" target="_blank">Telegram</a> untuk memastikan ketersediaan akun.</p>
+            </div>
+            <div class="step">
+                <h3>3. Lakukan Pembayaran</h3>
+                <p>Admin akan memberikan detail pembayaran. Gunakan metode pembayaran yang tersedia.</p>
+            </div>
+            <div class="step">
+                <h3>4. Terima Akun</h3>
+                <p>Setelah pembayaran dikonfirmasi, admin akan mengirimkan akun yang sudah Anda beli.</p>
+            </div>
+            <div class="step">
+                <h3>5. Ubah Data Akun</h3>
+                <p>Segera ubah password dan email akun untuk keamanan Anda.</p>
             </div>
         </div>
-        <div class="product-info">
-            <p><strong>Kode Akun:</strong> WANXX-0004</p>
+
+        <div class="contact">
+            <h2>Butuh Bantuan?</h2>
+            <p>Silakan hubungi admin:</p>
+            <p>📲 <a href="https://wa.me/6283134115994" target="_blank">WhatsApp Admin</a></p>
+            <p>📢 <a href="https://t.me/wanxxstore26" target="_blank">Telegram Admin</a></p>
         </div>
-        <button onclick="window.location.href='https://app.midtrans.com/payment-links/wanxxpembayaran1723615'">Beli Sekarang</button>
     </div>
-</body>
-</html>
-'">Beli Sekarang</button>
+    <div class="footer">
+        <p>&copy; 2025 WANXX STORE26. Semua Hak Dilindungi.</p>
     </div>
+    
+    <div class="live-chat-container">
+        <div class="chat-options" id="chatOptions">
+            <a href="https://wa.me/6283134115994" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"> CS Bantuan WA
+            </a>
+            <a href="https://t.me/wanxxstore26" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> CS Bantuan Telegram
+            </a>
+        </div>
+        <div class="chat-button" onclick="toggleChat()">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.YyDl0xTeGeLc5taKCX4J7AHaHa&pid=Api&P=0&h=180" alt="Chat" class="chat-icon">
+        </div>
+        
+        <script>
+        let currentIndex = 0;
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        setInterval(() => moveSlide(1), 3000); // Auto geser tiap 3 detik
+    </script>
+
+    <script>
+        function toggleChat() {
+            var chatBox = document.getElementById("chatOptions");
+            if (chatBox.style.display === "flex") {
+                chatBox.style.display = "none";
+            } else {
+                chatBox.style.display = "flex";
+            }
+        }
+    </script>
+    
+    <script>
+        let index = 0;
+        function gantiBanner() {
+            let banners = document.querySelectorAll(".banner-container img");
+            banners.forEach((img, i) => {
+                img.classList.remove("active");
+            });
+            banners[index].classList.add("active");
+            index = (index + 1) % banners.length;
+        }
+        setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
+    </script>
+        <script>
+        let container = document.getElementById("produkContainer");
+        let scrollSpeed = 1;
+        let scrolling = true;
+        
+        function scrollProducts() {
+            if (!scrolling) return;
+            container.style.transform = `translateX(-${scrollSpeed}px)`;
+            scrollSpeed += 1;
+            if (scrollSpeed >= container.scrollWidth / 2) {
+                container.appendChild(container.firstElementChild);
+                scrollSpeed = 1;
+                container.style.transform = "translateX(0)";
+            }
+            requestAnimationFrame(scrollProducts);
+        }
+        
+        function stopScrolling() {
+            scrolling = false;
+        }
+        
+        requestAnimationFrame(scrollProducts);
+    </script>
+    
+    <script>
+        let slider = document.getElementById("slider");
+
+        function scrollLeft() {
+            slider.scrollBy({ left: -250, behavior: "smooth" });
+        }
+
+        function scrollRight() {
+            slider.scrollBy({ left: 250, behavior: "smooth" });
+        }
+
+    </script>
+
+        <script>
+        function redirectToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
+    
+       <script>
+        let currentIndex = 0;
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        setInterval(() => moveSlide(1), 3000); // Auto geser tiap 3 detik
+    </script>
 </body>
 </html>
