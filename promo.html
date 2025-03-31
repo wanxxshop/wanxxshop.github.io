@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Gaming</title>
+    <title>Banner Gaming Responsif</title>
     <style>
         body {
             margin: 0;
@@ -12,49 +12,35 @@
             font-family: Arial, sans-serif;
         }
         
-        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #A0CCE5;
-            padding: 10px 20px;
+            background-color: #35aeeb;
+            padding: 10px 15px;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-        }
         .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
         }
-
-        /* SEARCH BAR */
-        .search-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #35aeeb;
-            padding: 5px;
-            border-radius: 5px;
-        }
+        
         .search-box {
             display: flex;
             background-color: white;
             border-radius: 5px;
             overflow: hidden;
-            max-width: 250px;
             width: 100%;
+            max-width: 250px;
         }
+        
         .search-box input {
             flex: 1;
             padding: 8px;
             border: none;
             outline: none;
         }
+        
         .search-box button {
             background-color: #00bfff;
             border: none;
@@ -62,63 +48,11 @@
             padding: 8px 12px;
             cursor: pointer;
         }
-        .search-box button:hover {
-            background-color: #0099cc;
-        }
-
-        /* MENU NAVIGASI */
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-        }
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 15px;
-            background-color: #35aeeb;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            background-color: #00bfff;
-        }
-
-        /* RESPONSIVE MENU */
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-            nav {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: #35aeeb;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 10px 0;
-                text-align: center;
-            }
-            nav a {
-                display: block;
-                padding: 10px;
-            }
-            .menu-icon.active + nav {
-                display: flex;
-            }
-        }
-
-        /* SLIDER */
+        
         .slider-container {
             position: relative;
             width: 100%;
-            max-width: 900px;
+            max-width: 800px;
             margin: auto;
             overflow: hidden;
             border-radius: 10px;
@@ -126,18 +60,18 @@
         }
         .slider {
             display: flex;
-            transition: transform 0.8s ease-in-out;
+            transition: transform 0.5s ease-in-out;
         }
         .slide {
             min-width: 100%;
-            height: 250px;
-            position: relative;
+            height: 200px;
         }
         .slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -145,108 +79,95 @@
             background-color: rgba(0, 191, 255, 0.8);
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 8px;
             cursor: pointer;
             z-index: 2;
             border-radius: 5px;
         }
-        .prev { left: 10px; }
-        .next { right: 10px; }
-        .prev:hover, .next:hover { background-color: rgba(0, 153, 204, 0.9); }
-
-        /* NAVIGASI BULAT */
+        .prev { left: 5px; }
+        .next { right: 5px; }
+        
         .dots {
             text-align: center;
             margin-top: 10px;
         }
         .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 5px;
+            height: 8px;
+            width: 8px;
+            margin: 0 3px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
         }
         .active { background-color: #00bfff; }
-        
-        /* RESPONSIF */
-        @media (max-width: 600px) {
-            .slide { height: 200px; }
-        }
 
+        @media (max-width: 600px) {
+            .slide { height: 150px; }
+            .search-box { max-width: 200px; }
+        }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="logo">
-        <img src="https://i.ibb.co.com/xKWvqDQb/9eb86dff-8e52-4477-9251-eea7f7ba4a9f.jpg" alt="Logo">
-    </div>
-
-    <div class="search-container">
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co.com/xKWvqDQb/9eb86dff-8e52-4477-9251-eea7f7ba4a9f.jpg" alt="Logo">
+        </div>
         <div class="search-box">
             <input type="text" placeholder="Cari...">
             <button>🔍</button>
         </div>
+    </header>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" alt="Banner 1"></div>
+            <div class="slide"><img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 2"></div>
+            <div class="slide"><img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 3"></div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <nav>
-        <a href="#">Beranda</a>
-        <a href="#">Kontak Kami</a>
-        <a href="#">Tentang Kami</a>
-    </nav>
-</header>
-
-
-<!-- SLIDER -->
-<div class="slider-container">
-    <div class="slider">
-        <div class="slide"><img src="hhttps://i.ibb.co.com/YFYm4sqB/20250214-073727.png" alt="Banner 1"></div>
-        <div class="slide"><img src="https://i.ibb.co.com/ycG66YmS/20250311-044439.png" alt="Banner 2"></div>
-        <div class="slide"><img src="https://i.ibb.co.com/4rpGNmW/20250310-221053.png" alt="Banner 3"></div>
+    
+    <div class="dots">
+        <span class="dot" onclick="jumpSlide(0)"></span>
+        <span class="dot" onclick="jumpSlide(1)"></span>
+        <span class="dot" onclick="jumpSlide(2)"></span>
     </div>
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-</div>
+    
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const dots = document.querySelectorAll('.dot');
 
-<div class="dots">
-    <span class="dot" onclick="jumpSlide(0)"></span>
-    <span class="dot" onclick="jumpSlide(1)"></span>
-    <span class="dot" onclick="jumpSlide(2)"></span>
-</div>
+        function moveSlide(step) {
+            currentIndex += step;
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+            updateSlider();
+        }
 
-<script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    const dots = document.querySelectorAll('.dot');
+        function jumpSlide(index) {
+            currentIndex = index;
+            updateSlider();
+        }
 
-    function moveSlide(step) {
-        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+        function updateSlider() {
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        function autoSlide() {
+            moveSlide(1);
+        }
+        setInterval(autoSlide, 4000);
         updateSlider();
-    }
-
-    function jumpSlide(index) {
-        currentIndex = index;
-        updateSlider();
-    }
-
-    function updateSlider() {
-        document.querySelector('.slider').style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
-    }
-
-    function autoSlide() { moveSlide(1); }
-    setInterval(autoSlide, 4000);
-    updateSlider();
-
-    function toggleMenu() {
-        document.querySelector('.menu-icon').classList.toggle('active');
-    }
-</script>
-
+    </script>
 </body>
 </html>
