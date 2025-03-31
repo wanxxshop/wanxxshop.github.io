@@ -44,24 +44,41 @@
         nav a:hover {
             background-color: #00bfff;
         }
-        .search-bar input {
-            padding: 8px;
-            border: 1px solid #00bfff;
-            border-radius: 5px;
-            background-color: transparent;
-            color: white;
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #222;
         }
-        .search-bar button {
-            background-color: #00bfff;
-            color: white;
-            border: none;
-            padding: 8px 12px;
+        .search-box {
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            background-color: white;
             border-radius: 5px;
+            overflow: hidden;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        .search-box button {
+            background-color: #00bfff;
+            border: none;
+            color: white;
+            padding: 10px 15px;
             cursor: pointer;
         }
-        .search-bar button:hover {
+        .search-box button:hover {
             background-color: #0099cc;
         }
+        @media (max-width: 480px) {
+            .search-box {
+                max-width: 90%;
+            }
         .menu-icon {
             display: none;
             cursor: pointer;
@@ -93,9 +110,10 @@
     <div class="logo">
         <img src="logo.png" alt="Logo">Factvion
     </div>
-    <div class="search-bar">
+    <div class="search-container">
+    <div class="search-box">
         <input type="text" placeholder="Cari...">
-        <button>Cari</button>
+        <button>🔍</button>
     </div>
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <nav>
