@@ -3,207 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jual Akun Game</title>
+    <title>Toko Gaming</title>
     <style>
-        /* Styling Dasar */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
         }
 
-        /* Header */
-        header {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .navbar {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem;
-        }
-        header img.logo {
-            width: 50px;
-        }
-        header nav {
-            display: none; /* Menyembunyikan navigasi pada layar kecil */
-        }
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        /* Navigasi Responsif */
-        @media (min-width: 768px) {
-            header nav {
-                display: block; /* Menampilkan navigasi pada layar besar */
-            }
-        }
-
-        /* Banner */
-        .banner {
-            background-image: url('https://via.placeholder.com/1200x300');
-            background-size: cover;
-            background-position: center;
-            height: 200px; /* Ukuran lebih kecil untuk layar kecil */
-            text-align: center;
-            color: white;
-            padding-top: 50px;
-        }
-        @media (min-width: 768px) {
-            .banner {
-                height: 300px; /* Ukuran lebih besar untuk layar besar */
-            }
-        }
-
-        /* Pencarian */
-        .search-bar {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .search-bar input[type="text"] {
-            padding: 10px;
-            width: 80%; /* Lebih lebar pada layar kecil */
-            max-width: 400px; /* Batas maksimal lebar */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .search-bar button {
+            align-items: center;
+            background-color: #222;
             padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .search-bar input {
+            padding: 8px;
             border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .menu-dots {
             cursor: pointer;
         }
-        .search-bar button:hover {
-            background-color: #45a049;
+
+        .carousel {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Produk */
-        .product-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-            gap: 20px; /* Jarak antar kartu */
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
             padding: 20px;
         }
-        .product-card {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+
+        .product {
+            background-color: #222;
             padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .product-card img {
+            border-radius: 10px;
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .product-card h3 {
-            margin: 10px 0;
-            font-size: 18px;
-        }
-        .product-card p {
-            color: #555;
-            font-size: 14px;
-        }
-        .product-card button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .product-card button:hover {
-            background-color: #45a049;
+            max-width: 250px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
+        .product img {
             width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            font-size: 16px;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
-        <nav>
-            <a href="#home">Beranda</a>
-            <a href="#products">Produk</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#contact">Kontak</a>
-        </nav>
+    <header class="navbar">
+        <div class="logo">TokoGaming</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Cari...">
+        </div>
+        <div class="menu-dots">☰</div>
     </header>
 
-    <!-- Banner -->
-    <div class="banner">
-        <h2>Cari Akun Game Favoritmu!</h2>
-    </div>
-
-    <!-- Pencarian -->
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Cari game...">
-        <button onclick="searchProduct()">Cari</button>
-    </div>
-
-    <!-- Produk -->
-    <div class="product-container" id="productContainer">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250x150" alt="Game 1">
-            <h3>Game A</h3>
-            <p>Akun premium dengan semua item.</p>
-            <button>Beli Sekarang</button>
+    <section class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x200');"></div>
+            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x200');"></div>
+            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x200');"></div>
         </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250x150" alt="Game 2">
-            <h3>Game B</h3>
-            <p>Akun standar untuk pemula.</p>
-            <button>Beli Sekarang</button>
+        <div class="carousel-buttons">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
         </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250x150" alt="Game 3">
-            <h3>Game C</h3>
-            <p>Akun khusus event terbatas.</p>
-            <button>Beli Sekarang</button>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250x150" alt="Game 4">
-            <h3>Game D</h3>
-            <p>Akun full skin dan karakter.</p>
-            <button>Beli Sekarang</button>
-        </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2023 Jual Akun Game. All rights reserved.
-    </footer>
+    <section class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="Produk 1">
+            <h3>Akun MLBB Premium</h3>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="Produk 2">
+            <h3>Akun Free Fire VIP</h3>
+        </div>
+    </section>
 
-    <!-- JavaScript untuk Fitur Pencarian -->
+    <footer class="footer">&copy; 2025 TokoGaming. All rights reserved.</footer>
+
     <script>
-        function searchProduct() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const products = document.querySelectorAll('.product-card');
-            products.forEach(product => {
-                const productName = product.querySelector('h3').innerText.toLowerCase();
-                if (productName.includes(input)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
+        let index = 0;
+        const slides = document.querySelectorAll(".carousel-item");
+        const totalSlides = slides.length;
+        
+        document.getElementById("next").addEventListener("click", () => {
+            index = (index + 1) % totalSlides;
+            updateCarousel();
+        });
+        
+        document.getElementById("prev").addEventListener("click", () => {
+            index = (index - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+        
+        function updateCarousel() {
+            document.querySelector(".carousel-inner").style.transform = `translateX(-${index * 100}%)`;
         }
     </script>
 </body>
