@@ -327,6 +327,24 @@
             text-align: center;
             cursor: pointer;
         }
+        .product[data-status="sold-out"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .product[data-status="sold-out"]::after {
+            content: "SOLD OUT";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
         .product img {
             max-width: 100%;
             border-radius: 10px;
@@ -447,20 +465,6 @@
                         <span class="discounted-price">Rp750.000</span>
                     </div>
                 </div>
-                <div class="slide" onclick="window.location.href='detailsepek8.html'">
-                    STOK #8
-                    <div class="price">
-                        <span class="original-price">Rp250.000</span>
-                        <span class="discounted-price">Rp220.000</span>
-                    </div>
-                </div>
-                <div class="slide" onclick="window.location.href='detailsepek2.html'">
-                    STOK #2
-                    <div class="price">
-                        <span class="original-price">Rp150.000</span>
-                        <span class="discounted-price">Rp140.000</span>
-                    </div>
-                </div>
             </div>
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
@@ -508,84 +512,84 @@
                 <p class="price">Rp 800.000</p>
             </div>
             <div class="product" onclick="redirectToPage('detailsepek2.html')">
-                <img src="https://i.ibb.co.com/WWd0sJmD/photo-2025-03-16-21-47-01.jpg" alt="Produk 1">
+                <img src=https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 1">
                 <h3>STOK #2</h3>
-                <p class="original-price">Rp 150.500</p>
-                <p class="price">Rp 140.000</p>
+                <p class="original-price">Rp 67.000</p>
+                <p class="price">Rp 50.000</p>
             </div>
             <div class="product" onclick="redirectToPage('detailsepek3.html')">
-                <img src="https://i.ibb.co.com/dsPCC2LK/a995d7fb-e1dc-464d-bebf-66d36fbc2b55.jpg" alt="Produk 2">
+                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 2">
                 <h3>STOK #3</h3>
-                <p class="original-price">Rp 80.000</p>
-                <p class="price">Rp 65.000</p>
-            </div>
-            <div class="product" onclick="redirectToPage('detaiksepek4.html')">
-                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 3">
-                <h3>STOK #4</h3>
                 <p class="original-price">Rp 55.999</p>
                 <p class="price">Rp 50.000</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek5.html')">
-                <img src="https://i.ibb.co.com/DH428yzC/photo-2025-03-16-21-47-10.jpg" alt="Produk 4">
-                <h3>STOK #5</h3>
-                <p class="original-price">Rp 140.999</p>
-                <p class="price">Rp 130.000</p>
+            <div class="product" onclick="redirectToPage('detaiksepek4.html')">
+                <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
+                <h3>STOK #4</h3>
+                <p class="original-price">Rp 52.999</p>
+                <p class="price">Rp 45.000</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek6.html')">
-                <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 5">
+            <div class="product" onclick="redirectToPage('detailsepek5.html')">
+                <img src="https://i.ibb.co.com/NH6Gmtd/51c057b0-0747-4315-90e7-120da5a9c423.jpg" alt="Produk 4">
+                <h3>STOK #5</h3>
+                <p class="original-price">Rp 41.999</p>
+                <p class="price">Rp 30.000</p>
+            </div>
+            <div class="product" data-status="sold-out">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg">
                 <h3>STOK #6</h3>
                 <p class="original-price">Rp 67.900</p>
                 <p class="price"> 50.000</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek7.html')">
-                <img src="https://i.ibb.co.com/VW0FJmVV/Whats-App-Image-2025-03-24-at-00-35-33-01a2c477.jpg" alt="Produk 4">
+            <div class="product" data-status="sold-out">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg">
                 <h3>STOK #7</h3>
                 <p class="original-price">Rp 60.999</p>
                 <p class="price">Rp 55.000</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek8.html')">
-                <img src="https://i.ibb.co.com/sp04sj07/df929dac-8d0f-499f-a50e-5923251275f4.jpg" alt="Produk 5">
+            <div class="product" data-status="sold-out">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 5">
                 <h3>STOK #8</h3>
                 <p class="original-price">Rp 250.800</p>
                 <p class="price">Rp 220.000</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek9.html')">
-                <img src="https://i.ibb.co.com/35g0fjPt/a8b3fb4e-9de3-4607-89d9-46a9d0a2cbcb.jpg" alt="Produk 4">
+            <div class="product" data-status="sold-out">
+                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #9</h3>
                 <p class="original-price">Rp 55.100</p>
                 <p class="price">Rp 40.000</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek10.html')">
+            <div class="product" data-status="sold-out">
                 <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #10</h3>
                 <p class="original-price">Rp kosong</p>
                 <p class="price">Rp kosong</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek11.html')">
+            <div class="product" data-status="sold-out">
                 <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #11</h3>
                 <p class="original-price">Rp kosong</p>
                 <p class="price">Rp kosong</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek12.html')">
+            <div class="product" data-status="sold-out">
                 <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #12</h3>
                 <p class="original-price">Rp kosong</p>
                 <p class="price">Rp kosong</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek13.html')">
+            <div class="product" data-status="sold-out">
                 <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #13</h3>
                 <p class="original-price">Rp kosong</p>
                 <p class="price">Rp kosong</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek14.html')">
+            <div class="product" data-status="sold-out">
                 <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #14</h3>
                 <p class="original-price">Rp kosong</p>
                 <p class="price">Rp kosong</p>
             </div>
-            <div class="product" onclick="redirectToPage('detailsepek15.html')">
+            <div class="product" data-status="sold-out">
                 <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
                 <h3>STOK #15</h3>
                 <p class="original-price">Rp kosong</p>
@@ -635,7 +639,7 @@
         </div>
     </div>
     <div class="footer">
-        <p>&copy; 2025 WANXX STORE26. Semua Hak Dilindungi.</p>
+        <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
     </div>
     <div class="live-chat-container">
         <div class="chat-options" id="chatOptions">
@@ -655,23 +659,18 @@
         const slider = document.getElementById('slider');
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
-
         function moveSlide(step) {
             currentIndex = (currentIndex + step + totalSlides) % totalSlides;
             updateSlider();
         }
-
         function updateSlider() {
             slider.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
-
         setInterval(() => moveSlide(1), 3000); // Auto geser tiap 3 detik
-
         function toggleChat() {
             var chatBox = document.getElementById("chatOptions");
             chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
         }
-
         let bannerIndex = 0;
         function gantiBanner() {
             let banners = document.querySelectorAll(".banner-container img");
@@ -682,10 +681,21 @@
             bannerIndex = (bannerIndex + 1) % banners.length;
         }
         setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
-
-        function redirectToPage(pageUrl) {
+        function redirectToPage(pageUrl, status = "available") {
+            if (status === "sold-out") {
+                alert("Maaf, produk ini sudah sold out!");
+                return; // Menghentikan aksi jika produk sold out
+            }
             window.location.href = pageUrl;
         }
+        // Menandai produk sold out secara dinamis
+        document.querySelectorAll('.product').forEach(product => {
+            const price = product.querySelector('.price').textContent.trim();
+            if (price === "Rp kosong") {
+                product.setAttribute('data-status', 'sold-out');
+                product.removeAttribute('onclick'); // Hapus onclick untuk produk sold out
+            }
+        });
     </script>
 </body>
 </html>
