@@ -3,50 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Sedang Update</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #1a1a2e;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            background-color: #2b2b4f;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            color: #00bfff;
-        }
-        p {
-            font-size: 18px;
-        }
-        .loader {
-            margin: 20px auto;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #00bfff;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Game Stok Akun - AtrozezMarket</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Website Sedang Dalam Perbaikan</h1>
-        <p>Kami sedang melakukan pembaruan untuk meningkatkan layanan kami. TERIMAKASIH ATAS KERJA SAMA NYA - WANXX STORE26<br>Harap kembali lagi nanti!</p>
-        <div class="loader"></div>
+    <!-- Banner Slideshow -->
+    <div class="banner">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/800x300?text=Game+Banner+1" alt="Banner 1">
+            </div>
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/800x300?text=Game+Banner+2" alt="Banner 2">
+            </div>
+            <div class="slide fade">
+                <img src="https://via.placeholder.com/800x300?text=Game+Banner+3" alt="Banner 3">
+            </div>
+        </div>
     </div>
+
+    <!-- Konten Utama -->
+    <div class="content">
+        <h1>Selamat Datang di Game Stok Akun</h1>
+        <p>Temukan akun game terbaik dengan harga terjangkau hanya di sini!</p>
+
+        <!-- Daftar Game -->
+        <div class="game-list">
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150?text=Game+1" alt="Game 1">
+                <h3>Game 1</h3>
+                <p>Rp 50.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150?text=Game+2" alt="Game 2">
+                <h3>Game 2</h3>
+                <p>Rp 75.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+            <div class="game-card">
+                <img src="https://via.placeholder.com/150?text=Game+3" alt="Game 3">
+                <h3>Game 3</h3>
+                <p>Rp 100.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
