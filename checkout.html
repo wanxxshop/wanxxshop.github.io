@@ -196,75 +196,6 @@
             padding: 20px;
             margin-top: 40px;
         }
-
-        /* Media Query for Mobile Devices */
-        @media (max-width: 768px) {
-            /* Navbar */
-            .navbar {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .search-bar {
-                display: none;
-            }
-
-            .menu-dots {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 10px;
-            }
-
-            /* Main Menu */
-            .main-menu {
-                display: none; /* Hide main menu by default */
-            }
-
-            .menu-toggle {
-                display: block; /* Show toggle button on mobile */
-                background-color: #007bff;
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-                cursor: pointer;
-            }
-
-            .menu-toggle.active + .main-menu {
-                display: block; /* Show menu when toggle is active */
-            }
-
-            .main-menu {
-                background-color: #007bff;
-                color: #fff;
-                padding: 0;
-            }
-
-            .main-menu a {
-                display: block;
-                text-align: center;
-                padding: 10px;
-                border-bottom: 1px solid #fff;
-            }
-
-            /* Products */
-            .products {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .product {
-                min-width: 100%;
-                max-width: 100%;
-                margin: 0 auto;
-            }
-
-            /* About Us */
-            .about-us {
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -283,8 +214,8 @@
     <!-- Carousel -->
     <section class="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1920x300')"></div>
-            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1920x300')"></div>
+            <div class="carousel-item" style="background-image: url('https://i.ibb.co.com/YFYm4sqB/20250214-073727.png')"></div>
+            <div class="carousel-item" style="background-image: url('hhttps://i.ibb.co.com/4rpGNmW/20250310-221053.png')"></div>
             <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1920x300')"></div>
         </div>
         <div class="carousel-indicators">
@@ -293,9 +224,6 @@
             <button data-slide-to="2"></button>
         </div>
     </section>
-
-    <!-- Toggle Menu Button -->
-    <div class="menu-toggle" onclick="this.classList.toggle('active')">Menu</div>
 
     <!-- Main Menu -->
     <nav class="main-menu">
