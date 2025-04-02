@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stok Akun - Rozez Market</title>
+    <title>Jual Akun Game</title>
     <style>
+        /* Styling Dasar */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,128 +13,81 @@
             background-color: #f9f9f9;
         }
         header {
-            background-color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
         }
-        header img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
+        header img.logo {
+            width: 50px;
+            vertical-align: middle;
         }
-        header .logo-text {
-            margin-left: 10px;
-            color: #333;
-        }
-        header .search-bar {
-            flex-grow: 1;
-            margin-left: 20px;
-        }
-        header .search-bar input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            outline: none;
-        }
-        header .menu-icon {
-            margin-left: auto;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Slider */
-        .slider-container {
-            position: relative;
+        nav {
+            background-color: #333;
             overflow: hidden;
-            width: 100%;
-            height: 200px; /* Tinggi slider */
         }
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease;
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
         }
-        .slide {
-            flex-shrink: 0;
-            width: 100%;
-            height: 100%;
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .banner {
+            background-image: url('https://via.placeholder.com/1200x300');
             background-size: cover;
             background-position: center;
+            height: 300px;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
         }
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .search-bar {
+            text-align: center;
+            margin: 20px 0;
         }
-        .slider-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .slider-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 0 5px;
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
-        .slider-dot.active {
-            background-color: #333;
+        .search-bar button:hover {
+            background-color: #45a049;
         }
-        .container {
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 20px;
         }
-        .filter-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .filter-section .search {
-            background-color: #f2f2f2;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            padding: 8px 15px;
-            display: flex;
-            align-items: center;
-        }
-        .filter-section .search input {
-            border: none;
-            outline: none;
-            margin-left: 10px;
-        }
-        .filter-section .filter-btn {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
         .product-card {
-            background-color: #fff;
+            background-color: white;
             border: 1px solid #ddd;
             border-radius: 8px;
+            width: 250px;
+            margin: 10px;
             padding: 15px;
-            text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover {
-            transform: scale(1.02);
+            text-align: center;
         }
         .product-card img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
             border-radius: 8px;
         }
         .product-card h3 {
@@ -141,142 +95,105 @@
             font-size: 18px;
         }
         .product-card p {
-            font-size: 14px;
             color: #555;
+            font-size: 14px;
+        }
+        .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-card button:hover {
+            background-color: #45a049;
         }
         footer {
             background-color: #333;
-            color: #fff;
+            color: white;
             text-align: center;
             padding: 10px;
             position: relative;
             bottom: 0;
             width: 100%;
         }
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .product-list {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="https://via.placeholder.com/40" alt="Logo">
-            <span class="logo-text">RozezMarket</span>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Cari game...">
-        </div>
-        <span class="menu-icon">&#9776;</span>
+        <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
+        <h1>Jual Akun Game</h1>
     </header>
 
-    <!-- Slider -->
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide" style="background-image: url('https://via.placeholder.com/800x200');">
-                <h1>STOK AKUN</h1>
-                <p>by RozezMarket</p>
-                <small>Anti HB & Garansi Selamanya</small>
-            </div>
-            <div class="slide" style="background-image: url('https://via.placeholder.com/800x200');">
-                <h1>Promo Spesial</h1>
-                <p>Dapatkan Diskon Hingga 20%</p>
-            </div>
-            <div class="slide" style="background-image: url('https://via.placeholder.com/800x200');">
-                <h1>Terbaru!</h1>
-                <p>Akun Game Terlaris</p>
-            </div>
-        </div>
-        <div class="slider-dots">
-            <span class="slider-dot active"></span>
-            <span class="slider-dot"></span>
-            <span class="slider-dot"></span>
-        </div>
+    <!-- Navigasi -->
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#products">Produk</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h2>Cari Akun Game Favoritmu!</h2>
     </div>
 
-    <!-- Container -->
-    <div class="container">
-        <h2>REKOMENDASI AKUN</h2>
-        <hr style="background-color: #333; height: 2px;">
+    <!-- Pencarian -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cari game...">
+        <button onclick="searchProduct()">Cari</button>
+    </div>
 
-        <!-- Filter Section -->
-        <div class="filter-section">
-            <div class="search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-                <input type="text" placeholder="Cari Akun">
-            </div>
-            <button class="filter-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
-                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.115.354L8 8.105l-3.886-3.686a.5.5 0 1 1 .894-.448L8 7.5l3.687-3.197a.5.5 0 1 1-.894.448L8 7.5l-3.886 3.687a.5.5 0 0 1-.115-.354V2a.5.5 0 0 1 .5-.5z"/>
-                  </svg> Menyaring</button>
+    <!-- Produk -->
+    <div class="product-container" id="productContainer">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Game 1">
+            <h3>Game A</h3>
+            <p>Akun premium dengan semua item.</p>
+            <button>Beli Sekarang</button>
         </div>
-
-        <!-- Product List -->
-        <div class="product-list">
-            <!-- Contoh Produk 1 -->
-            <a href="#detail-akun-1" class="product-card">
-                <img src="https://via.placeholder.com/250x150" alt="Akun Game">
-                <h3>RZ-00136</h3>
-                <p>Harga: Rp 2.000.000,00</p>
-            </a>
-
-            <!-- Contoh Produk 2 -->
-            <a href="#detail-akun-2" class="product-card">
-                <img src="https://via.placeholder.com/250x150" alt="Akun Game">
-                <h3>RZ-01250</h3>
-                <p>Harga: Rp 650.000,00</p>
-            </a>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Game 2">
+            <h3>Game B</h3>
+            <p>Akun standar untuk pemula.</p>
+            <button>Beli Sekarang</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Game 3">
+            <h3>Game C</h3>
+            <p>Akun khusus event terbatas.</p>
+            <button>Beli Sekarang</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x150" alt="Game 4">
+            <h3>Game D</h3>
+            <p>Akun full skin dan karakter.</p>
+            <button>Beli Sekarang</button>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Rozez Market. All rights reserved.</p>
+        &copy; 2023 Jual Akun Game. All rights reserved.
     </footer>
 
-    <!-- JavaScript for Slider -->
+    <!-- JavaScript untuk Fitur Pencarian -->
     <script>
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.slider-dot');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(${(i - index) * 100}%)`;
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
+        function searchProduct() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                const productName = product.querySelector('h3').innerText.toLowerCase();
+                if (productName.includes(input)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
             });
         }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        // Auto-play slider
-        setInterval(nextSlide, 3000); // Ganti slide setiap 3 detik
-
-        // Event listeners for dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                showSlide(currentIndex);
-            });
-        });
-
-        // Initialize the slider
-        showSlide(currentIndex);
     </script>
 </body>
 </html>
