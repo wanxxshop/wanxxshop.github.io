@@ -1,12 +1,19 @@
 let slideIndex = 0;
+
 function showSlides() {
-    let slides = document.querySelectorAll(".slider img");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+    const slides = document.querySelectorAll('.slideshow-container .slide');
+    slides.forEach((slide, index) => {
+        slide.style.display = 'none';
+    });
+
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000);
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
-document.addEventListener("DOMContentLoaded", showSlides);
+
+// Start the slideshow
+showSlides();
