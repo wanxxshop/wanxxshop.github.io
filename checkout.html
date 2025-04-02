@@ -3,112 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Gaming</title>
+    <title>TokoGaming</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #111;
             color: #fff;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #222;
-            padding: 10px 20px;
+            padding: 10px;
         }
-
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #ffcc00;
         }
-
         .search-bar input {
             padding: 8px;
-            border-radius: 5px;
             border: none;
-            outline: none;
+            border-radius: 5px;
+            width: 180px;
         }
-
-        .menu-dots {
-            cursor: pointer;
-        }
-
         .carousel {
             width: 100%;
-            height: 200px;
-            overflow: hidden;
             position: relative;
+            overflow: hidden;
         }
-
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            min-width: 100%;
+        .carousel img {
+            width: 100%;
             height: 200px;
-            background-position: center;
-            background-size: cover;
+            object-fit: cover;
         }
-
-        .carousel-buttons {
+        .carousel button {
             position: absolute;
             top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
             transform: translateY(-50%);
-        }
-
-        .carousel-buttons button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
+            background: rgba(0,0,0,0.5);
             border: none;
+            color: white;
             padding: 10px;
             cursor: pointer;
         }
-
+        .prev { left: 10px; }
+        .next { right: 10px; }
         .products {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 15px;
             padding: 20px;
         }
-
         .product {
-            background-color: #222;
-            padding: 15px;
+            background: #222;
+            padding: 10px;
             border-radius: 10px;
-            width: 100%;
-            max-width: 250px;
+            text-align: center;
+            width: 90%;
+            max-width: 300px;
         }
-
         .product img {
-            width: 100%;
-            border-radius: 10px;
+            width: 50px;
         }
-
         .product h3 {
             font-size: 16px;
+            margin-top: 5px;
             color: #ffcc00;
-            margin: 10px 0;
         }
-
-        .footer {
+        footer {
+            background-color: #222;
             text-align: center;
-            padding: 20px;
-            background: #222;
+            padding: 15px;
             margin-top: 20px;
         }
     </style>
@@ -116,54 +89,44 @@
 <body>
     <header class="navbar">
         <div class="logo">TokoGaming</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Cari...">
-        </div>
-        <div class="menu-dots">☰</div>
+        <div class="search-bar"><input type="text" placeholder="Cari..."></div>
     </header>
 
     <section class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x200');"></div>
-            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x200');"></div>
-            <div class="carousel-item" style="background-image: url('https://via.placeholder.com/800x200');"></div>
-        </div>
-        <div class="carousel-buttons">
-            <button id="prev">❮</button>
-            <button id="next">❯</button>
-        </div>
+        <img id="banner" src="https://via.placeholder.com/1920x300" alt="Banner">
+        <button class="prev" onclick="prevSlide()">&#9664;</button>
+        <button class="next" onclick="nextSlide()">&#9654;</button>
     </section>
 
     <section class="products">
         <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Produk 1">
+            <img src="🏸" alt="Akun MLBB">
             <h3>Akun MLBB Premium</h3>
         </div>
         <div class="product">
-            <img src="https://via.placeholder.com/250" alt="Produk 2">
+            <img src="🏸" alt="Akun Free Fire">
             <h3>Akun Free Fire VIP</h3>
         </div>
     </section>
 
-    <footer class="footer">&copy; 2025 TokoGaming. All rights reserved.</footer>
+    <footer>
+        &copy; 2025 TokoGaming. All rights reserved.
+    </footer>
 
     <script>
-        let index = 0;
-        const slides = document.querySelectorAll(".carousel-item");
-        const totalSlides = slides.length;
-        
-        document.getElementById("next").addEventListener("click", () => {
-            index = (index + 1) % totalSlides;
-            updateCarousel();
-        });
-        
-        document.getElementById("prev").addEventListener("click", () => {
-            index = (index - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        });
-        
-        function updateCarousel() {
-            document.querySelector(".carousel-inner").style.transform = `translateX(-${index * 100}%)`;
+        const images = [
+            "https://via.placeholder.com/1920x300/ff0000/ffffff",
+            "https://via.placeholder.com/1920x300/00ff00/ffffff",
+            "https://via.placeholder.com/1920x300/0000ff/ffffff"
+        ];
+        let currentImage = 0;
+        function nextSlide() {
+            currentImage = (currentImage + 1) % images.length;
+            document.getElementById('banner').src = images[currentImage];
+        }
+        function prevSlide() {
+            currentImage = (currentImage - 1 + images.length) % images.length;
+            document.getElementById('banner').src = images[currentImage];
         }
     </script>
 </body>
