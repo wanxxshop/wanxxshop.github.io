@@ -196,6 +196,57 @@
             padding: 20px;
             margin-top: 40px;
         }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            /* Navbar */
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .menu-dots {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            /* Main Menu */
+            .main-menu {
+                flex-direction: column;
+                padding: 5px 10px;
+            }
+
+            .main-menu a {
+                display: block;
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #fff;
+            }
+
+            /* Products */
+            .products {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .product {
+                min-width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            /* About Us */
+            .about-us {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
