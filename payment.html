@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pembayaran Futuristik RGB</title>
+    <title>Pembayaran wanxx store26</title>
     <style>
+        /* Animasi Neon Glow */
         @keyframes neonGlow {
             0% { box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff; }
             25% { box-shadow: 0 0 10px #0099ff, 0 0 20px #0099ff, 0 0 30px #0099ff; }
@@ -13,6 +14,7 @@
             100% { box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff; }
         }
 
+        /* Styling Halaman Utama */
         body {
             background: black;
             color: #fff;
@@ -58,6 +60,7 @@
             transform: scale(1.05);
         }
 
+        /* Styling Popup */
         .popup {
             display: none;
             position: fixed;
@@ -110,7 +113,7 @@
             transform: scale(1.1);
         }
 
-        /* Media Query untuk tampilan di ponsel kecil */
+        /* Media Query untuk Tampilan di Ponsel Kecil */
         @media (max-width: 480px) {
             .container {
                 width: 85%;
@@ -135,40 +138,48 @@
             .close-btn {
                 font-size: 28px;
                 padding: 8px 12px;
-            }.popup-text {
+            }
+
+            .popup-text {
                 font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Kontainer Utama -->
     <div class="container">
         <h1>PAYMENT WANXX26</h1>
-        <div class="payment-method" onclick="showPopup('wanxxjejw.jpg')">QRIS</div>
-        <div class="payment-method" onclick="showPopup('Dana')">Dana</div>
-        <div class="payment-method" onclick="showPopup('GoPay')">GoPay</div>
-        <div class="payment-method" onclick="showPopup('SeaBank')">SeaBank</div>
+        <div class="payment-method" onclick="showPopup('https://i.ibb.co.com/HDV3C9fc/872f8992-4ad4-4289-b3da-cdff549b781d.jpg')">QRIS</div>
+        <div class="payment-method" onclick="showPopup('083134115994')">Dana</div>
+        <div class="payment-method" onclick="showPopup('083134115994')">Gopay</div>
+        <div class="payment-method" onclick="showPopup('901485633027')">Seabank</div>
     </div>
-    
+
+    <!-- Popup -->
     <div class="popup" id="popup">
         <span class="close-btn" onclick="closePopup()">×</span>
         <div id="popup-content"></div>
     </div>
-    
+
+    <!-- Script Interaktif -->
     <script>
         function showPopup(paymentMethod) {
             const popup = document.getElementById("popup");
             const popupContent = document.getElementById("popup-content");
 
-            if (paymentMethod === 'wanxxjejw.jpg') {
-                popupContent.innerHTML = <img src="${paymentMethod}" alt="QR Code">;
+            if (paymentMethod === 'https://i.ibb.co.com/HDV3C9fc/872f8992-4ad4-4289-b3da-cdff549b781d.jpg') {
+                // Menampilkan gambar QR Code jika metode pembayaran adalah QRIS
+                popupContent.innerHTML = `<img src="${paymentMethod}" alt="QR Code">`;
             } else {
-                popupContent.innerHTML = Metode Pembayaran: ${paymentMethod};
+                // Menampilkan teks nama metode pembayaran
+                popupContent.innerHTML = `<p class="popup-text">SALIN= ${paymentMethod}</p>`;
             }
             popup.style.display = "block";
         }
-        
+
         function closePopup() {
+            // Menutup popup
             document.getElementById("popup").style.display = "none";
         }
     </script>
