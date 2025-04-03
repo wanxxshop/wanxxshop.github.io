@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Futuristik RGB</title>
+    <style>
+        @keyframes neonGlow {
+            0% { box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff; }
+            25% { box-shadow: 0 0 10px #0099ff, 0 0 20px #0099ff, 0 0 30px #0099ff; }
+            50% { box-shadow: 0 0 10px #0066cc, 0 0 20px #0066cc, 0 0 30px #0066cc; }
+            75% { box-shadow: 0 0 10px #0033ff, 0 0 20px #0033ff, 0 0 30px #0033ff; }
+            100% { box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff; }
+        }
+
+        body {
+            background: black;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: 90%;
+            max-width: 320px;
+            animation: neonGlow 2s infinite alternate;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #0000ff, 0 0 20px #0099ff;
+        }
+
+        .payment-method {
+            margin: 10px 0;
+            padding: 15px;
+            background: linear-gradient(45deg, #0000ff, #0099ff, #0066cc);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            animation: neonGlow 1.5s infinite alternate;
+        }
+
+        .payment-method:hover {
+            transform: scale(1.05);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: neonGlow 2s infinite alternate;
+            width: 90%;
+            max-width: 350px;
+            height: auto;
+            max-height: 80vh;
+            overflow: auto;
+        }
+
+        .popup img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .popup-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #0000ff, 0 0 20px #0099ff;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            background: #0033ff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            background: #0066cc;
+            transform: scale(1.1);
+        }
+
+        /* Media Query untuk tampilan di ponsel kecil */
+        @media (max-width: 480px) {
+            .container {
+                width: 85%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .payment-method {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .popup {
+                width: 90%;
+                max-width: 300px;
+                padding: 15px;
+            }
+
+            .close-btn {
+                font-size: 28px;
+                padding: 8px 12px;
+            }.popup-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PAYMENT WANXX26</h1>
+        <div class="payment-method" onclick="showPopup('wanxxjejw.jpg')">QRIS</div>
+        <div class="payment-method" onclick="showPopup('Dana')">Dana</div>
+        <div class="payment-method" onclick="showPopup('GoPay')">GoPay</div>
+        <div class="payment-method" onclick="showPopup('SeaBank')">SeaBank</div>
+    </div>
+    
+    <div class="popup" id="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <div id="popup-content"></div>
+    </div>
+    
+    <script>
+        function showPopup(paymentMethod) {
+            const popup = document.getElementById("popup");
+            const popupContent = document.getElementById("popup-content");
+
+            if (paymentMethod === 'wanxxjejw.jpg') {
+                popupContent.innerHTML = <img src="${paymentMethod}" alt="QR Code">;
+            } else {
+                popupContent.innerHTML = Metode Pembayaran: ${paymentMethod};
+            }
+            popup.style.display = "block";
+        }
+        
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
