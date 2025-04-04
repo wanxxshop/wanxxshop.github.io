@@ -2,61 +2,47 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Jual Akun Stok Free Fire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Wanxxstore26</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #35aeeb;
+            background-color: #000000;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
         }
 
-        /* Teks berjalan */
-        marquee {
-            background-color: #A0CCE0;
-            color: black;
-            padding: 5px;
-            font-weight: bold;
-        }
-
-        /* Kontainer produk */
         .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* Produk di kiri dan kanan */
-            align-items: flex-start;
+            justify-content: space-between;
             gap: 10px;
             padding: 10px;
-            max-width: 600px; /* Batasi lebar agar tetap rapi */
+            max-width: 600px;
             margin: auto;
         }
 
-        .produk {
+        .product {
             background-color: #A0CCE5;
             border-radius: 10px;
             padding: 10px;
-            width: calc(50% - 10px); /* 2 produk per baris */
+            width: calc(50% - 10px);
             box-sizing: border-box;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+            position: relative;
+            cursor: pointer; /* Menunjukkan bahwa produk dapat diklik */
         }
 
-        .produk a {
-            display: block;
-            text-decoration: none;
-            color: white;
-        }
-
-        .produk img {
+        .product img {
             width: 100%;
             border-radius: 5px;
             display: block;
         }
 
-        .produk h3 {
+        .product h3 {
             margin: 5px 0;
             font-size: 16px;
             color: #000000;
@@ -74,142 +60,81 @@
             color: #ffff00;
         }
 
-        /* Efek saat ditekan */
-        .produk:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        /* Efek biru di sisi produk saat ditekan */
+        .product:active {
+            outline: 3px solid #00f; /* Garis biru tebal */
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.8); /* Efek cahaya biru */
+            animation: click-animation 0.3s ease-in-out; /* Animasi saat ditekan */
+        }
+
+        /* Animasi saat ditekan */
+        @keyframes click-animation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.95);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Efek biru di sisi produk saat hover */
+        .product:hover {
+            outline: 2px solid #00f; /* Garis biru tipis */
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Efek cahaya biru lembut */
+            transform: scale(1.05); /* Memperbesar produk sedikit */
         }
 
         /* Untuk layar kecil tetap dua kolom */
         @media (max-width: 600px) {
-            .produk {
+            .product {
                 width: calc(50% - 10px); /* Pastikan tetap dua kolom */
             }
         }
     </style>
 </head>
 <body>
-
-    <marquee behavior="scroll" direction="left">Promo Terbatas! Beli akun sekarang sebelum kehabisan!</marquee>
-
-    <h2>STOK TERBATAS GAS KEBURU ABIS😊 </h2>
-
     <div class="container">
-        <div class="produk">
-            <a href="http://lynk.id/wanxxgames/e0dlljz1jeek">
-                <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 1">
-                <h3>STOK WANXX#1</h3>
-                <p class="harga">Rp 1008.600</p>
-                <p class="harga-diskon">Rp 750.000</p>
-            </a>
+        <!-- Produk 1 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
+            <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 1">
+            <h3>STOK WANXX#1</h3>
+            <p class="harga">Rp 1008.600</p>
+            <p class="harga-diskon">Rp 750.000</p>
         </div>
 
-        <div class="produk">
-            <a href="http://lynk.id/wanxxgames/pvyppkegnj9k">
-                <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 2">
-                <h3>STOK WANXX#2</h3>
-                <p class="harga">Rp 67.000</p>
-                <p class="harga-diskon">Rp 50.000</p>
-            </a>
+        <!-- Produk 2 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
+            <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 2">
+            <h3>STOK WANXX#2</h3>
+            <p class="harga">Rp 67.000</p>
+            <p class="harga-diskon">Rp 50.000</p>
         </div>
 
-        <div class="produk">
-            <a href="http://lynk.id/wanxxgames/k6mkky1p6j6r">
-                <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
-                <h3>STOK WANXX#3</h3>
-                <p class="harga">Rp 51.000</p>
-                <p class="harga-diskon">Rp 45.000</p>
-            </a>
+        <!-- Produk 3 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
+            <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
+            <h3>STOK WANXX#3</h3>
+            <p class="harga">Rp 51.000</p>
+            <p class="harga-diskon">Rp 45.000</p>
         </div>
 
-        <div class="produk">
-            <a href="http://lynk.id/wanxxgames/q6y22dk5wg79">
-                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 4">
-                <h3>STOK WANXX#4</h3>
-                <p class="harga">Rp 55.999</p>
-                <p class="harga-diskon">Rp 50.000</p>
-            </a>
+        <!-- Produk 4 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
+            <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 4">
+            <h3>STOK WANXX#4</h3>
+            <p class="harga">Rp 55.999</p>
+            <p class="harga-diskon">Rp 50.000</p>
         </div>
-        
-        <div class="produk">
-            <a href="detailsepek5.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 1">
-                <h3>STOK WANXX#5</h3>
-                <p class="harga">Rp 140.999</p>
-                <p class="harga-diskon">Rp 130.000</p>
-            </a>
-        </div>
+    </div>
 
-        <div class="produk">
-            <a href="detailsepek6.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 2">
-                <h3>STOK WANXX#6</h3>
-                <p class="harga">Rp 67.900</p>
-                <p class="harga-diskon">Rp 50.000</p>
-            </a>
-        </div>
-
-        <div class="produk">
-            <a href="detailsepek7.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 3">
-                <h3>STOK WANXX#7</h3>
-                <p class="harga">Rp 60.999</p>
-                <p class="harga-diskon">Rp 55.000</p>
-            </a>
-        </div>
-
-        <div class="produk">
-            <a href="detailsepek8.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
-                <h3>STOK WANXX#8</h3>
-                <p class="harga">Rp 250.500</p>
-                <p class="harga-diskon">Rp 220.000</p>
-            </a>
-          </div>
-          
-          <div class="produk">
-            <a href="deg.html">
-                <img src=https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 3">
-                <h3>STOK WANXX#9</h3>
-                <p class="harga">Rp 55.100</p>
-                <p class="harga-diskon">Rp 40.000</p>
-            </a>
-        </div>
-        
-        <div class="produk">
-            <a href="detailsepek10.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
-                <h3>SOLD WANXX#10</h3>
-                <p class="harga">Rp kosong</p>
-                <p class="harga-diskon">Rp kosong</p>
-            </a>
-         </div>
-         
-         <div class="produk">
-            <a href="detailsepek11.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
-                <h3>SOLD WANXX#11</h3>
-                <p class="harga">Rp kosong</p>
-                <p class="harga-diskon">Rp kosong</p>
-            </a>
-         </div>
-         
-         <div class="produk">
-            <a href="detailsepek12.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 4">
-                <h3>STOK WANXX#12</h3>
-                <p class="harga">Rp kosong</p>
-                <p class="harga-diskon">Rp kosong</p>
-            </a>
-          </div>
-          
-          <div class="produk">
-            <a href="detailsepek13.html">
-                <img src="https://img.freepik.com/premium-vector/sold-icon-logo-vector-design-template_827767-4632.jpg" alt="Produk 3">
-                <h3>STOK WANXX#13</h3>
-                <p class="harga">Rp kosong</p>
-                <p class="harga-diskon">Rp kosong</p>
-            </a>
-        </div>
+    <script>
+        // Fungsi untuk mengarahkan ke halaman tertentu
+        function redirectToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
 </body>
 </html>
