@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg">
     <title>Wanxxstore26 - Pengusaha Jual Beli Akun Game</title>
     <meta name="description" content="Wanxx adalah pengusaha muda yang bergerak di bidang jual beli akun game, pemilik WANXX STORE26.">
+    <meta name="keywords" content="jual beli akun game, akun free fire, wanxx store26, jual akun ff, promo game">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,16 +21,20 @@
       ]
     }
     </script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Press Start 2P', cursive; /* Font retro game */
+            font-family: 'Orbitron', sans-serif; /* Font futuristik */
         }
         body {
             text-align: center;
-            background: linear-gradient(to bottom, #000000, #1e1e1e); /* Warna gelap untuk tema game */
+            background: linear-gradient(to bottom, #000000, #1e1e1e);
             color: #fff;
             overflow-x: hidden;
         }
@@ -38,25 +43,23 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #333; /* Warna latar belakang putih */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+            background-color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        /* Logo */
         .logo {
             width: 40px;
             height: 40px;
-            background-image: url('https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg'); /* Ganti dengan URL/path logo Anda */
-            background-size: cover; /* Mengatur ukuran gambar agar sesuai */
-            background-position: center; /* Menyentra gambar di tengah */
-            border-radius: 8px; /* Sudut melengkung */
+            background-image: url('https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
         }
-        /* Kolom Pencarian */
         .search-bar {
             position: relative;
             width: 300px;
             height: 40px;
-            background-color: #f4f4f4; /* Warna latar belakang abu-abu muda */
-            border-radius: 20px; /* Sudut melengkung */
+            background-color: #f4f4f4;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             padding: 0 15px;
@@ -66,23 +69,22 @@
             height: 100%;
             border: none;
             outline: none;
-            background-color: transparent; /* Latar belakang transparan */
+            background-color: transparent;
             font-size: 16px;
-            color: #333333; /* Warna teks hitam */
+            color: #333333;
         }
         .search-bar input[type="text"]::placeholder {
-            color: #999999; /* Warna placeholder abu-abu */
+            color: #999999;
         }
         .search-bar .icon-search {
             position: absolute;
             right: 15px;
             width: 20px;
             height: 20px;
-            background-image: url('https://via.placeholder.com/20x20'); /* Ganti dengan URL ikon pencarian */
+            background-image: url('https://via.placeholder.com/20x20');
             background-size: cover;
             background-position: center;
         }
-        /* Menu Burger */
         .menu-burger {
             display: flex;
             flex-direction: column;
@@ -93,19 +95,18 @@
             display: block;
             width: 25px;
             height: 3px;
-            background-color: #fff; /* Warna garis putih */
-            border-radius: 2px; /* Sudut melengkung kecil */
+            background-color: #fff;
+            border-radius: 2px;
         }
-        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
-            top: 40px; /* Letakkan di bawah header */
+            top: 40px;
             right: 20px;
             background-color: #333;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            display: none; /* Sembunyikan awalnya */
+            display: none;
             z-index: 1000;
         }
         .dropdown-menu a {
@@ -118,7 +119,7 @@
             transition: background 0.3s ease;
         }
         .dropdown-menu a:hover {
-            background-color: #555; /* Efek hover */
+            background-color: #555;
         }
         .dropdown-menu img {
             width: 20px;
@@ -173,7 +174,7 @@
         }
         .menu-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 10px 2px #00f; /* Efek biru saat hover */
+            box-shadow: 0 0 10px 2px #00f;
         }
         .menu-item img {
             width: 50px;
@@ -291,67 +292,58 @@
             padding: 20px 5%;
             background: #1e1e1e;
         }
-        .product-slider {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            gap: 10px;
-            padding: 10px;
-            white-space: nowrap;
+        .swiper.product-slider {
+            width: 100%;
+            padding: 20px 0;
         }
-        .product-slider::-webkit-scrollbar {
-            display: none;
-        }
-        .product {
-            display: inline-block;
+        .swiper-slide {
             background: #333;
             padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        .product[data-status="sold-out"] {
+        .swiper-slide[data-status="sold-out"] {
             opacity: 0.5;
-            border: 2px solid red; /* Border merah untuk produk sold-out */
+            border: 2px solid red;
             cursor: not-allowed;
             pointer-events: none;
         }
-        .product:hover {
+        .swiper-slide:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 10px 2px #00f; /* Efek biru saat hover */
+            box-shadow: 0 0 10px 2px #00f;
         }
-        .product img {
+        .swiper-slide img {
             max-width: 100%;
             border-radius: 10px;
         }
-        .product h3 {
+        .swiper-slide h3 {
             margin: 8px 0;
             font-size: 16px;
         }
-        .product .price {
+        .swiper-slide .price {
             font-size: 12px;
             color: #ccc;
         }
-        .product .original-price {
+        .swiper-slide .original-price {
             text-decoration: line-through;
             color: #ff0000;
             font-size: 10px;
         }
         @media (max-width: 600px) {
-            .product {
+            .swiper-slide {
                 min-width: 180px;
                 max-width: 180px;
                 padding: 8px;
             }
-            .product h3 {
+            .swiper-slide h3 {
                 font-size: 14px;
             }
-            .product .price {
+            .swiper-slide .price {
                 font-size: 10px;
             }
-            .product .original-price {
+            .swiper-slide .original-price {
                 font-size: 9px;
             }
         }
@@ -370,21 +362,18 @@
     <header class="header">
         <!-- Logo -->
         <div class="logo"></div>
-
         <!-- Kolom Pencarian -->
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Cari..." oninput="filterSearchResults(this.value)">
             <div class="icon-search"></div>
             <!-- Popup Hasil Pencarian -->
             <div class="search-results" id="searchResults">
-
         <!-- Menu Burger -->
         <div class="menu-burger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
         <!-- Dropdown Menu -->
         <div class="dropdown-menu" id="dropdownMenu">
             <a href="index.html"><img src="https://via.placeholder.com/20x20" alt="Home"> Home</a>
@@ -393,35 +382,34 @@
             <a href="jual-akun.html"><img src="https://via.placeholder.com/20x20" alt="Jual Akun"> Jual Akun?</a>
         </div>
     </header>
-
     <!-- Konten Utama -->
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
     </div>
     <div class="menu-container">
-        <h2>🔥List Menu🔥</h2>
+        <h2 class="animate__animated animate__bounceInDown">🔥List Menu🔥</h2>
         <div class="menu">
-            <a href="produk.html" class="menu-item">
+            <a href="produk.html" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Free Fire">
                 <div>
                     <h3>Free Fire</h3>
                     <p>Akun Stok</p>
                 </div>
             </a>
-            <a href="https://wa.me/6283134115994" class="menu-item">
+            <a href="https://wa.me/6283134115994" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun">
                 <div>
                     <h3>Jual Akun</h3><p>Ke Sini</p>
                 </div>
             </a>
-            <a href="promo.html" class="menu-item">
+            <a href="promo.html" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Promo">
                 <div>
                     <h3>Info Promo</h3>
                     <p>Ke Sini</p>
                 </div>
             </a>
-            <a href="cekakunhb.html" class="menu-item">
+            <a href="cekakunhb.html" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/Q7YLnK8L/photo-2025-03-18-22-43-53-3.jpg" alt="Cek Akun">
                 <div>
                     <h3>Info HB + SCAM</h3>
@@ -432,42 +420,49 @@
     </div>
     <!-- PRODUK SLIDER -->
     <section class="product-section">
-        <h2>Stok Populer😎</h2>
-        <div class="product-slider" id="slider">
-            <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
-                <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 4">
-                <h3>STOK #1</h3>
-                <p class="original-price">Rp 1008.600</p>
-                <p class="price">Rp 800.000</p>
+        <h2 class="animate__animated animate__bounceInDown">Stok Populer😎</h2>
+        <div class="swiper product-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
+                    <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 4">
+                    <h3>STOK #1</h3>
+                    <p class="original-price">Rp 1008.600</p>
+                    <p class="price">Rp 800.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
+                    <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 1">
+                    <h3>STOK #2</h3>
+                    <p class="original-price">Rp 67.000</p>
+                    <p class="price">Rp 50.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
+                    <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 2">
+                    <h3>STOK #3</h3>
+                    <p class="original-price">Rp 55.999</p>
+                    <p class="price">Rp 50.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
+                    <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
+                    <h3>STOK #4</h3>
+                    <p class="original-price">Rp 52.999</p>
+                    <p class="price">Rp 45.000</p>
+                </div>
+                <div class="swiper-slide product" data-status="sold-out">
+                    <img src="https://i.ibb.co.com/NH6Gmtd/51c057b0-0747-4315-90e7-120da5a9c423.jpg" alt="Produk 4">
+                    <h3>STOK #5</h3>
+                    <p class="original-price">Rp 41.999</p>
+                    <p class="price">Rp 30.000</p>
+                </div>
             </div>
-            <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
-                <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 1">
-                <h3>STOK #2</h3>
-                <p class="original-price">Rp 67.000</p>
-                <p class="price">Rp 50.000</p>
-            </div>
-            <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
-                <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 2">
-                <h3>STOK #3</h3>
-                <p class="original-price">Rp 55.999</p>
-                <p class="price">Rp 50.000</p>
-            </div>
-            <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
-                <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
-                <h3>STOK #4</h3>
-                <p class="original-price">Rp 52.999</p>
-                <p class="price">Rp 45.000</p>
-            </div>
-            <div class="product" data-status="sold-out">
-                <img src="https://i.ibb.co.com/NH6Gmtd/51c057b0-0747-4315-90e7-120da5a9c423.jpg" alt="Produk 4">
-                <h3>STOK #5</h3>
-                <p class="original-price">Rp 41.999</p>
-                <p class="price">Rp 30.000</p>
-            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-    </div>
+    </section>
     <div class="contact-container">
-        <h2>INFO WANXX STORE26</h2>
+        <h2 class="animate__animated animate__bounceInDown">INFO WANXX STORE26</h2>
         <a href="https://wa.me/6283134115994">WA ADMIN</a>
         <a href="https://t.me/wanxxstore26">TELEGRAM ADMIN</a>
         <a href="https://t.me/stokwanxx26">GRUP STOK WANXX26</a>
@@ -491,58 +486,23 @@
             <img src="https://tse1.mm.bing.net/th?id=OIP.YyDl0xTeGeLc5taKCX4J7AHaHa&pid=Api&P=0&h=180" alt="Chat" class="chat-icon">
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         // Fungsi untuk toggle dropdown menu
         function toggleMenu() {
             const dropdownMenu = document.getElementById('dropdownMenu');
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         }
-
         // Fungsi untuk filter hasil pencarian
         function filterSearchResults(query) {
             const resultsContainer = document.getElementById('searchResults');
-            const searchItems = resultsContainer.querySelectorAll('.search-result-item');
-
             if (query.trim() === '') {
                 resultsContainer.style.display = 'none';
                 return;
             }
-
             resultsContainer.style.display = 'block';
-
-            searchItems.forEach(item => {
-                const title = item.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(query.toLowerCase())) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
         }
-
-        let currentIndex = 0;
-        const slider = document.getElementById('slider');
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function moveSlide(step) {
-            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-            updateSlider();
-        }
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        setInterval(() => moveSlide(1), 3000); // Auto geser tiap 3 detik
-
-        function toggleChat() {
-            var chatBox = document.getElementById("chatOptions");
-            chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
-        }
-
         let bannerIndex = 0;
-
         function gantiBanner() {
             let banners = document.querySelectorAll(".banner-container img");
             banners.forEach((img, i) => {
@@ -551,25 +511,46 @@
             banners[bannerIndex].classList.add("active");
             bannerIndex = (bannerIndex + 1) % banners.length;
         }
-
         setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
-
         function redirectToPage(pageUrl, status = "available") {
             if (status === "sold-out") {
                 alert("Maaf, produk ini sudah sold out!");
-                return; // Menghentikan aksi jika produk sold out
+                return;
             }
             window.location.href = pageUrl;
         }
-
-        // Menandai produk sold out secara dinamis
-        document.querySelectorAll('.product').forEach(product => {
-            const price = product.querySelector('.price').textContent.trim();
-            if (price === "Rp kosong") {
-                product.setAttribute('data-status', 'sold-out');
-                product.removeAttribute('onclick'); // Hapus onclick untuk produk sold out
-            }
+        // Inisialisasi Swiper.js
+        const swiper = new Swiper('.product-slider', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            },
         });
+        // Toggle chat
+        function toggleChat() {
+            var chatBox = document.getElementById("chatOptions");
+            chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+        }
     </script>
 </body>
 </html>
