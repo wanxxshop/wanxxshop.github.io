@@ -132,6 +132,14 @@
         .dropdown-menu a:hover {
             background: #ff4500;
         }
+        /* Penyesuaian ukuran gambar di dropdown menu */
+        .dropdown-menu img {
+            width: 20px; /* Sesuaikan ukuran lebar gambar */
+            height: 20px; /* Sesuaikan ukuran tinggi gambar */
+            object-fit: cover; /* Memastikan gambar tetap proporsional */
+            border-radius: 3px; /* Memberikan sudut melengkung agar lebih estetis */
+            margin-right: 10px; /* Jarak antara gambar dan teks */
+        }
         .banner-container {
             position: relative;
             width: 100%;
@@ -378,14 +386,14 @@
         <!-- Logo -->
         <div class="logo-container">
             <div class="logo"></div>
-            <h1 class="site-title">Wanxx Store26</h1>
+            <h1 class="site-title">WANXX26</h1>
         </div>
         <!-- Kolom Pencarian -->
         <div class="search-bar">
             <input 
                 type="text" 
                 id="searchInput" 
-                placeholder="Cari produk..." 
+                placeholder="Cari Akun Games..." 
                 oninput="filterSearchResults(this.value)"
             />
             <div class="icon-search">
@@ -403,16 +411,16 @@
         <!-- Dropdown Menu -->
         <div class="dropdown-menu" id="dropdownMenu">
             <a href="index.html">
-                <img src="https://via.placeholder.com/20x20" alt="Home" /> Home
+                <img src="https://png.pngtree.com/png-clipart/20241102/original/pngtree-blue-home-button-icon-clipart-png-image_16643181.png" alt="Beranda" /> Beranda
             </a>
-            <a href="cek-transaksi.html">
-                <img src="https://via.placeholder.com/20x20" alt="Cek Transaksi" /> Cek Transaksi
+            <a href="stok-akun-free-fire.html">
+                <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Akun Free Fire" /> Akun Free Fire
             </a>
-            <a href="akun-bermasalah.html">
-                <img src="https://via.placeholder.com/20x20" alt="Akun Bermasalah" /> Akun Bermasalah
+            <a href="info-promo-akun-free-fire.html">
+                <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Info Promo" /> Info Promo
             </a>
             <a href="jual-akun.html">
-                <img src="https://via.placeholder.com/20x20" alt="Jual Akun" /> Jual Akun?
+                <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun?" /> Jual Akun?
             </a>
         </div>
     </header>
@@ -423,7 +431,7 @@
     <div class="menu-container">
         <h2 class="animate__animated animate__bounceInDown">🔥List Menu🔥</h2>
         <div class="menu">
-            <a href="produk.html" class="menu-item animate__animated animate__fadeInUp">
+            <a href="stok-akun-free-fire.html" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Free Fire">
                 <div>
                     <h3>Free Fire</h3>
@@ -436,14 +444,14 @@
                     <h3>Jual Akun</h3><p>Ke Sini</p>
                 </div>
             </a>
-            <a href="promo.html" class="menu-item animate__animated animate__fadeInUp">
+            <a href="info-promo-akun-free-fire.html" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Promo">
                 <div>
                     <h3>Info Promo</h3>
                     <p>Ke Sini</p>
                 </div>
             </a>
-            <a href="cekakunhb.html" class="menu-item animate__animated animate__fadeInUp">
+            <a href="info-akun-bermasalah-wanxx.html" class="menu-item animate__animated animate__fadeInUp">
                 <img src="https://i.ibb.co.com/Q7YLnK8L/photo-2025-03-18-22-43-53-3.jpg" alt="Cek Akun">
                 <div>
                     <h3>Info HB + SCAM</h3>
@@ -463,19 +471,19 @@
                     <p class="original-price">Rp 1008.600</p>
                     <p class="price">Rp 800.000</p>
                 </div>
-                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
+                <div class="swiper-slide product" data-status="sold-out">
                     <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 1">
                     <h3>STOK #2</h3>
                     <p class="original-price">Rp 67.000</p>
                     <p class="price">Rp 50.000</p>
                 </div>
-                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
+                <div class="swiper-slide product" data-status="sold-out">
                     <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 2">
                     <h3>STOK #3</h3>
                     <p class="original-price">Rp 55.999</p>
                     <p class="price">Rp 50.000</p>
                 </div>
-                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
+                <div class="swiper-slide product" data-status="sold-out">
                     <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
                     <h3>STOK #4</h3>
                     <p class="original-price">Rp 52.999</p>
