@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Wanxxstore26</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .product {
+            background-color: #A0CCE5;
+            border-radius: 10px;
+            padding: 10px;
+            width: calc(50% - 10px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+            position: relative;
+            cursor: pointer; /* Menunjukkan bahwa produk dapat diklik */
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .product h3 {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #000000;
+        }
+
+        .harga {
+            font-size: 14px;
+            color: #ff0000;
+            text-decoration: line-through;
+        }
+
+        .harga-diskon {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffff00;
+        }
+
+        /* Efek biru di sisi produk saat ditekan */
+        .product:active {
+            outline: 3px solid #00f; /* Garis biru tebal */
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.8); /* Efek cahaya biru */
+            animation: click-animation 0.3s ease-in-out; /* Animasi saat ditekan */
+        }
+
+        /* Animasi saat ditekan */
+        @keyframes click-animation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.95);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Efek biru di sisi produk saat hover */
+        .product:hover {
+            outline: 2px solid #00f; /* Garis biru tipis */
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Efek cahaya biru lembut */
+            transform: scale(1.05); /* Memperbesar produk sedikit */
+        }
+
+        /* Untuk layar kecil tetap dua kolom */
+        @media (max-width: 600px) {
+            .product {
+                width: calc(50% - 10px); /* Pastikan tetap dua kolom */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Produk 1 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
+            <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 1">
+            <h3>STOK WANXX#1</h3>
+            <p class="harga">Rp 1008.600</p>
+            <p class="harga-diskon">Rp 750.000</p>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
+            <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 2">
+            <h3>STOK WANXX#2</h3>
+            <p class="harga">Rp 67.000</p>
+            <p class="harga-diskon">Rp 50.000</p>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
+            <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
+            <h3>STOK WANXX#3</h3>
+            <p class="harga">Rp 51.000</p>
+            <p class="harga-diskon">Rp 45.000</p>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
+            <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 4">
+            <h3>STOK WANXX#4</h3>
+            <p class="harga">Rp 55.999</p>
+            <p class="harga-diskon">Rp 50.000</p>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk mengarahkan ke halaman tertentu
+        function redirectToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
+</body>
+</html>
