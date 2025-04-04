@@ -42,48 +42,52 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #A0CCE5, #A0CCE5);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
         }
-        .logo {
-            width: 40px;
-            height: 40px;
-            background-image: url('https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .site-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .search-bar {
             position: relative;
             width: 300px;
             height: 40px;
-            background-color: #f4f4f4;
+            background: #fff;
             border-radius: 20px;
             display: flex;
             align-items: center;
             padding: 0 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .search-bar input[type="text"] {
             width: 100%;
             height: 100%;
             border: none;
             outline: none;
-            background-color: transparent;
-            font-size: 16px;
-            color: #333333;
+            background: transparent;
+            font-size: 14px;
+            color: #333;
         }
         .search-bar input[type="text"]::placeholder {
-            color: #999999;
+            color: #999;
         }
-        .search-bar .icon-search {
+        .icon-search {
             position: absolute;
             right: 15px;
-            width: 20px;
-            height: 20px;
-            background-image: url('https://via.placeholder.com/20x20');
-            background-size: cover;
-            background-position: center;
+            cursor: pointer;
         }
         .menu-burger {
             display: flex;
@@ -97,12 +101,19 @@
             height: 3px;
             background-color: #fff;
             border-radius: 2px;
+            transition: transform 0.3s ease;
+        }
+        .menu-burger:hover span:nth-child(1) {
+            transform: translateY(-3px);
+        }
+        .menu-burger:hover span:nth-child(3) {
+            transform: translateY(3px);
         }
         .dropdown-menu {
             position: absolute;
-            top: 40px;
+            top: 60px;
             right: 20px;
-            background-color: #333;
+            background: #333;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -119,12 +130,7 @@
             transition: background 0.3s ease;
         }
         .dropdown-menu a:hover {
-            background-color: #555;
-        }
-        .dropdown-menu img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+            background: #ff4500;
         }
         .banner-container {
             position: relative;
@@ -162,7 +168,7 @@
             margin: auto;
         }
         .menu-item {
-            background: #333;
+            background: #A0CCE5;
             padding: 10px;
             border-radius: 10px;
             text-align: left;
@@ -218,7 +224,7 @@
         }
         .contact-container h2 {
             font-size: 20px;
-            color: #ff0000;
+            color: #ffffff;
             margin-bottom: 10px;
         }
         .contact-container a {
@@ -243,7 +249,7 @@
             z-index: 1000;
         }
         .chat-button {
-            background-color: #ff0000;
+            background-color: #A0CCE5;
             color: white;
             padding: 15px;
             border-radius: 50%;
@@ -306,7 +312,7 @@
             padding: 20px 0;
         }
         .swiper-slide {
-            background: #333;
+            background: #A0CCE5;
             padding: 10px;
             border-radius: 10px;
             text-align: center;
@@ -370,13 +376,24 @@
     <!-- Header Baru -->
     <header class="header">
         <!-- Logo -->
-        <div class="logo"></div>
+        <div class="logo-container">
+            <div class="logo"></div>
+            <h1 class="site-title">Wanxx Store26</h1>
+        </div>
         <!-- Kolom Pencarian -->
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Cari..." oninput="filterSearchResults(this.value)">
-            <div class="icon-search"></div>
-            <!-- Popup Hasil Pencarian -->
-            <div class="search-results" id="searchResults">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Cari produk..." 
+                oninput="filterSearchResults(this.value)"
+            />
+            <div class="icon-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#999" viewBox="0 0 24 24">
+                    <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z"/>
+                </svg>
+            </div>
+        </div>
         <!-- Menu Burger -->
         <div class="menu-burger" onclick="toggleMenu()">
             <span></span>
@@ -385,10 +402,18 @@
         </div>
         <!-- Dropdown Menu -->
         <div class="dropdown-menu" id="dropdownMenu">
-            <a href="index.html"><img src="https://via.placeholder.com/20x20" alt="Home"> Home</a>
-            <a href="cek-transaksi.html"><img src="https://via.placeholder.com/20x20" alt="Cek Transaksi"> Cek Transaksi</a>
-            <a href="akun-bermasalah.html"><img src="https://via.placeholder.com/20x20" alt="Akun Bermasalah"> Akun Bermasalah</a>
-            <a href="jual-akun.html"><img src="https://via.placeholder.com/20x20" alt="Jual Akun"> Jual Akun?</a>
+            <a href="index.html">
+                <img src="https://via.placeholder.com/20x20" alt="Home" /> Home
+            </a>
+            <a href="cek-transaksi.html">
+                <img src="https://via.placeholder.com/20x20" alt="Cek Transaksi" /> Cek Transaksi
+            </a>
+            <a href="akun-bermasalah.html">
+                <img src="https://via.placeholder.com/20x20" alt="Akun Bermasalah" /> Akun Bermasalah
+            </a>
+            <a href="jual-akun.html">
+                <img src="https://via.placeholder.com/20x20" alt="Jual Akun" /> Jual Akun?
+            </a>
         </div>
     </header>
     <!-- Konten Utama -->
