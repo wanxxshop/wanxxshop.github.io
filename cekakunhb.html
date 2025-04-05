@@ -3,76 +3,601 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Sedang Dalam Pemeliharaan</title>
+    <meta name="google-site-verification" content="A6bm4Sbbh2s__tk5UzhJnDcZfEelaVCHlXL9LQclFHY" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg">
+    <title>Wanxxstore26 - Pengusaha Jual Beli Akun Game</title>
+    <meta name="description" content="Wanxx adalah pengusaha muda yang bergerak di bidang jual beli akun game, pemilik WANXX STORE26.">
+    <meta name="keywords" content="jual beli akun game, akun free fire, wanxx store26, jual akun ff, promo game">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wanxx26",
+      "url": "https://wanxxstore26.shop",
+      "description": "Pengusaha muda di bidang jual beli akun game, pemilik WANXX STORE26.",
+      "sameAs": [
+        "https://www.instagram.com/wanxxstore26",
+        "https://t.me/wanxxstore26"
+      ]
+    }
+    </script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <style>
-        body {
+        /* CSS untuk header baru */
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif; /* Font futuristik */
+        }
+        body {
             text-align: center;
+            background: linear-gradient(to bottom, #000000, #1e1e1e);
+            color: #fff;
+            overflow-x: hidden;
         }
-        .maintenance-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #ff4500, #ff6f61); /* Gradien oranye gaming */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .site-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #ff4500; /* Efek glow gaming */
+        }
+        .search-bar {
+            position: relative;
+            width: 300px;
+            height: 40px;
+            background: #fff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar input[type="text"] {
             width: 100%;
-        }
-        .maintenance-icon {
-            font-size: 60px;
-            color: #ffc107;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 24px;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 14px;
             color: #333;
+        }
+        .search-bar input[type="text"]::placeholder {
+            color: #999;
+        }
+        .icon-search {
+            position: absolute;
+            right: 15px;
+            cursor: pointer;
+        }
+        .menu-burger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-burger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: transform 0.3s ease;
+        }
+        .menu-burger:hover span:nth-child(1) {
+            transform: translateY(-3px);
+        }
+        .menu-burger:hover span:nth-child(3) {
+            transform: translateY(3px);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            z-index: 1000;
+        }
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .dropdown-menu a:hover {
+            background: #ff4500;
+        }
+        /* Penyesuaian ukuran gambar di dropdown menu */
+        .dropdown-menu img {
+            width: 20px; /* Sesuaikan ukuran lebar gambar */
+            height: 20px; /* Sesuaikan ukuran tinggi gambar */
+            object-fit: cover; /* Memastikan gambar tetap proporsional */
+            border-radius: 3px; /* Memberikan sudut melengkung agar lebih estetis */
+            margin-right: 10px; /* Jarak antara gambar dan teks */
+        }
+        /* CSS lainnya (tidak diubah) */
+        .banner-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 60px auto 20px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .banner-container img {
+            width: 100%;
+            border-radius: 10px;
+            transition: opacity 1s ease-in-out;
+        }
+        .banner-container img.active {
+            opacity: 1;
+        }
+        .menu-container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .menu-container h2 {
+            font-size: 24px;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
             margin-bottom: 10px;
         }
-        p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 350px;
+            margin: auto;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
+        .menu-item {
+            background: #A0CCE5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px 2px #00f;
+        }
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .menu-item div {
+            color: #fff;
+        }
+        .menu-item div h3 {
+            font-size: 14px;
+            margin: 0;
+        }
+        .menu-item div p {
+            font-size: 12px;
+            color: #ccc;
+            margin: 0;
+        }
+        .menu a {
+            text-decoration: none;
+        }
+        @media (max-width: 480px) {
+            .menu {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            .menu-item {
+                width: 48%;
+                margin-bottom: 10px;
+            }
+        }
+        .contact-container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .contact-container h2 {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .contact-container a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #333;
             color: #fff;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
         }
-        .btn:hover {
-            background-color: #0056b3;
+        .contact-container a:hover {
+            background-color: #ff0000;
+            color: #fff;
+        }
+        .live-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .chat-button {
+            background-color: #A0CCE5;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #ff4500;
+        }
+        .chat-icon {
+            width: 30px;
+            height: 30px;
+        }
+        .chat-options {
+            position: absolute;
+            bottom: 70px;
+            right: 10px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            width: 180px;
+        }
+        .chat-options a {
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+        .chat-options a:hover {
+            background: #333;
+        }
+        .chat-options img {
+            width: 25px;
+            height: 25px;
+        }
+        .product-section {
+            text-align: center;
+            padding: 20px 5%;
+            background: #1e1e1e;
+        }
+        .swiper.product-slider {
+            width: 100%;
+            padding: 20px 0;
+        }
+        .swiper-slide {
+            background: #A0CCE5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .swiper-slide[data-status="sold-out"] {
+            opacity: 0.5;
+            border: 2px solid red;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .swiper-slide:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px 2px #00f;
+        }
+        .swiper-slide img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .swiper-slide h3 {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .swiper-slide .price {
+            font-size: 20px;
+            color: #ffff00;
+        }
+        .swiper-slide .original-price {
+            text-decoration: line-through;
+            color: #ff0000;
+            font-size: 10px;
         }
         @media (max-width: 600px) {
-            .maintenance-container {
-                padding: 30px;
+            .swiper-slide {
+                min-width: 180px;
+                max-width: 180px;
+                padding: 8px;
             }
-            h1 {
-                font-size: 20px;
-            }
-            p {
+            .swiper-slide h3 {
                 font-size: 14px;
             }
+            .swiper-slide .price {
+                font-size: 15px;
+            }
+            .swiper-slide .original-price {
+                font-size: 9px;
+            }
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #000;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-
-    <div class="maintenance-container">
-        <div class="maintenance-icon">🚧</div>
-        <h1>Situs Sedang Dalam Pemeliharaan</h1>
-        <p>Kami sedang melakukan pembaruan untuk meningkatkan layanan kami. Mohon kesabarannya, situs akan segera kembali online.</p>
-        <a href="#" class="btn">Kembali Nanti</a>
+    <!-- Header Baru -->
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg" alt="Logo WANXX26" style="width: 40px; height: 40px; border-radius: 50%;">
+            </div>
+            <h1 class="site-title">WANXX26</h1>
+        </div>
+        <!-- Kolom Pencarian -->
+        <div class="search-bar">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Cari Akun Games..." 
+                oninput="filterSearchResults(this.value)"
+            />
+            <div class="icon-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff4500" viewBox="0 0 24 24">
+                    <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z"/>
+                </svg>
+            </div>
+        </div>
+        <!-- Menu Burger -->
+        <div class="menu-burger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">
+                <img src="https://png.pngtree.com/png-clipart/20241102/original/pngtree-blue-home-button-icon-clipart-png-image_16643181.png" alt="Beranda" /> Beranda
+            </a>
+            <a href="stok-akun-free-fire.html">
+                <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Akun Free Fire" /> Akun Free Fire
+            </a>
+            <a href="info-promo-akun-free-fire.html">
+                <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Info Promo" /> Info Promo
+            </a>
+            <a href="jual-akun.html">
+                <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun?" /> Jual Akun?
+            </a>
+        </div>
+    </header>
+    <!-- Konten Utama -->
+    <div class="banner-container">
+        <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
     </div>
-
+    <div class="menu-container">
+        <h2 class="animate__animated animate__bounceInDown">🔥List Menu🔥</h2>
+        <div class="menu">
+            <a href="stok-akun-free-fire.html" class="menu-item animate__animated animate__fadeInUp">
+                <img src="https://i.ibb.co.com/Xrf8qfFY/photo-2025-03-18-22-43-52.jpg" alt="Free Fire">
+                <div>
+                    <h3>Free Fire</h3>
+                    <p>Akun Stok</p>
+                </div>
+            </a>
+            <a href="https://wa.me/6283134115994" class="menu-item animate__animated animate__fadeInUp">
+                <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun">
+                <div>
+                    <h3>Jual Akun</h3><p>Ke Sini</p>
+                </div>
+            </a>
+            <a href="info-promo-akun-free-fire.html" class="menu-item animate__animated animate__fadeInUp">
+                <img src="https://i.ibb.co.com/N6RQy2Jq/photo-2025-03-18-22-43-53-2.jpg" alt="Promo">
+                <div>
+                    <h3>Info Promo</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+            <a href="info-akun-bermasalah-wanxx.html" class="menu-item animate__animated animate__fadeInUp">
+                <img src="https://i.ibb.co.com/Q7YLnK8L/photo-2025-03-18-22-43-53-3.jpg" alt="Cek Akun">
+                <div>
+                    <h3>Info HB + SCAM</h3>
+                    <p>Ke Sini</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- PRODUK SLIDER -->
+    <section class="product-section">
+        <h2 class="animate__animated animate__bounceInDown">Stok Populer😎</h2>
+        <div class="swiper product-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
+                    <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 4">
+                    <h3>STOK #1</h3>
+                    <p class="original-price">Rp 1008.600</p>
+                    <p class="price">Rp 800.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/m6jl3xk7p978')">
+                    <img src="https://i.ibb.co.com/fYcmGX9K/a0533ad0-187d-4a73-90b8-60a31e54b0df.jpg" alt="Produk 1">
+                    <h3>STOK #2</h3>
+                    <p class="original-price">Rp 143.000</p>
+                    <p class="price">Rp 125.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/y4jnp1k81krr')">
+                    <img src="https://i.ibb.co.com/B28MLcR5/dbf47d3b-bbc2-4ba8-84b8-75ee241b0a9a.jpg" alt="Produk 2">
+                    <h3>STOK #3</h3>
+                    <p class="original-price">Rp 164.999</p>
+                    <p class="price">Rp 140.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/j8y6jl5owme5')">
+                    <img src="https://i.ibb.co.com/8nzThgTt/ea57e927-53f2-4b28-a1f5-c86f110fcb62.jpg" alt="Produk 3">
+                    <h3>STOK #4</h3>
+                    <p class="original-price">Rp 151.999</p>
+                    <p class="price">Rp 130.000</p>
+                </div>
+                <div class="swiper-slide product" onclick="redirectToPage('http://lynk.id/wanxxgames/gn8w13no4805')">
+                    <img src="https://i.ibb.co.com/pBWtJK7k/c0612549-6bf9-4303-a435-fc23b003c84a.jpg" alt="Produk 4">
+                    <h3>STOK #5</h3>
+                    <p class="original-price">Rp 71.500</p>
+                    <p class="price">Rp 60.000</p>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <div class="contact-container">
+        <h2 class="animate__animated animate__bounceInDown">INFO WANXX STORE26</h2>
+        <a href="https://wa.me/6283134115994">WA ADMIN</a>
+        <a href="https://t.me/wanxxstore26">TELEGRAM ADMIN</a>
+        <a href="https://t.me/stokwanxx26">GRUP STOK WANXX26</a>
+        <a href="https://t.me/jbwanxxstore26">JB WANXX26 #1</a>
+        <a href="https://t.me/jualbeliakunffmllbb">JB WANXX26 #2</a>
+        <a href="https://www.instagram.com/wanxxstore26?igsh=MW12bnhjbW93bnNxZw==">INSTAGRAM ADMIN</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
+    </div>
+    <div class="live-chat-container">
+        <div class="chat-options" id="chatOptions">
+            <a href="https://wa.me/6283134115994" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"> CS Bantuan WA
+            </a>
+            <a href="https://t.me/wanxxstore26" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> CS Bantuan Telegram
+            </a>
+        </div>
+        <div class="chat-button" onclick="toggleChat()">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.YyDl0xTeGeLc5taKCX4J7AHaHa&pid=Api&P=0&h=180" alt="Chat" class="chat-icon">
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Fungsi untuk toggle dropdown menu
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+        // Fungsi untuk filter hasil pencarian
+        function filterSearchResults(query) {
+            const resultsContainer = document.getElementById('searchResults');
+            if (query.trim() === '') {
+                resultsContainer.style.display = 'none';
+                return;
+            }
+            resultsContainer.style.display = 'block';
+        }
+        let bannerIndex = 0;
+        function gantiBanner() {
+            let banners = document.querySelectorAll(".banner-container img");
+            banners.forEach((img, i) => {
+                img.classList.remove("active");
+            });
+            banners[bannerIndex].classList.add("active");
+            bannerIndex = (bannerIndex + 1) % banners.length;
+        }
+        setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
+        function redirectToPage(pageUrl, status = "available") {
+            if (status === "sold-out") {
+                alert("Maaf, produk ini sudah sold out!");
+                return;
+            }
+            window.location.href = pageUrl;
+        }
+        // Inisialisasi Swiper.js
+        const swiper = new Swiper('.product-slider', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            },
+        });
+        // Toggle chat
+        function toggleChat() {
+            var chatBox = document.getElementById("chatOptions");
+            chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
 </body>
 </html>
