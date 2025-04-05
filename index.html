@@ -26,6 +26,7 @@
     <!-- Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <style>
+        /* CSS untuk header baru */
         * {
             margin: 0;
             padding: 0;
@@ -43,8 +44,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background: linear-gradient(135deg, #A0CCE5, #A0CCE5);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #A0CCE5, #A0CCE5); /* Gradien oranye gaming */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 1000;
         }
@@ -54,18 +55,19 @@
             gap: 10px;
         }
         .site-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #fff;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #000000; /* Efek glow gaming */
         }
         .search-bar {
             position: relative;
             width: 300px;
             height: 40px;
-            background: #fff;
+            background: #1e1e1e;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -113,7 +115,7 @@
             position: absolute;
             top: 60px;
             right: 20px;
-            background: #333;
+            background: #1e1e1e;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -140,6 +142,7 @@
             border-radius: 3px; /* Memberikan sudut melengkung agar lebih estetis */
             margin-right: 10px; /* Jarak antara gambar dan teks */
         }
+        /* CSS lainnya (tidak diubah) */
         .banner-container {
             position: relative;
             width: 100%;
@@ -378,6 +381,53 @@
             font-size: 14px;
             border-radius: 5px;
         }
+        /* Styling untuk Tata Cara Beli Akun */
+        .buy-guide {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .buy-guide h2 {
+            font-size: 24px;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            margin-bottom: 10px;
+        }
+        .buy-guide ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .buy-guide li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #fff;
+        }
+        .about-wanxx26 {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .about-wanxx26 h2 {
+            font-size: 24px;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            margin-bottom: 10px;
+        }
+        .about-wanxx26 p {
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .about-wanxx26 img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -385,7 +435,9 @@
     <header class="header">
         <!-- Logo -->
         <div class="logo-container">
-            <div class="logo"></div>
+            <div class="logo">
+                <img src="https://i.ibb.co.com/mrQ51dfQ/da7a4f00-e7ae-45f2-ab18-391ad509012f.jpg" alt="Logo WANXX26" style="width: 40px; height: 40px; border-radius: 50%;">
+            </div>
             <h1 class="site-title">WANXX26</h1>
         </div>
         <!-- Kolom Pencarian -->
@@ -397,7 +449,7 @@
                 oninput="filterSearchResults(this.value)"
             />
             <div class="icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#999" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff4500" viewBox="0 0 24 24">
                     <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z"/>
                 </svg>
             </div>
@@ -503,6 +555,36 @@
             <div class="swiper-button-prev"></div>
         </div>
     </section>
+    <!-- Tata Cara Beli Akun -->
+    <div class="buy-guide">
+        <h2>Tata Cara Beli Akun</h2>
+        <ul>
+            <li><strong>Langkah 1:</strong> Pilih akun yang ingin Anda beli dari daftar stok.</li>
+            <li><strong>Langkah 2:</strong> Klik tombol "Beli Sekarang" pada produk yang dipilih.</li>
+            <li><strong>Langkah 3:</strong> Ikuti instruksi pembayaran yang diberikan.</li>
+            <li><strong>Langkah 4:</strong> Setelah pembayaran berhasil, Anda akan menerima detail akun melalui WhatsApp atau Telegram.</li>
+            <li><strong>Langkah 5:</strong> Gunakan akun sesuai kebutuhan Anda.</li>
+        </ul>
+    </div>
+    <!-- Tentang Wanxx26 -->
+    <div class="about-wanxx26">
+        <h2>Tentang Wanxx26</h2>
+        <p>
+            WANXX STORE26 adalah platform terpercaya untuk jual beli akun game, khususnya Free Fire. Kami menawarkan layanan yang aman, cepat, dan profesional dengan fokus pada kepuasan pelanggan.
+        </p>
+        <p>
+            Dengan komitmen kami terhadap keamanan, efisiensi, dan kepercayaan, memberikan pengalaman transaksi yang andal dan nyaman bagi para pengguna yang mencari akun game berkualitas.
+        </p>
+        <p>
+            Selain itu, kami juga menyediakan:
+            <ul>
+                <li><strong>Jaminan Layanan:</strong> Keamanan dan kualitas layanan terjamin.</li>
+                <li><strong>Jaminan Layanan 24 Jam:</strong> Layanan non-stop, 24 jam setiap hari.</li>
+                <li><strong>Pembayaran Aman & Terpercaya:</strong> Transaksi aman, pembayaran dapat dipercaya.</li>
+                <li><strong>Proses Cepat & Otomatis:</strong> Proses cepat, otomatis, tanpa hambatan.</li>
+            </ul>
+        </p>
+    </div>
     <div class="contact-container">
         <h2 class="animate__animated animate__bounceInDown">INFO WANXX STORE26</h2>
         <a href="https://wa.me/6283134115994">WA ADMIN</a>
