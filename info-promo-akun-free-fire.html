@@ -3,76 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanxx</title>
+    <title>Produk Wanxxstore26</title>
     <style>
         body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: white;
+            text-align: center;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+            overflow-x: hidden;
         }
-        .maintenance-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-        }
-        .maintenance-icon {
-            font-size: 60px;
-            color: #ffc107;
-            margin-bottom: 20px;
-        }
+
         h1 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
-        p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px; /* Jarak antar produk */
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+
+        .product {
+            background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+            border-radius: 15px;
+            padding: 15px;
+            width: calc(50% - 15px); /* Dua kolom dengan jarak */
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
         }
-        .btn:hover {
-            background-color: #0056b3;
+
+        .product img {
+            width: 100%;
+            height: auto; /* Pastikan gambar proporsional */
+            border-radius: 10px;
+            transition: transform 0.3s;
         }
-        @media (max-width: 600px) {
-            .maintenance-container {
-                padding: 30px;
+
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .harga {
+            font-size: 14px;
+            color: #ff4d4d;
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+
+        .harga-diskon {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ff99;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Efek saat hover */
+        .product:hover {
+            background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .product:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Efek biru di sisi produk saat ditekan */
+        .product:active {
+            outline: 3px solid #00f;
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+            animation: click-animation 0.3s ease-in-out;
+        }
+
+        /* Animasi saat ditekan */
+        @keyframes click-animation {
+            0% {
+                transform: scale(1);
             }
-            h1 {
-                font-size: 20px;
+            50% {
+                transform: scale(0.95);
             }
-            p {
-                font-size: 14px;
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Untuk layar kecil, pastikan tetap dua kolom */
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 15px); /* Tetap dua kolom */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: 100%; /* Satu kolom untuk layar sangat kecil */
+            }
+
+            .product img {
+                height: 200px; /* Tinggi gambar tetap agar tidak terlalu kecil */
+                object-fit: cover; /* Pastikan gambar tetap proporsional */
             }
         }
     </style>
 </head>
 <body>
+    <h1>Produk Wanxxstore26</h1>
+    <div class="container">
+        <!-- Produk 1 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
+            <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 1">
+            <h3>STOK WANXX#1</h3>
+            <p class="harga">Rp 1008.600</p>
+            <p class="harga-diskon">Rp 750.000</p>
+        </div>
 
-    <div class="maintenance-container">
-        <div class="maintenance-icon">🚧</div>
-        <h1>Situs Sedang Dalam Pemeliharaan</h1>
-        <p>Kami sedang melakukan pembaruan untuk meningkatkan layanan kami. Mohon kesabarannya, situs akan segera kembali online.</p>
-        <a href="#" class="btn">Kembali Nanti</a>
+        <!-- Produk 2 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
+            <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 2">
+            <h3>STOK WANXX#2</h3>
+            <p class="harga">Rp 67.000</p>
+            <p class="harga-diskon">Rp 50.000</p>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
+            <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
+            <h3>STOK WANXX#3</h3>
+            <p class="harga">Rp 51.000</p>
+            <p class="harga-diskon">Rp 45.000</p>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
+            <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 4">
+            <h3>STOK WANXX#4</h3>
+            <p class="harga">Rp 55.999</p>
+            <p class="harga-diskon">Rp 50.000</p>
+        </div>
     </div>
 
+    <script>
+        // Fungsi untuk mengarahkan ke halaman tertentu
+        function redirectToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
 </body>
 </html>
