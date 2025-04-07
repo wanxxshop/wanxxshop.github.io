@@ -6,65 +6,88 @@
     <title>Produk Wanxxstore26</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 10px;
-            padding: 10px;
-            max-width: 600px;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
             margin: auto;
         }
 
         .product {
-            background-color: #A0CCE5;
-            border-radius: 10px;
-            padding: 10px;
-            width: calc(50% - 10px);
+            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            border-radius: 15px;
+            padding: 15px;
+            width: calc(33% - 20px);
             box-sizing: border-box;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-            transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             position: relative;
-            cursor: pointer; /* Menunjukkan bahwa produk dapat diklik */
+            cursor: pointer;
+            overflow: hidden;
         }
 
         .product img {
             width: 100%;
-            border-radius: 5px;
-            display: block;
+            border-radius: 10px;
+            transition: transform 0.3s;
         }
 
         .product h3 {
-            margin: 5px 0;
-            font-size: 16px;
-            color: #000000;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .harga {
             font-size: 14px;
-            color: #ff0000;
+            color: #ff4d4d;
             text-decoration: line-through;
+            opacity: 0.8;
         }
 
         .harga-diskon {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            color: #ffff00;
+            color: #00ff99;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Efek saat hover */
+        .product:hover {
+            background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .product:hover img {
+            transform: scale(1.1);
         }
 
         /* Efek biru di sisi produk saat ditekan */
         .product:active {
-            outline: 3px solid #00f; /* Garis biru tebal */
-            box-shadow: 0 0 15px rgba(0, 0, 255, 0.8); /* Efek cahaya biru */
-            animation: click-animation 0.3s ease-in-out; /* Animasi saat ditekan */
+            outline: 3px solid #00f;
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+            animation: click-animation 0.3s ease-in-out;
         }
 
         /* Animasi saat ditekan */
@@ -80,22 +103,47 @@
             }
         }
 
-        /* Efek biru di sisi produk saat hover */
-        .product:hover {
-            outline: 2px solid #00f; /* Garis biru tipis */
-            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Efek cahaya biru lembut */
-            transform: scale(1.05); /* Memperbesar produk sedikit */
+        /* Untuk layar kecil tetap dua kolom */
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
         }
 
-        /* Untuk layar kecil tetap dua kolom */
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
             .product {
-                width: calc(50% - 10px); /* Pastikan tetap dua kolom */
+                width: 100%;
             }
+        }
+
+        /* Tambahkan tombol beli */
+        .buy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff0066, #ff6600);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #ff6600, #ff0066);
+            transform: scale(1.1);
+        }
+
+        .buy-button:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
+    <h1>Produk Wanxxstore26</h1>
     <div class="container">
         <!-- Produk 1 -->
         <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
@@ -103,6 +151,7 @@
             <h3>STOK WANXX#1</h3>
             <p class="harga">Rp 1008.600</p>
             <p class="harga-diskon">Rp 750.000</p>
+            <button class="buy-button">Beli Sekarang</button>
         </div>
 
         <!-- Produk 2 -->
@@ -111,6 +160,7 @@
             <h3>STOK WANXX#2</h3>
             <p class="harga">Rp 67.000</p>
             <p class="harga-diskon">Rp 50.000</p>
+            <button class="buy-button">Beli Sekarang</button>
         </div>
 
         <!-- Produk 3 -->
@@ -119,6 +169,7 @@
             <h3>STOK WANXX#3</h3>
             <p class="harga">Rp 51.000</p>
             <p class="harga-diskon">Rp 45.000</p>
+            <button class="buy-button">Beli Sekarang</button>
         </div>
 
         <!-- Produk 4 -->
@@ -127,6 +178,7 @@
             <h3>STOK WANXX#4</h3>
             <p class="harga">Rp 55.999</p>
             <p class="harga-diskon">Rp 50.000</p>
+            <button class="buy-button">Beli Sekarang</button>
         </div>
     </div>
 
