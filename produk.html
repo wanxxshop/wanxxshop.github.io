@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #000000, #1a1a1a);
+            background: linear-gradient(135deg, #1E90FF, #0074D9);
             color: white;
             text-align: center;
             margin: 0;
@@ -16,7 +16,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-top: 20px;
             color: #ffffff;
             text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -25,7 +25,7 @@
         .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
@@ -33,10 +33,10 @@
         }
 
         .product {
-            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            background: linear-gradient(135deg, #1E90FF, #0074D9);
             border-radius: 15px;
             padding: 15px;
-            width: calc(33% - 20px);
+            width: calc(50% - 20px); /* Dua kolom default */
             box-sizing: border-box;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
@@ -53,22 +53,22 @@
 
         .product h3 {
             margin: 10px 0;
-            font-size: 18px;
+            font-size: 1.2rem; /* Ukuran dinamis */
             color: #ffffff;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .harga {
-            font-size: 14px;
+            font-size: 1rem;
             color: #ff4d4d;
             text-decoration: line-through;
             opacity: 0.8;
         }
 
         .harga-diskon {
-            font-size: 18px;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #00ff99;
+            color: #00cc66; /* Warna hijau yang lebih gelap */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
@@ -83,102 +83,62 @@
             transform: scale(1.1);
         }
 
-        /* Efek biru di sisi produk saat ditekan */
-        .product:active {
-            outline: 3px solid #00f;
-            box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
-            animation: click-animation 0.3s ease-in-out;
-        }
-
-        /* Animasi saat ditekan */
-        @keyframes click-animation {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(0.95);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Untuk layar kecil tetap dua kolom */
+        /* Untuk layar kecil */
         @media (max-width: 768px) {
             .product {
-                width: calc(50% - 20px);
+                width: calc(50% - 20px); /* Dua kolom */
             }
         }
 
         @media (max-width: 480px) {
             .product {
-                width: 100%;
+                width: 100%; /* Satu kolom */
+                padding: 10px; /* Kurangi padding */
             }
-        }
 
-        /* Tambahkan tombol beli */
-        .buy-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #ff0066, #ff6600);
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
+            .product h3 {
+                font-size: 1rem; /* Perkecil ukuran judul */
+            }
 
-        .buy-button:hover {
-            background: linear-gradient(135deg, #ff6600, #ff0066);
-            transform: scale(1.1);
-        }
-
-        .buy-button:active {
-            transform: scale(0.95);
+            .harga, .harga-diskon {
+                font-size: 0.9rem; /* Perkecil ukuran harga */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Produk Wanxxstore26</h1>
+    <h1>STOK ADMIN WANXX26</h1>
     <div class="container">
         <!-- Produk 1 -->
         <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/e0dlljz1jeek')">
-            <img src="https://i.ibb.co.com/VWVRm54w/Whats-App-Image-2025-03-24-at-00-35-33-5bb490e5.jpg" alt="Produk 1">
+            <img src="https://i.ibb.co.com/xtjd0K9j/cea04fe4-9c35-4b56-b96c-56a4074cbeb5.jpg" alt="Produk 1">
             <h3>STOK WANXX#1</h3>
-            <p class="harga">Rp 1008.600</p>
-            <p class="harga-diskon">Rp 750.000</p>
-            <button class="buy-button">Beli Sekarang</button>
+            <p class="harga">Rp 200.600</p>
+            <p class="harga-diskon">Rp 170.000</p>
         </div>
 
         <!-- Produk 2 -->
-        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/pvyppkegnj9k')">
-            <img src="https://i.ibb.co.com/spRcYLFQ/ac77b58a-5f92-44cb-827e-95998196b23d.jpg" alt="Produk 2">
+        <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/krjo17je1n47')">
+            <img src="https://i.ibb.co.com/CsMy7pPc/7b432d3a-89e0-464e-814c-7f8bb178ff4f.jpg" alt="Produk 2">
             <h3>STOK WANXX#2</h3>
-            <p class="harga">Rp 67.000</p>
-            <p class="harga-diskon">Rp 50.000</p>
-            <button class="buy-button">Beli Sekarang</button>
+            <p class="harga">Rp 150.000</p>
+            <p class="harga-diskon">Rp 130.000</p>
         </div>
 
         <!-- Produk 3 -->
         <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/k6mkky1p6j6r')">
-            <img src="https://i.ibb.co.com/S7shV865/a1146a10-efcd-4ec9-8be3-b1f439ee6d37.jpg" alt="Produk 3">
-            <h3>STOK WANXX#3</h3>
-            <p class="harga">Rp 51.000</p>
-            <p class="harga-diskon">Rp 45.000</p>
-            <button class="buy-button">Beli Sekarang</button>
+            <img src="https://i.ibb.co.com/7JBJvN1B/1fca3933-a542-46c3-9c7e-451712fd6e3a.jpg" alt="Produk 3">
+            <h3>STOK #3</h3>
+            <p class="harga">Rp 100.000</p>
+            <p class="harga-diskon">Rp 80.000</p>
         </div>
 
         <!-- Produk 4 -->
         <div class="product" onclick="redirectToPage('http://lynk.id/wanxxgames/q6y22dk5wg79')">
-            <img src="https://i.ibb.co.com/GfKJy6dS/photo-2025-03-21-17-48-29.jpg" alt="Produk 4">
-            <h3>STOK WANXX#4</h3>
+            <img src="https://via.placeholder.com/300x200?text=Sold+Out" alt="Produk 4">
+            <h3>STOK #4 SOLD</h3>
             <p class="harga">Rp 55.999</p>
             <p class="harga-diskon">Rp 50.000</p>
-            <button class="buy-button">Beli Sekarang</button>
         </div>
     </div>
 
