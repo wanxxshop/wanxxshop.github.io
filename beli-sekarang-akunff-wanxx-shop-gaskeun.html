@@ -2,11 +2,18 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Deskripsi Produk dan Cara Beli</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Reset Margin dan Padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         /* Animasi Fade-in */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -15,10 +22,12 @@
 
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
             background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
             animation: fadeIn 1s ease-in-out;
+            margin: 0;
+            padding: 20px;
         }
 
         .container {
@@ -27,52 +36,52 @@
             background: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1s ease-in-out;
         }
 
         h1, h2 {
-            color: #333;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         p {
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .product-image {
-            margin-bottom: 20px;
-            overflow: hidden;
-            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
         .product-image img {
             width: 100%;
+            height: auto;
+            border-radius: 8px;
             transition: transform 0.3s ease;
         }
 
         .product-image img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .buttons {
             display: flex;
             justify-content: space-around;
-            margin-top: 20px;
+            gap: 10px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .btn {
             text-decoration: none;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 5px;
             font-size: 16px;
-            transition: background 0.3s ease, transform 0.3s ease;
+            text-align: center;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 200px;
         }
 
         .btn-telegram {
@@ -109,14 +118,22 @@
 
         /* Responsif */
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
             .buttons {
                 flex-direction: column;
-                gap: 10px;
+                align-items: center;
             }
 
             .btn {
                 width: 100%;
-                text-align: center;
+                max-width: none;
             }
         }
 
@@ -141,12 +158,10 @@
 <body>
 
 <div class="container">
-    <h1>STOK #1</h1>
+    <h1>WANXX26</h1>
     <div class="product-image">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" alt="Produk Contoh">
     </div>
-    <p>
-        Tanya-tanya seputar produk atau negosiasi lainnya bisa hubungi kontak di bawah.
     </p>
     <p>
         <strong>Cara Membeli:</strong>
@@ -180,11 +195,11 @@
     <h2>FAQ</h2>
     <details>
         <summary>Apa metode pembayaran yang tersedia?</summary>
-        <p>Kami menerima pembayaran melalui transfer bank, e-wallet, Qris All Payment.</p>
+        <p>Kami menerima pembayaran melalui transfer bank, e-wallet, Qris All Payment</p>
     </details>
     <details>
         <summary>Berapa lama proses pengiriman akun?</summary>
-        <p>Pengiriman akun Cepat Jika Admin Sedang ON Karena Di Proses Manual.</p>
+        <p>Pengiriman akun Cepat Jika Admin WANXX STORE26 Online Karena Di Proses Manual.</p>
     </details>
 </div>
 
