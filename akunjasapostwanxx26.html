@@ -57,10 +57,17 @@
         /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
             .diamond-grid {
-                grid-template-columns: 1fr; /* Satu kolom di mobile */
+                grid-template-columns: repeat(2, 1fr); /* Tetap dua kolom di mobile */
+                gap: 10px; /* Jarak lebih kecil untuk mobile */
             }
             .diamond-item {
-                width: 100%; /* Tombol penuh lebar di mobile */
+                padding: 10px; /* Padding lebih kecil untuk mobile */
+            }
+            .diamond-item a {
+                font-size: 12px; /* Ukuran teks lebih kecil untuk mobile */
+            }
+            .diamond-item img {
+                width: 20px; /* Ukuran ikon diamond lebih kecil untuk mobile */
             }
         }
     </style>
