@@ -319,14 +319,8 @@
         }
         /* Responsive Design */
         @media (max-width: 600px) {
-            .menu-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .menu-button {
-                width: 100%;
-                margin: 5px 0;
+            .search-bar {
+                width: 150px;
             }
             .product-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -340,6 +334,49 @@
             .product-item-price {
                 font-size: 14px;
             }
+            
+            /* Menu Section */
+.menu-section {
+    display: flex;
+    justify-content: space-around; /* Menyusun menu secara merata */
+    align-items: center;
+    padding: 10px 20px;
+    background: #000033;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid #00ffff;
+    border-radius: 50px;
+    color: #00ffff;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none;
+    margin: 0 5px; /* Jarak antar tombol */
+}
+
+.menu-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .menu-section {
+        flex-direction: column; /* Kembali ke vertikal untuk layar kecil */
+        align-items: stretch;
+    }
+    .menu-button {
+        margin: 5px 0; /* Jarak vertikal untuk layar kecil */
+    }
+}
+            
         }
     </style>
 </head>
@@ -388,31 +425,31 @@
         </div>
     </section>
     <!-- Menu Section -->
-    <div class="menu-section">
-        <a href="#popular" class="menu-button">POPULER</a>
-        <a href="#buy-accounts" class="menu-button">BELI AKUN</a>
-        <a href="#joki-services" class="menu-button">JASA JOKI</a>
-        <a href="#game-top-up" class="menu-button">TOP UP GAME</a>
-    </div>
+<div class="menu-section">
+    <a href="#popular" class="menu-button">POPULER</a>
+    <a href="#buy-accounts" class="menu-button">BELI AKUN</a>
+    <a href="#joki-services" class="menu-button">JASA JOKI</a>
+    <a href="#game-top-up" class="menu-button">TOP UP GAME</a>
+</div>
     <!-- Popular Products Grid -->
     <section class="product-grid">
-        <div class="product-item" onclick="redirectToPage('https://example.com/buy-mobile-legends')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/mobilelegend.svg" alt="Mobile Legends">
+        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
+            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
             <div class="product-item-details">
                 <h3 class="product-item-title">Mobile Legends</h3>
                 <p class="product-item-price">Rp 170.000</p>
                 <p class="product-item-discount">Rp 200.600</p>
             </div>
         </div>
-        <div class="product-item" onclick="redirectToPage('https://example.com/buy-free-fire')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
+        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
+            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/mobilelegend.svg" alt="Mobile Legends">
             <div class="product-item-details">
                 <h3 class="product-item-title">Free Fire</h3>
                 <p class="product-item-price">Rp 150.000</p>
                 <p class="product-item-discount">Rp 180.000</p>
             </div>
         </div>
-        <div class="product-item" onclick="redirectToPage('https://example.com/buy-genshin-impact')">
+        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/genshinimpact.png" alt="Genshin Impact">
             <div class="product-item-details">
                 <h3 class="product-item-title">Genshin Impact</h3>
@@ -425,21 +462,21 @@
     <section class="games-section">
         <h2>Games 🎮</h2>
         <div class="game-grid">
-            <div class="game-item" onclick="redirectToPage('https://example.com/game-details-free-fire-max')">
+            <div class="game-item" onclick="redirectToPage('game-details-free-fire-max.html')">
                 <img src="https://example.com/free-fire-max.jpg" alt="Free Fire MAX">
                 <div class="game-item-details">
                     <h3 class="game-item-title">Free Fire MAX</h3>
                     <p class="game-item-discount">-10%</p>
                 </div>
             </div>
-            <div class="game-item" onclick="redirectToPage('https://example.com/game-details-magic-chess-go-go')">
+            <div class="game-item" onclick="redirectToPage('game-details-magic-chess-go-go.html')">
                 <img src="https://example.com/magic-chess-go-go.jpg" alt="Magic Chess: Go Go">
                 <div class="game-item-details">
                     <h3 class="game-item-title">Magic Chess: Go Go</h3>
                     <p class="game-item-discount">-10%</p>
                 </div>
             </div>
-            <div class="game-item" onclick="redirectToPage('https://example.com/game-details-zenless-zone-zero')">
+            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
                 <img src="https://example.com/zenless-zone-zero.jpg" alt="Zenless Zone Zero">
                 <div class="game-item-details">
                     <h3 class="game-item-title">Zenless Zone Zero</h3>
@@ -477,11 +514,6 @@
             bannerIndex = (bannerIndex + 1) % banners.length;
         } 
         setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
-
-        // Fungsi untuk redirect ke halaman produk
-        function redirectToPage(url) {
-            window.location.href = url;
-        }
     </script>
 </body>
 </html>
