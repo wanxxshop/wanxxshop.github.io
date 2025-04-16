@@ -9,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #0000ff;
-            color: #000000;
+            color: #fff;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -21,11 +21,11 @@
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #ffffff;
+            color: #000;
         }
         h1 {
             text-align: center;
-            color: #000000;
+            color: #0000ff;
             margin-bottom: 20px;
         }
 
@@ -55,7 +55,7 @@
             color: #666;
         }
 
-        /* Cara Beli */
+        /* Cara Beli Button */
         .cara-beli-button {
             background-color: #A0CCE5;
             padding: 10px 15px;
@@ -91,6 +91,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 80%;
+            overflow-y: auto; /* Scroll jika konten melebihi tinggi layar */
+            max-height: 80vh; /* Maksimal 80% tinggi layar */
         }
         .popup-content h3 {
             margin-bottom: 15px;
@@ -112,7 +114,7 @@
             border-radius: 5px;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -122,6 +124,10 @@
         .diamond-item:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .diamond-item:active {
+            background-color: #0000ff;
+            color: #fff;
         }
         .diamond-item img {
             width: 40px;
@@ -194,28 +200,28 @@
 
         <!-- Diamond Grid -->
         <div class="diamond-grid">
-            <a href="https://buylink.id/wanxx-topup-semua-games.com/share?product=freefire5" class="diamond-item">
-                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+            <a href="https://example.com/buy-diamonds?amount=5" class="diamond-item">
+                <img src="https://i.ibb.co.com/fVxYLY8b/dbd8a7f0-e42f-48a6-8653-ecad12ffc3fa-diamond-1713844640png.png" alt="Diamond Icon">
                 <p><span>5 Diamond</span><br>Rp 1.003</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=10" class="diamond-item">
-                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                <img src="https://i.ibb.co.com/fVxYLY8b/dbd8a7f0-e42f-48a6-8653-ecad12ffc3fa-diamond-1713844640png.png" alt="Diamond Icon">
                 <p><span>10 Diamond</span><br>Rp 1.925</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=20" class="diamond-item">
-                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                <img src="https://i.ibb.co.com/fVxYLY8b/dbd8a7f0-e42f-48a6-8653-ecad12ffc3fa-diamond-1713844640png.png" alt="Diamond Icon">
                 <p><span>20 Diamond</span><br>Rp 4.270</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=50" class="diamond-item">
-                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                <img src="https://i.ibb.co.com/fVxYLY8b/dbd8a7f0-e42f-48a6-8653-ecad12ffc3fa-diamond-1713844640png.png" alt="Diamond Icon">
                 <p><span>50 Diamond</span><br>Rp 7.848</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=100" class="diamond-item">
-                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                <img src="https://i.ibb.co.com/fVxYLY8b/dbd8a7f0-e42f-48a6-8653-ecad12ffc3fa-diamond-1713844640png.png" alt="Diamond Icon">
                 <p><span>100 Diamond</span><br>Rp 14.000</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=200" class="diamond-item">
-                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                <img src="https://i.ibb.co.com/fVxYLY8b/dbd8a7f0-e42f-48a6-8653-ecad12ffc3fa-diamond-1713844640png.png" alt="Diamond Icon">
                 <p><span>200 Diamond</span><br>Rp 26.000</p>
             </a>
         </div>
