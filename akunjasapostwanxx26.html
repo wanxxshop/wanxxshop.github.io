@@ -1,78 +1,178 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanxx</title>
+    <title>Top Up Diamond</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
         }
-        .maintenance-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-        }
-        .maintenance-icon {
-            font-size: 60px;
-            color: #ffc107;
-            margin-bottom: 20px;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
         }
         h1 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 16px;
-            color: #666;
+            text-align: center;
+            color: #fff;
             margin-bottom: 20px;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: #fff;
+        .diamond-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .diamond-item {
+            background-color: #444;
+            padding: 15px; /* Padding yang lebih ramping */
+            border-radius: 5px;
+            width: calc(50% - 10px);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .diamond-item:hover {
+            transform: scale(1.05);
+        }
+        .diamond-item a {
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .btn:hover {
-            background-color: #0056b3;
+        .diamond-item img {
+            width: 25px; /* Ukuran ikon diamond */
+            vertical-align: middle;
         }
-        @media (max-width: 600px) {
-            .maintenance-container {
-                padding: 30px;
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .diamond-box {
+                flex-direction: column;
             }
-            h1 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 14px;
+            .diamond-item {
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
-
-    <div class="maintenance-container">
-        <div class="maintenance-icon">‼‼‼</div>
-        <h1>Akun Jasapost Kosong Mau Jasapost Gertias Langsung Cilik Jaspost</h1>
-        <p>Jasapost Sini Wajib Pakai Admin Sini Ya -WANXXSTORE26</p>
-        <a href="infowanxx26.html" class="btn">JASPOST KE SINI</a>
+    <div class="container">
+        <h1>Diamond</h1>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=5">
+                    <p>5 Diamond<br>Rp 1.003</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=10">
+                    <p>10 Diamond<br>Rp 1.925</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=12">
+                    <p>12 Diamond<br>Rp 3.100</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=15">
+                    <p>15 Diamond<br>Rp 3.800</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=20">
+                    <p>20 Diamond<br>Rp 4.270</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=25">
+                    <p>25 Diamond<br>Rp 5.058</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=30">
+                    <p>30 Diamond<br>Rp 5.819</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=40">
+                    <p>40 Diamond<br>Rp 7.422</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=50">
+                    <p>50 Diamond<br>Rp 7.848</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=55">
+                    <p>55 Diamond<br>Rp 8.180</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=60">
+                    <p>60 Diamond<br>Rp 9.429</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=70">
+                    <p>70 Diamond<br>Rp 9.800</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <div class="diamond-box">
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=75">
+                    <p>75 Diamond<br>Rp 11.136</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+            <div class="diamond-item">
+                <a href="https://example.com/buy-diamonds?amount=80">
+                    <p>80 Diamond<br>Rp 13.800</p>
+                    <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
+                </a>
+            </div>
+        </div>
+        <!-- Add more items as needed -->
     </div>
-
 </body>
 </html>
