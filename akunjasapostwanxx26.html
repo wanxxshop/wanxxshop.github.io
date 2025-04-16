@@ -3,163 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Up Diamond</title>
+    <title>Free Fire Top-Up</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #222;
+            background-color: #0000ff;
             color: #fff;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #333;
+            background-color: #ffffff;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #000;
         }
         h1 {
             text-align: center;
-            color: #fff;
+            color: #0000ff;
             margin-bottom: 20px;
         }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+        }
+        .header .game-info {
+            flex-grow: 1;
+        }
+        .header .game-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #0000ff;
+        }
+        .header .game-info p {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Cara Beli */
+        .cara-beli {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .cara-beli a {
+            color: #0000ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .cara-beli a:hover {
+            color: #0000cc;
+        }
+
+        /* Diamond Grid */
         .diamond-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Dua kolom di desktop */
-            gap: 15px; /* Jarak antar item */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
         }
         .diamond-item {
-            background-color: #444;
+            background-color: #A0CCE5;
             padding: 15px;
             border-radius: 5px;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .diamond-item:hover {
             transform: scale(1.05);
-        }
-        .diamond-item a {
-            text-decoration: none;
-            color: #ffcc00;
-            font-weight: bold;
-            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .diamond-item img {
-            width: 25px; /* Ukuran ikon diamond */
+            width: 40px;
+            margin-bottom: 10px;
+        }
+        .diamond-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .diamond-item span {
+            font-weight: bold;
+            font-size: 16px;
         }
 
-        /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: start;
+            }
+            .header img {
+                margin: 0 auto;
+            }
+            .header .game-info {
+                text-align: center;
+            }
             .diamond-grid {
-                grid-template-columns: repeat(2, 1fr); /* Tetap dua kolom di mobile */
-                gap: 10px; /* Jarak lebih kecil untuk mobile */
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
             .diamond-item {
-                padding: 10px; /* Padding lebih kecil untuk mobile */
-            }
-            .diamond-item a {
-                font-size: 12px; /* Ukuran teks lebih kecil untuk mobile */
+                padding: 10px;
             }
             .diamond-item img {
-                width: 20px; /* Ukuran ikon diamond lebih kecil untuk mobile */
+                width: 30px;
+            }
+            .diamond-item p {
+                font-size: 12px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Diamond</h1>
+        <!-- Header -->
+        <div class="header">
+            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire Logo">
+            <div class="game-info">
+                <h2>Free Fire</h2>
+                <p>Proses Kirim Hitungan Detik⚡ </p>
+            </div>
+        </div>
+
+        <!-- Cara Beli -->
+        <div class="cara-beli">
+            <p>Cara Beli:</p>
+            <ul>
+                <li><a href="#">Silahkan Pilih Diamond Yang Mau Beli</a></li>
+                <li><a href="#">Pilih Diamond Dan Pencet Nnati Di arahkan</a></li>
+                <li><a href="#">Habis Itu Kalian Masukan ID CONTOH : 12345678910</a></li>
+                <li><a href="#">Jika Sudah Kalian TinggaL Bayar Proses Kirim Hitungan Detik 
+</li>
+            </ul>
+        </div>
+
+        <!-- Diamond Grid -->
         <div class="diamond-grid">
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=5">
-                    <p>5 Diamond<br>Rp 1.003</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=10">
-                    <p>10 Diamond<br>Rp 1.925</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=12">
-                    <p>12 Diamond<br>Rp 3.100</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=15">
-                    <p>15 Diamond<br>Rp 3.800</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=20">
-                    <p>20 Diamond<br>Rp 4.270</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=25">
-                    <p>25 Diamond<br>Rp 5.058</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=30">
-                    <p>30 Diamond<br>Rp 5.819</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=40">
-                    <p>40 Diamond<br>Rp 7.422</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=50">
-                    <p>50 Diamond<br>Rp 7.848</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=55">
-                    <p>55 Diamond<br>Rp 8.180</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=60">
-                    <p>60 Diamond<br>Rp 9.429</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=70">
-                    <p>70 Diamond<br>Rp 9.800</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=75">
-                    <p>75 Diamond<br>Rp 11.136</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
-            <div class="diamond-item">
-                <a href="https://example.com/buy-diamonds?amount=80">
-                    <p>80 Diamond<br>Rp 13.800</p>
-                    <img src="https://via.placeholder.com/25/diamond.png" alt="Diamond Icon">
-                </a>
-            </div>
+            <a href="https://buylink.id/wanxx-topup-semua-games.com/share?product=freefire5" class="diamond-item">
+                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <p><span>5 Diamond</span><br>Rp 1.003</p>
+            </a>
+            <a href="https://example.com/buy-diamonds?amount=10" class="diamond-item">
+                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <p><span>10 Diamond</span><br>Rp 1.925</p>
+            </a>
+            <a href="https://example.com/buy-diamonds?amount=20" class="diamond-item">
+                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <p><span>20 Diamond</span><br>Rp 4.270</p>
+            </a>
+            <a href="https://example.com/buy-diamonds?amount=50" class="diamond-item">
+                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <p><span>50 Diamond</span><br>Rp 7.848</p>
+            </a>
+            <a href="https://example.com/buy-diamonds?amount=100" class="diamond-item">
+                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <p><span>100 Diamond</span><br>Rp 14.000</p>
+            </a>
+            <a href="https://example.com/buy-diamonds?amount=200" class="diamond-item">
+                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <p><span>200 Diamond</span><br>Rp 26.000</p>
+            </a>
         </div>
     </div>
 </body>
