@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanxxstore26 - Pengusaha Jual Beli Akun Game</title>
+    <title>Wanxxstore26 - Top Up & Jual Beli Akun Game</title>
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Swiper.js -->
@@ -17,18 +17,17 @@
             font-family: 'Orbitron', sans-serif;
         }
         body {
-            background: linear-gradient(to bottom, #1E90FF, #0074D9);
+            background: linear-gradient(to bottom, #000033, #000066);
             color: #fff;
             overflow-x: hidden;
         }
-
         /* Header */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background: linear-gradient(135deg, #1E90FF, #0074D9);
+            background: linear-gradient(135deg, #000066, #000033);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
@@ -43,20 +42,22 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
+            border: 2px solid #00ffff;
         }
         .site-title {
             font-size: 20px;
             font-weight: bold;
-            color: #fff;
+            color: #00ffff;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px #0074D9;
+            text-shadow: 0 0 10px #00ffff;
         }
         .search-bar {
             position: relative;
-            width: 150px;
-            height: 30px;
-            background: #0074D9;
+            width: 200px;
+            height: 40px;
+            background: #000033;
+            border: 2px solid #00ffff;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -69,8 +70,8 @@
             border: none;
             outline: none;
             background: transparent;
-            font-size: 12px;
-            color: #fff;
+            font-size: 14px;
+            color: #00ffff;
         }
         .icon-search {
             position: absolute;
@@ -85,18 +86,17 @@
         }
         .menu-burger span {
             display: block;
-            width: 20px;
+            width: 25px;
             height: 3px;
-            background-color: #fff;
+            background-color: #00ffff;
             border-radius: 2px;
             transition: transform 0.3s ease;
         }
-
         /* Banner Section */
         .banner-container {
             position: relative;
             width: 100%;
-            max-height: 200px;
+            max-height: 300px;
             overflow: hidden;
             margin-top: 20px;
         }
@@ -108,14 +108,16 @@
         .banner-container img.active {
             opacity: 1;
         }
-
         /* Flash Sale Section */
         .flash-sale {
             padding: 20px;
+            background: linear-gradient(135deg, #000033, #000066);
+            border-radius: 10px;
+            margin-top: 20px;
         }
         .flash-sale h2 {
             font-size: 24px;
-            color: #fff;
+            color: #00ffff;
             margin-bottom: 20px;
         }
         .flash-sale-product {
@@ -123,7 +125,8 @@
             align-items: center;
             gap: 20px;
             padding: 10px;
-            background: #1E90FF;
+            background: #000066;
+            border: 2px solid #00ffff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
@@ -132,52 +135,45 @@
             transform: scale(1.05);
         }
         .flash-sale-product img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             object-fit: cover;
             border-radius: 10px;
+            border: 2px solid #00ffff;
         }
         .flash-sale-details {
             flex: 1;
         }
         .flash-sale-title {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 5px;
-            color: #fff;
+            color: #00ffff;
         }
         .flash-sale-price {
-            font-size: 18px;
-            color: #ffff00;
+            font-size: 20px;
+            color: #00ff00;
         }
         .flash-sale-discount {
-            font-size: 12px;
+            font-size: 14px;
             color: #ff0000;
             text-decoration: line-through;
-        }
-        .flash-sale-stock {
-            background: #f0f0f0;
-            color: #ff6384;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
         }
         .flash-sale-badge {
             position: absolute;
             top: 10px;
             right: 10px;
             background: #ffcc00;
-            color: #fff;
+            color: #000033;
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 12px;
         }
-
         /* Categories */
         .categories {
             display: flex;
             justify-content: space-between;
             padding: 10px 20px;
-            background: #0074D9;
+            background: #000066;
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -186,17 +182,16 @@
             align-items: center;
             justify-content: center;
             padding: 5px 10px;
-            border: 2px dashed #fff;
+            border: 2px dashed #00ffff;
             border-radius: 5px;
-            color: #fff;
+            color: #00ffff;
             font-size: 14px;
             font-weight: bold;
             transition: background 0.3s;
         }
         .category:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 255, 255, 0.1);
         }
-
         /* Popular Products Grid */
         .product-grid {
             display: grid;
@@ -205,11 +200,13 @@
             padding: 20px;
         }
         .product-item {
-            background: #1E90FF;
+            background: #000066;
+            border: 2px solid #00ffff;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .product-item:hover {
             transform: scale(1.05);
@@ -225,32 +222,105 @@
         .product-item-title {
             font-size: 14px;
             margin-bottom: 5px;
-            color: #fff;
+            color: #00ffff;
         }
         .product-item-price {
             font-size: 16px;
-            color: #ffff00;
+            color: #00ff00;
         }
         .product-item-discount {
             font-size: 12px;
             color: #ff0000;
             text-decoration: line-through;
         }
-
+        /* Games Section */
+        .games-section {
+            padding: 20px;
+            background: #000066;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .games-section h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .game-item {
+            background: #000066;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .game-item:hover {
+            transform: scale(1.05);
+        }
+        .game-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .game-item-details {
+            padding: 10px;
+        }
+        .game-item-title {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #00ffff;
+        }
+        .game-item-discount {
+            font-size: 12px;
+            color: #ff0000;
+            text-decoration: line-through;
+        }
         /* Footer */
         .footer {
             margin-top: 20px;
             padding: 10px;
-            background: #0074D9;
-            color: #fff;
+            background: #000033;
+            color: #00ffff;
             font-size: 14px;
             border-radius: 5px;
+            text-align: center;
         }
-
+        /* Menu Buttons */
+        .menu-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #000033;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .menu-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid #00ffff;
+            border-radius: 50px;
+            color: #00ffff;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .menu-button:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
         /* Responsive Design */
         @media (max-width: 600px) {
             .search-bar {
-                width: 100px;
+                width: 150px;
             }
             .product-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -282,7 +352,7 @@
                 oninput="filterSearchResults(this.value)"
             />
             <div class="icon-search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#00ffff" viewBox="0 0 24 24">
                     <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z"/>
                 </svg>
             </div>
@@ -293,53 +363,50 @@
             <span></span>
         </div>
     </header>
-
     <!-- Banner Section -->
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
     </div>
-
     <!-- Flash Sale Section -->
     <section class="flash-sale">
         <h2>Flash Sale ⚡</h2>
         <div class="flash-sale-product">
             <img src="https://i.ibb.co.com/xtjd0K9j/cea04fe4-9c35-4b56-b96c-56a4074cbeb5.jpg" alt="Genshin Impact">
             <div class="flash-sale-details">
-                <h3 class="flash-sale-title">Genshin Impact</h3>
+                <h3>Genshin Impact</h3>
                 <p>Blessing of the Welkin Moon</p>
-                <p class="flash-sale-price">Rp. 56.099</p>
-                <p class="flash-sale-stock">Sisa 76</p>
+                <p>Rp. 56.099</p>
+                <p><small>Sisa 76</small></p>
             </div>
             <div class="flash-sale-badge">FLASH SALE!</div>
         </div>
     </section>
-
-    <!-- Categories -->
-    <div class="categories">
-        <div class="category">Populer 🔥</div>
-        <div class="category">Games 🎮</div>
-        <div class="category">Voucher 💳</div>
+    <!-- Menu Section -->
+    <div class="menu-section">
+        <a href="#popular" class="menu-button">POPULER</a>
+        <a href="#buy-accounts" class="menu-button">BELI AKUN</a>
+        <a href="#joki-services" class="menu-button">JASA JOKI</a>
+        <a href="#game-top-up" class="menu-button">TOP UP GAME</a>
     </div>
-
     <!-- Popular Products Grid -->
     <section class="product-grid">
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
             <div class="product-item-details">
-                <h3 class="product-item-title">Free Fire</h3>
+                <h3 class="product-item-title">Mobile Legends</h3>
                 <p class="product-item-price">Rp 170.000</p>
                 <p class="product-item-discount">Rp 200.600</p>
             </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/mobilelegend.svg" alt="Mobile Legends">
             <div class="product-item-details">
-                <h3 class="product-item-title">Mobile Legends</h3>
+                <h3 class="product-item-title">Free Fire</h3>
                 <p class="product-item-price">Rp 150.000</p>
                 <p class="product-item-discount">Rp 180.000</p>
             </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/genshinimpact.png" alt="Genshin Impact">
             <div class="product-item-details">
                 <h3 class="product-item-title">Genshin Impact</h3>
@@ -347,21 +414,44 @@
                 <p class="product-item-discount">Rp 150.000</p>
             </div>
         </div>
-        <!-- Add more products as needed -->
     </section>
-
+    <!-- Games Section -->
+    <section class="games-section">
+        <h2>Games 🎮</h2>
+        <div class="game-grid">
+            <div class="game-item" onclick="redirectToPage('game-details-free-fire-max.html')">
+                <img src="https://example.com/free-fire-max.jpg" alt="Free Fire MAX">
+                <div class="game-item-details">
+                    <h3 class="game-item-title">Free Fire MAX</h3>
+                    <p class="game-item-discount">-10%</p>
+                </div>
+            </div>
+            <div class="game-item" onclick="redirectToPage('game-details-magic-chess-go-go.html')">
+                <img src="https://example.com/magic-chess-go-go.jpg" alt="Magic Chess: Go Go">
+                <div class="game-item-details">
+                    <h3 class="game-item-title">Magic Chess: Go Go</h3>
+                    <p class="game-item-discount">-10%</p>
+                </div>
+            </div>
+            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
+                <img src="https://example.com/zenless-zone-zero.jpg" alt="Zenless Zone Zero">
+                <div class="game-item-details">
+                    <h3 class="game-item-title">Zenless Zone Zero</h3>
+                    <p class="game-item-discount">-10%</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
     </footer>
-
     <script>
         // Fungsi untuk toggle dropdown menu
         function toggleMenu() {
             const dropdownMenu = document.getElementById('dropdownMenu');
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         }
-
         // Fungsi untuk filter hasil pencarian
         function filterSearchResults(query) {
             const resultsContainer = document.getElementById('searchResults');
@@ -371,7 +461,6 @@
             }
             resultsContainer.style.display = 'block';
         }
-
         let bannerIndex = 0;
         function gantiBanner() {
             let banners = document.querySelectorAll(".banner-container img");
