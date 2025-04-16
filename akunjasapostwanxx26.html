@@ -319,8 +319,14 @@
         }
         /* Responsive Design */
         @media (max-width: 600px) {
-            .search-bar {
-                width: 150px;
+            .menu-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .menu-button {
+                width: 100%;
+                margin: 5px 0;
             }
             .product-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -390,23 +396,23 @@
     </div>
     <!-- Popular Products Grid -->
     <section class="product-grid">
-        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
+        <div class="product-item" onclick="redirectToPage('https://example.com/buy-mobile-legends')">
+            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/mobilelegend.svg" alt="Mobile Legends">
             <div class="product-item-details">
                 <h3 class="product-item-title">Mobile Legends</h3>
                 <p class="product-item-price">Rp 170.000</p>
                 <p class="product-item-discount">Rp 200.600</p>
             </div>
         </div>
-        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/mobilelegend.svg" alt="Mobile Legends">
+        <div class="product-item" onclick="redirectToPage('https://example.com/buy-free-fire')">
+            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
             <div class="product-item-details">
                 <h3 class="product-item-title">Free Fire</h3>
                 <p class="product-item-price">Rp 150.000</p>
                 <p class="product-item-discount">Rp 180.000</p>
             </div>
         </div>
-        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
+        <div class="product-item" onclick="redirectToPage('https://example.com/buy-genshin-impact')">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/genshinimpact.png" alt="Genshin Impact">
             <div class="product-item-details">
                 <h3 class="product-item-title">Genshin Impact</h3>
@@ -419,21 +425,21 @@
     <section class="games-section">
         <h2>Games 🎮</h2>
         <div class="game-grid">
-            <div class="game-item" onclick="redirectToPage('game-details-free-fire-max.html')">
+            <div class="game-item" onclick="redirectToPage('https://example.com/game-details-free-fire-max')">
                 <img src="https://example.com/free-fire-max.jpg" alt="Free Fire MAX">
                 <div class="game-item-details">
                     <h3 class="game-item-title">Free Fire MAX</h3>
                     <p class="game-item-discount">-10%</p>
                 </div>
             </div>
-            <div class="game-item" onclick="redirectToPage('game-details-magic-chess-go-go.html')">
+            <div class="game-item" onclick="redirectToPage('https://example.com/game-details-magic-chess-go-go')">
                 <img src="https://example.com/magic-chess-go-go.jpg" alt="Magic Chess: Go Go">
                 <div class="game-item-details">
                     <h3 class="game-item-title">Magic Chess: Go Go</h3>
                     <p class="game-item-discount">-10%</p>
                 </div>
             </div>
-            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
+            <div class="game-item" onclick="redirectToPage('https://example.com/game-details-zenless-zone-zero')">
                 <img src="https://example.com/zenless-zone-zero.jpg" alt="Zenless Zone Zero">
                 <div class="game-item-details">
                     <h3 class="game-item-title">Zenless Zone Zero</h3>
@@ -471,6 +477,11 @@
             bannerIndex = (bannerIndex + 1) % banners.length;
         } 
         setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
+
+        // Fungsi untuk redirect ke halaman produk
+        function redirectToPage(url) {
+            window.location.href = url;
+        }
     </script>
 </body>
 </html>
