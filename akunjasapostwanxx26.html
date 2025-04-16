@@ -9,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #0000ff;
-            color: #fff;
+            color: #000000;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -21,11 +21,11 @@
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #000;
+            color: #ffffff;
         }
         h1 {
             text-align: center;
-            color: #0000ff;
+            color: #000000;
             margin-bottom: 20px;
         }
 
@@ -56,21 +56,48 @@
         }
 
         /* Cara Beli */
-        .cara-beli {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
-        }
-        .cara-beli p {
-            margin: 5px 0;
-        }
-        .cara-beli a {
+        .cara-beli-button {
+            background-color: #A0CCE5;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
             color: #0000ff;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 14px;
         }
-        .cara-beli a:hover {
-            color: #0000cc;
+        .cara-beli-button:hover {
+            background-color: #0000cc;
+        }
+
+        /* Popup Cara Beli */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+        }
+        .popup-content h3 {
+            margin-bottom: 15px;
+            color: #0000ff;
+        }
+        .popup-content p {
+            margin: 5px 0;
         }
 
         /* Diamond Grid */
@@ -87,6 +114,10 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
         .diamond-item:hover {
             transform: scale(1.05);
@@ -143,45 +174,63 @@
             </div>
         </div>
 
-        <!-- Cara Beli -->
-        <div class="cara-beli">
-            <h3>Cara Beli:</h3>
-            <p>
-                1. Pilih jumlah diamond yang ingin dibeli.<br>
-                2. Klik tombol pembelian untuk melanjutkan proses.<br>
-                3. Masukkan User ID Free Fire Anda saat diminta.<br>
-                4. Pilih metode pembayaran (kartu kredit, pulsa, e-wallet, dll.).<br>
-                5. Konfirmasi pembelian dan tunggu konfirmasi sukses.
-            </p>
+        <!-- Tombol Cara Beli -->
+        <button class="cara-beli-button" onclick="showPopup()">Cara Beli</button>
+
+        <!-- Popup Cara Beli -->
+        <div class="popup-overlay" id="popup-overlay">
+            <div class="popup-content">
+                <h3>Cara Beli:</h3>
+                <ol>
+                    <li>Pilih jumlah diamond yang ingin dibeli.</li>
+                    <li>Klik tombol pembelian untuk melanjutkan proses.</li>
+                    <li>Masukkan User ID Free Fire Anda saat diminta.</li>
+                    <li>Pilih metode pembayaran (kartu kredit, pulsa, e-wallet, dll.).</li>
+                    <li>Konfirmasi pembelian dan tunggu konfirmasi sukses.</li>
+                </ol>
+                <button onclick="closePopup()">Tutup</button>
+            </div>
         </div>
 
         <!-- Diamond Grid -->
         <div class="diamond-grid">
-            <a href="https://example.com/buy-diamonds?amount=5" class="diamond-item">
-                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+            <a href="https://buylink.id/wanxx-topup-semua-games.com/share?product=freefire5" class="diamond-item">
+                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
                 <p><span>5 Diamond</span><br>Rp 1.003</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=10" class="diamond-item">
-                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
                 <p><span>10 Diamond</span><br>Rp 1.925</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=20" class="diamond-item">
-                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
                 <p><span>20 Diamond</span><br>Rp 4.270</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=50" class="diamond-item">
-                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
                 <p><span>50 Diamond</span><br>Rp 7.848</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=100" class="diamond-item">
-                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
                 <p><span>100 Diamond</span><br>Rp 14.000</p>
             </a>
             <a href="https://example.com/buy-diamonds?amount=200" class="diamond-item">
-                <img src="https://via.placeholder.com/40" alt="Diamond Icon">
+                <img src="http://hub.rapspoint.com/storage/top-up/free-fire/diamond-1713844162png" alt="Diamond Icon">
                 <p><span>200 Diamond</span><br>Rp 26.000</p>
             </a>
         </div>
     </div>
+
+    <script>
+        // Fungsi untuk menampilkan popup
+        function showPopup() {
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        // Fungsi untuk menutup popup
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
