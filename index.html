@@ -489,6 +489,63 @@
         #dontShowAgain {
             margin-right: 5px;
         }
+        
+        /* Styling untuk container menu */
+.menu-options {
+    display: flex;
+    justify-content: center; /* Pusatkan menu secara horizontal */
+    gap: 10px; /* Jarak antar menu */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Agar menu tetap rapi di layar kecil */
+}
+
+/* Styling untuk setiap item menu */
+.menu-option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Lebar otomatis */
+    min-width: 120px; /* Lebar minimum */
+    height: 50px; /* Tinggi tetap */
+    background-color: #1E90FF; /* Warna biru gaming */
+    border-radius: 8px; /* Sudut melengkung */
+    color: #fff; /* Warna teks putih */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-size: 14px; /* Ukuran font */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan halus */
+}
+
+/* Efek hover pada menu */
+.menu-option:hover {
+    background-color: #0074D9; /* Warna lebih gelap saat hover */
+    transform: scale(1.05); /* Efek membesar sedikit */
+}
+
+/* Styling untuk teks di dalam menu */
+.menu-option span {
+    display: block;
+    text-align: center;
+    text-transform: uppercase; /* Huruf besar semua */
+    letter-spacing: 1px; /* Jarak antar huruf */
+}
+
+/* Penyesuaian untuk layar kecil */
+@media (max-width: 600px) {
+    .menu-options {
+        flex-direction: row; /* Tetap horizontal */
+        gap: 5px; /* Kurangi jarak antar menu */
+        overflow-x: auto; /* Aktifkan scroll horizontal jika diperlukan */
+        padding: 10px 0; /* Tambah padding agar tidak terlalu rapat */
+    }
+    .menu-option {
+        min-width: 100px; /* Lebar minimum lebih kecil */
+        height: 40px; /* Tinggi lebih pendek */
+        font-size: 12px; /* Ukuran font lebih kecil */
+    }
+}
+        
     </style>
 </head>
 <body>
@@ -536,11 +593,28 @@
                 <img src="https://i.ibb.co.com/snM74Kz/photo-2025-03-18-22-43-53.jpg" alt="Jual Akun?" /> Jual Akun?
             </a>
         </div>
+        
     </header>
     <!-- Konten Utama -->
     <div class="banner-container">
         <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
     </div>
+    
+    <div class="menu-options">
+    <a href="populer.html" class="menu-option">
+        <span>POPULER</span>
+    </a>
+    <a href="beli-akun.html" class="menu-option">
+        <span>BELI AKUN</span>
+    </a>
+    <a href="jasa-joki.html" class="menu-option">
+        <span>JASA JOKI</span>
+    </a>
+    <a href="top-up-game.html" class="menu-option">
+        <span>TOP UP GAME</span>
+    </a>
+</div>
+    
     <div class="menu-container">
         <h2 class="animate__animated animate__bounceInDown">🔥 TOP UP GAMES! </h2>
         <div class="menu">
