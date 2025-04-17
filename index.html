@@ -159,7 +159,6 @@
         .swiper-pagination-bullet-active {
             opacity: 1;
         }
-        
         /* Styling untuk Populer Section */
 .populer-section {
     margin-top: 20px;
@@ -221,7 +220,6 @@
     border-radius: 5px;
     font-size: 10px; /* Mengurangi ukuran badge */
 }
-
 .account-products-section {
     margin-top: 20px;
     padding: 15px; /* Tambahkan padding untuk ruang lebih */
@@ -229,7 +227,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 .account-products-section h2 {
     text-align: center; /* Judul section tetap di tengah */
     margin-bottom: 15px;
@@ -297,17 +294,22 @@
                 font-size: 12px; /* Ukuran font lebih kecil untuk mobile */
                 padding: 8px 12px; /* Padding lebih kecil */
             }
-            .game-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller grid for mobile */
+            .game-grid,
+            .account-grid {
+                grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Dua kolom untuk mobile */
+                gap: 15px; /* Jarak antar item */
             }
-            .game-item img {
-                height: 100px; /* Reduce image height for mobile */
+            .game-item img,
+            .account-item img {
+                height: 80px; /* Mengurangi tinggi gambar untuk mobile */
             }
-            .game-item-title {
-                font-size: 12px; /* Reduce title font size */
+            .game-item-title,
+            .account-item-title {
+                font-size: 12px; /* Mengurangi ukuran judul */
             }
-            .game-item-discount {
-                font-size: 10px; /* Reduce discount font size */
+            .game-item-discount,
+            .account-item-description {
+                font-size: 10px; /* Mengurangi ukuran deskripsi */
             }
             .flash-sale-product img {
                 width: 100px; /* Reduce image size for mobile */
@@ -317,7 +319,6 @@
                 font-size: 16px; /* Reduce title font size */
             }
         }
-
         /* About Us Section */
         .about-section {
             margin-top: 20px;
@@ -351,7 +352,6 @@
         .about-link:hover {
             transform: scale(1.05);
         }
-
         /* Account Products Section */
         .account-products-section {
             margin-top: 20px;
@@ -474,7 +474,6 @@
          </div>
         </a>
       </section>
-      
       <!-- Account Products Section -->
     <section class="account-products-section" id="stok-akunff">
         <h2>Stok FF</h2>
@@ -541,7 +540,6 @@
             </div>
         </div>
     </section>
-
     <!-- Top Up Section -->
     <section class="product-section" id="top-up">
         <h2>Top Up Games🎮</h2>
@@ -608,7 +606,6 @@
             </div>
         </div>
     </section>
-    
     <!-- Account Products Section -->
     <section class="account-products-section" id="streaming">
         <h2>Streaming</h2>
@@ -650,7 +647,6 @@
             </div>
         </div>
     </section>
-    
     <!-- Account Products Section -->
     <section class="account-products-section" id="plntoken">
         <h2>PLN Token</h2>
