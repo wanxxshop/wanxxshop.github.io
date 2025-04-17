@@ -400,6 +400,21 @@
         .account-item-description {
             font-size: 12px;
             color: #ffffff;
+            
+            /* Tambahkan media query untuk responsive grid */
+@media (min-width: 768px) {
+    .account-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+        gap: 20px; /* Jarak antar item */
+    }
+}
+
+/* Untuk perangkat mobile, gunakan satu kolom */
+@media (max-width: 767px) {
+    .account-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+    }
         }
     </style>
 </head>
