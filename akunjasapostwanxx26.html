@@ -93,6 +93,27 @@
             border-radius: 2px;
             transition: transform 0.3s ease;
         }
+        /* Navigation Menu */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .menu-item {
+            background: #000033;
+            color: #00ffff;
+            padding: 15px 25px;
+            border-radius: 20px;
+            border: 2px solid #00ffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
         /* Banner Section */
         .banner-section {
             position: relative;
@@ -211,7 +232,7 @@
         }
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* Dua kolom */
             gap: 20px;
         }
         .game-item {
@@ -281,7 +302,6 @@
             <span></span>
         </div>
     </header>
-
     <!-- Banner Section -->
     <section class="banner-section">
         <div class="swiper banner-swiper">
@@ -306,6 +326,15 @@
             <div class="swiper-button-prev"></div>
         </div>
     </section>
+
+
+    <!-- Navigation Menu -->
+    <nav class="menu">
+        <div class="menu-item" onclick="redirectToPage('popular.html')">Populer💥</div>
+        <div class="menu-item" onclick="redirectToPage('buy-account.html')">Beli Akun</div>
+        <div class="menu-item" onclick="redirectToPage('joki-service.html')">Top Up🎮</div>
+    </nav>
+
 
     <!-- Flash Sale Section -->
     <section class="flash-sale">
@@ -396,13 +425,11 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-
         // Fungsi untuk toggle dropdown menu
         function toggleMenu() {
             const dropdownMenu = document.getElementById('dropdownMenu');
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         }
-
         // Fungsi untuk filter hasil pencarian
         function filterSearchResults(query) {
             const resultsContainer = document.getElementById('searchResults');
@@ -413,7 +440,6 @@
             resultsContainer.style.display = 'block';
             resultsContainer.innerHTML = `Menampilkan hasil untuk: "${query}"`;
         }
-
         // Fungsi untuk redirect ke halaman game
         function redirectToPage(page) {
             window.location.href = page;
