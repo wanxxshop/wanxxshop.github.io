@@ -159,65 +159,76 @@
         .swiper-pagination-bullet-active {
             opacity: 1;
         }
-        /* Flash Sale Section */
-        .flash-sale {
-            padding: 20px;
-            background: linear-gradient(135deg, #000033, #000066);
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .flash-sale h2 {
-            font-size: 24px;
-            color: #00ffff;
-            margin-bottom: 20px;
-        }
-        .flash-sale-product {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 10px;
-            background: #000066;
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .flash-sale-product:hover {
-            transform: scale(1.05);
-        }
-        .flash-sale-product img {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #00ffff;
-        }
-        .flash-sale-details {
-            flex: 1;
-        }
-        .flash-sale-title {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #00ffff;
-        }
-        .flash-sale-price {
-            font-size: 20px;
-            color: #00ff00;
-        }
-        .flash-sale-discount {
-            font-size: 14px;
-            color: #ff0000;
-            text-decoration: line-through;
-        }
-        .flash-sale-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ffcc00;
-            color: #000033;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
+        /* Styling untuk Populer Section */
+.populer-section {
+    margin-top: 20px;
+    padding: 10px;
+    background: linear-gradient(135deg, #000033, #000066);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.populer-section h2 {
+    font-size: 20px; /* Mengurangi ukuran judul */
+    color: #00ffff;
+    margin-bottom: 15px;
+}
+
+.popular-product-link {
+    text-decoration: none; /* Menghilangkan garis bawah dari link */
+    color: inherit; /* Mewarisi warna teks dari parent */
+}
+
+.popular-product {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Mengurangi jarak antar elemen */
+    padding: 10px;
+    background: #000066;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.popular-product:hover {
+    transform: scale(1.03); /* Efek hover yang lebih halus */
+}
+
+.popular-product img {
+    width: 80px; /* Mengurangi ukuran gambar */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #00ffff;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 16px; /* Mengurangi ukuran judul produk */
+    margin-bottom: 5px;
+    color: #00ffff;
+}
+
+.product-description {
+    font-size: 12px; /* Mengurangi ukuran deskripsi */
+    color: #ffffff;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffcc00;
+    color: #000033;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px; /* Mengurangi ukuran badge */
+}
         }
         /* Games Section */
         .games-section {
@@ -339,11 +350,11 @@
                 </div>
                 <!-- Slide 2 -->
                 <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/800x300" alt="Banner 2">
+                    <img src="https://i.ibb.co.com/hFLLHLpr/24ca2704-1035-43b5-a1cf-3f9cca6d1a40.jpg" alt="Banner 2">
                 </div>
                 <!-- Slide 3 -->
                 <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/800x300" alt="Banner 3">
+                    <img src="https://i.ibb.co.com/DPXPdNGX/80cde350-b874-43c8-94ab-9b221e6cd109.jpg" alt="Banner 3">
                 </div>
             </div>
             <!-- Add Pagination -->
@@ -355,30 +366,33 @@
     </section>
     <!-- Navigation Menu -->
     <nav class="menu">
-        <div class="menu-item" onclick="redirectToPage('popular.html')">Populer</div>
+        <div class="menu-item" onclick="redirectToPage('#populer-sekarang')">Populer</div>
         <div class="menu-item" onclick="redirectToPage('buy-account.html')">Akun FF</div>
         <div class="menu-item" onclick="redirectToPage('#top-up')">Top Up</div>
     </nav>
-    <!-- Populer Section -->
-    <section class="populer-section">
-        <h2>Populer ⚡</h2>
-        <div class="flash-sale-product">
+        <!-- Populer Section -->
+    <section class="product-section" id="populer-sekarang">
+       <h2>Populer⚡</h2>
+       <!-- Link ke halaman populer -->
+       <a href="popular.html" class="popular-product-link">
+        <div class="popular-product">
             <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
-            <div class="flash-sale-details">
-                <h3>Free Fire</h3>
-                <p>Proses Cepat⚡</p>
+            <div class="product-details">
+                <h3 class="product-title">Free Fire</h3>
+                <p class="product-description">Proses cepat⚡</p>
             </div>
-            <div class="flash-sale-badge">Populer Sekarang</div>
+            <div class="product-badge">Populer Sekarang</div>
         </div>
-    </section>
+    </a>
+</section>
     <!-- Top Up Section -->
     <section class="product-section" id="top-up">
-        <h2>Top Up 🎮</h2>
+        <h2>Top Up Games🎮</h2>
         <div class="game-grid">
             <!-- Free Fire MAX -->
             <div class="game-item" onclick="redirectToPage('topup-wanxx-free-fire.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire MAX">
-                <h3 class="game-item-title">Free Fire MAX</h3>
+                <h3 class="game-item-title">Free Fire</h3>
             </div>
             <!-- Mobile Legends: Bang Bang -->
             <div class="game-item" onclick="redirectToPage('topup-wanxx-mobile-legends.html')">
