@@ -273,6 +273,40 @@
             font-size: 14px;
             border-radius: 5px;
             text-align: center;
+            
+            /* Navigation Menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menu-item {
+    background: #000033;
+    color: #00ffff;
+    padding: 10px 15px; /* Mengurangi padding untuk ukuran lebih kecil */
+    border-radius: 10px; /* Mengurangi radius agar lebih ramping */
+    border: 2px solid #00ffff;
+    font-size: 14px; /* Mengurangi ukuran font */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center; /* Menyentralkan teks */
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+        /* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .menu-item {
+        font-size: 12px; /* Ukuran font lebih kecil untuk mobile */
+        padding: 8px 12px; /* Padding lebih kecil */
+    }
+}
+            
         }
     </style>
 </head>
@@ -330,9 +364,9 @@
 
     <!-- Navigation Menu -->
     <nav class="menu">
-        <div class="menu-item" onclick="redirectToPage('popular.html')">Populer💥</div>
-        <div class="menu-item" onclick="redirectToPage('buy-account.html')">Beli Akun</div>
-        <div class="menu-item" onclick="redirectToPage('joki-service.html')">Top Up🎮</div>
+        <div class="menu-item" onclick="redirectToPage('popular.html')">Populer</div>
+        <div class="menu-item" onclick="redirectToPage('buy-account.html')">Akun FF</div>
+        <div class="menu-item" onclick="redirectToPage('#top-up')">Top Up</div>
     </nav>
 
 
@@ -352,7 +386,7 @@
     </section>
 
     <!-- Games Section -->
-    <section class="games-section">
+    <section class="product-section" id="top-up">
         <h2>Games 🎮</h2>
         <div class="game-grid">
             <!-- Free Fire MAX -->
