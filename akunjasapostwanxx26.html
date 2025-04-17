@@ -94,19 +94,47 @@
             transition: transform 0.3s ease;
         }
         /* Banner Section */
-        .banner-container {
+        .banner-section {
             position: relative;
             width: 100%;
-            max-height: 300px;
+            max-height: 350px;
             overflow: hidden;
             margin-top: 20px;
         }
-        .banner-container img {
+        .swiper-slide img {
             width: 100%;
+            height: 100%;
             object-fit: cover;
-            transition: opacity 1s ease-in-out;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-        .banner-container img.active {
+        /* Navigation Buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #00ffff;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            transition: background 0.3s ease;
+        }
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 20px;
+        }
+        /* Pagination Dots */
+        .swiper-pagination-bullet {
+            background: #00ffff;
+            opacity: 0.5;
+            width: 10px;
+            height: 10px;
+            transition: opacity 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
             opacity: 1;
         }
         /* Flash Sale Section */
@@ -169,123 +197,6 @@
             border-radius: 5px;
             font-size: 12px;
         }
-        /* Categories */
-        .categories {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background: #000066;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .category {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px 10px;
-            border: 2px dashed #00ffff;
-            border-radius: 5px;
-            color: #00ffff;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .category:hover {
-            background: rgba(0, 255, 255, 0.1);
-        }
-        /* Popular Products Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 10px;
-            padding: 20px;
-        }
-        .product-item {
-            background: #000066;
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .product-item:hover {
-            transform: scale(1.05);
-        }
-        .product-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-        .product-item-details {
-            padding: 10px;
-        }
-        .product-item-title {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #00ffff;
-        }
-        .product-item-price {
-            font-size: 16px;
-            color: #00ff00;
-        }
-        .product-item-discount {
-            font-size: 12px;
-            color: #ff0000;
-            text-decoration: line-through;
-        }
-        /* Games Section */
-        .games-section {
-            padding: 20px;
-            background: #000066;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .games-section h2 {
-            font-size: 24px;
-            color: #00ffff;
-            margin-bottom: 20px;
-        }
-        .game-grid {
-            display: flex; /* Menggunakan flexbox untuk layout horizontal */
-            justify-content: space-around; /* Menyusun elemen secara merata */
-            align-items: center;
-            flex-wrap: wrap; /* Memungkinkan elemen pindah baris jika tidak cukup ruang */
-            gap: 20px; /* Jarak antar elemen */
-            padding: 20px;
-        }
-        .game-item {
-            flex: 1 1 calc(30% - 40px); /* Setiap item mengambil sekitar 30% lebar layar */
-            max-width: 300px; /* Batas maksimum lebar item */
-            background: #000066;
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .game-item:hover {
-            transform: scale(1.05);
-        }
-        .game-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-        .game-item-details {
-            padding: 10px;
-        }
-        .game-item-title {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #00ffff;
-        }
-        .game-item-discount {
-            font-size: 12px;
-            color: #ff0000;
-            text-decoration: line-through;
-        }
         /* Footer */
         .footer {
             margin-top: 20px;
@@ -295,164 +206,6 @@
             font-size: 14px;
             border-radius: 5px;
             text-align: center;
-        }
-        /* Menu Buttons */
-        .menu-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background: #000033;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .menu-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            background: transparent;
-            border: 2px solid #00ffff;
-            border-radius: 50px;
-            color: #00ffff;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background 0.3s;
-            text-decoration: none;
-            margin: 0 5px; /* Jarak antar tombol */
-        }
-        .menu-button:hover {
-            background: rgba(0, 255, 255, 0.1);
-        }
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .search-bar {
-                width: 150px;
-            }
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-            .product-item img {
-                height: 120px;
-            }
-            .product-item-title {
-                font-size: 12px;
-            }
-            .product-item-price {
-                font-size: 14px;
-            }
-            /* Menu Section */
-            .menu-section {
-                flex-direction: column; /* Kembali ke vertikal untuk layar kecil */
-                align-items: stretch;
-            }
-            .menu-button {
-                margin: 5px 0; /* Jarak vertikal untuk layar kecil */
-                width: 100%; /* Penuhi seluruh lebar layar */
-            }
-            /* Games Grid */
-            .game-grid {
-                flex-direction: column; /* Kembali ke vertikal untuk layar kecil */
-                align-items: stretch;
-            }
-            .game-item {
-                flex: 1 1 100%; /* Setiap item mengambil seluruh lebar layar */
-                max-width: 100%; /* Lebar maksimum 100% */
-            }
-            .game-item img {
-                height: 100px; /* Ukuran gambar lebih kecil */
-            }
-        }
-        /* Media Query untuk Layar Sangat Kecil */
-        @media (max-width: 500px) {
-            /* Header */
-            .header {
-                flex-direction: column; /* Atur header menjadi vertikal */
-                align-items: center;
-            }
-            .logo,
-            .search-bar,
-            .menu-burger {
-                margin-bottom: 10px; /* Jarak antar elemen */
-            }
-
-            /* Search Bar */
-            .search-bar {
-                width: 100%; /* Penuhi seluruh lebar layar */
-            }
-
-            /* Menu Section */
-            .menu-section {
-                flex-direction: column; /* Atur menu menjadi vertikal */
-                align-items: stretch;
-            }
-            .menu-button {
-                margin: 5px 0; /* Jarak vertikal untuk tombol menu */
-                width: 100%; /* Penuhi seluruh lebar layar */
-            }
-
-            /* Flash Sale Section */
-            .flash-sale-product {
-                flex-direction: column; /* Atur flash sale menjadi vertikal */
-            }
-            .flash-sale-details {
-                text-align: center; /* Sentralisasi teks */
-            }
-
-            /* Popular Products Grid */
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Satu kolom */
-            }
-            .product-item img {
-                height: 100px; /* Ukuran gambar lebih kecil */
-            }
-
-            /* Games Section */
-            .game-grid {
-                flex-direction: column; /* Atur games menjadi vertikal */
-                align-items: stretch;
-            }
-            .game-item {
-                max-width: 100%; /* Penuhi seluruh lebar layar */
-            }
-            .game-item img {
-                height: 100px; /* Ukuran gambar lebih kecil */
-            }
-
-            /* Font Size */
-            body {
-                font-size: 14px; /* Ukuran font lebih kecil */
-            }
-            .site-title {
-                font-size: 18px; /* Judul situs lebih kecil */
-            }
-            .menu-button {
-                font-size: 12px; /* Ukuran font tombol menu lebih kecil */
-            }
-            .product-item-title,
-            .game-item-title {
-                font-size: 12px; /* Judul produk lebih kecil */
-            }
-        }
-        /* Scroll-to-Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #00ffff;
-            color: #000033;
-            border: none;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: none; /* Awalnya disembunyikan */
-            z-index: 1000;
-            transition: opacity 0.3s;
-        }
-        .scroll-to-top.show {
-            display: block;
         }
     </style>
 </head>
@@ -483,9 +236,29 @@
         </div>
     </header>
     <!-- Banner Section -->
-    <div class="banner-container">
-        <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" class="active" alt="Banner 1">
-    </div>
+    <section class="banner-section">
+        <div class="swiper banner-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="https://i.ibb.co.com/YFYm4sqB/20250214-073727.png" alt="Banner 1">
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="https://example.com/banner2.jpg" alt="Banner 2">
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="https://example.com/banner3.jpg" alt="Banner 3">
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
     <!-- Flash Sale Section -->
     <section class="flash-sale">
         <h2>Flash Sale ⚡</h2>
@@ -500,111 +273,28 @@
             <div class="flash-sale-badge">FLASH SALE!</div>
         </div>
     </section>
-    <!-- Menu Section -->
-    <div class="menu-section">
-        <a href="#popular" class="menu-button">POPULER</a>
-        <a href="#buy-accounts" class="menu-button">BELI AKUN</a>
-        <a href="#joki-services" class="menu-button">JASA JOKI</a>
-        <a href="#game-top-up" class="menu-button">TOP UP GAME</a>
-    </div>
-    <!-- Popular Products Grid -->
-    <section class="product-grid">
-        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/freefire.svg" alt="Free Fire">
-            <div class="product-item-details">
-                <h3 class="product-item-title">Mobile Legends</h3>
-                <p class="product-item-price">Rp 170.000</p>
-                <p class="product-item-discount">Rp 200.600</p>
-            </div>
-        </div>
-        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/mobilelegend.svg" alt="Mobile Legends">
-            <div class="product-item-details">
-                <h3 class="product-item-title">Free Fire</h3>
-                <p class="product-item-price">Rp 150.000</p>
-                <p class="product-item-discount">Rp 180.000</p>
-            </div>
-        </div>
-        <div class="product-item" onclick="redirectToPage('beli-sekarang-akunff-wanxx-shop-gaskeun.html')">
-            <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/genshinimpact.png" alt="Genshin Impact">
-            <div class="product-item-details">
-                <h3 class="product-item-title">Genshin Impact</h3>
-                <p class="product-item-price">Rp 120.000</p>
-                <p class="product-item-discount">Rp 150.000</p>
-            </div>
-        </div>
-    </section>
-    <!-- Games Section -->
-    <section class="games-section">
-        <h2>Games 🎮</h2>
-        <div class="game-grid">
-            <div class="game-item" onclick="redirectToPage('game-details-free-fire-max.html')">
-                <img src="https://example.com/free-fire-max.jpg" alt="Free Fire MAX">
-                <div class="game-item-details">
-                    <h3 class="game-item-title">Free Fire MAX</h3>
-                    <p class="game-item-discount">-10%</p>
-                </div>
-            </div>
-            <div class="game-item" onclick="redirectToPage('game-details-magic-chess-go-go.html')">
-                <img src="https://example.com/magic-chess-go-go.jpg" alt="Magic Chess: Go Go">
-                <div class="game-item-details">
-                    <h3 class="game-item-title">Magic Chess: Go Go</h3>
-                    <p class="game-item-discount">-10%</p>
-                </div>
-            </div>
-            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
-                <img src="https://example.com/zenless-zone-zero.jpg" alt="Zenless Zone Zero">
-                <div class="game-item-details">
-                    <h3 class="game-item-title">Zenless Zone Zero</h3>
-                    <p class="game-item-discount">-10%</p>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
     </footer>
-    <!-- Scroll-to-Top Button -->
-    <button class="scroll-to-top" onclick="scrollToTop()">&#8593;</button>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // Fungsi untuk toggle dropdown menu
-        function toggleMenu() {
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-        }
-        // Fungsi untuk filter hasil pencarian
-        function filterSearchResults(query) {
-            const resultsContainer = document.getElementById('searchResults');
-            if (query.trim() === '') {
-                resultsContainer.style.display = 'none';
-                return;
-            }
-            resultsContainer.style.display = 'block';
-        }
-        let bannerIndex = 0;
-        function gantiBanner() {
-            let banners = document.querySelectorAll(".banner-container img");
-            banners.forEach((img, i) => {
-                img.classList.remove("active");
-            });
-            banners[bannerIndex].classList.add("active");
-            bannerIndex = (bannerIndex + 1) % banners.length;
-        } 
-        setInterval(gantiBanner, 3000); // Ganti gambar setiap 3 detik
-
-        // Tombol Scroll ke Atas
-        const scrollToTopButton = document.querySelector(".scroll-to-top");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollToTopButton.classList.add("show");
-            } else {
-                scrollToTopButton.classList.remove("show");
-            }
+        // Initialize Swiper for Banner
+        const bannerSwiper = new Swiper('.banner-swiper', {
+            loop: true, // Looping slides
+            autoplay: {
+                delay: 5000, // Auto change every 5 seconds
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
     </script>
 </body>
 </html>
