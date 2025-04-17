@@ -167,18 +167,15 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 .populer-section h2 {
     font-size: 20px; /* Mengurangi ukuran judul */
     color: #00ffff;
     margin-bottom: 15px;
 }
-
 .popular-product-link {
     text-decoration: none; /* Menghilangkan garis bawah dari link */
     color: inherit; /* Mewarisi warna teks dari parent */
 }
-
 .popular-product {
     display: flex;
     align-items: center;
@@ -191,11 +188,9 @@
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-
 .popular-product:hover {
     transform: scale(1.03); /* Efek hover yang lebih halus */
 }
-
 .popular-product img {
     width: 80px; /* Mengurangi ukuran gambar */
     height: 80px;
@@ -203,22 +198,18 @@
     border-radius: 10px;
     border: 2px solid #00ffff;
 }
-
 .product-details {
     flex: 1;
 }
-
 .product-title {
     font-size: 16px; /* Mengurangi ukuran judul produk */
     margin-bottom: 5px;
     color: #00ffff;
 }
-
 .product-description {
     font-size: 12px; /* Mengurangi ukuran deskripsi */
     color: #ffffff;
 }
-
 .product-badge {
     position: absolute;
     top: 10px;
@@ -312,6 +303,90 @@
                 font-size: 16px; /* Reduce title font size */
             }
         }
+
+        /* About Us Section */
+        .about-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #000033, #000066);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .about-section h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+        .about-section p {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .about-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00ffff;
+            color: #000033;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .about-link:hover {
+            transform: scale(1.05);
+        }
+
+        /* Account Products Section */
+        .account-products-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #000033, #000066);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .account-products-section h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .account-item {
+            background: #000066;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            padding: 10px;
+        }
+        .account-item:hover {
+            transform: scale(1.05);
+        }
+        .account-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .account-item-title {
+            font-size: 16px;
+            color: #00ffff;
+            margin-bottom: 5px;
+        }
+        .account-item-description {
+            font-size: 12px;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -366,11 +441,11 @@
     </section>
     <!-- Navigation Menu -->
     <nav class="menu">
-        <div class="menu-item" onclick="redirectToPage('#populer-sekarang')">Populer</div>
-        <div class="menu-item" onclick="redirectToPage('buy-account.html')">Akun FF</div>
+        <div class="menu-item" onclick="redirectToPage('#stok-akunff')">Akun FF</div>
         <div class="menu-item" onclick="redirectToPage('#top-up')">Top Up</div>
+        <div class="menu-item" onclick="redirectToPage('#streaming')">Streaming</div>
     </nav>
-        <!-- Populer Section -->
+    <!-- Populer Section -->
     <section class="product-section" id="populer-sekarang">
        <h2>Populer⚡</h2>
        <!-- Link ke halaman populer -->
@@ -381,10 +456,78 @@
                 <h3 class="product-title">Free Fire</h3>
                 <p class="product-description">Proses cepat⚡</p>
             </div>
-            <div class="product-badge">Populer Sekarang</div>
+             <div class="product-badge">Populer Sekarang</div>
+         </div>
+        </a>
+      </section>
+      
+      <!-- Account Products Section -->
+    <section class="account-products-section" id="streaming">
+        <h2>Stok FF</h2>
+        <div class="account-grid">
+            <!-- Spotify -->
+            <div class="account-item" onclick="redirectToPage('buy-account-free-fire.html')">
+                <img src="https://i.ibb.co.com/5g8Z1dwQ/e8bf4470-e5e6-467c-9b62-b4b9a2b95ff2.jpg" alt="stok ff wanxx26">
+                <h3 class="account-item-title">Rp 200.000</h3>
+                <p class="account-item-description">SG GURUN PASIR VAULT TW 300 JERAMI GAGAH</p>
+            </div>
+            <!-- Viu -->
+            <div class="account-item" onclick="redirectToPage('buy-account-mobile-legends.html')">
+                <img src="https://i.ibb.co.com/MJ5TqLW/6a37fee3-dfbb-4733-9b93-a4398c9a4fb9.jpg" alt="stok ff wanxx26">
+                <h3 class="account-item-title">Rp 175.000</h3>
+                <p class="account-item-description">SG TEROMPET VAULT TW 320 KAKASIH GAGAH</p>
+            </div>
+            <!-- We TV -->
+            <div class="account-item" onclick="redirectToPage('buy-account-pubg.html')">
+                <img src="https://i.ibb.co.com/h37JJpx/06cf057e-b4b2-4742-90ad-5009231ba957.jpg">
+                <h3 class="account-item-title">Rp 150.000</h3>
+                <p class="account-item-description">SG ABU PASIR VAULT TW 210 SET CE CO CAKEP</p>
+            </div>
+            <!-- WeSing -->
+            <div class="account-item" onclick="redirectToPage('buy-account-valorant.html')">
+                <img src="https://i.ibb.co.com/993rGzwY/35486c25-e4a4-4f61-8621-0ba2e8ac6d84.jpg">
+                <h3 class="account-item-title">Rp 130.000</h3>
+                <p class="account-item-description">SG TEROMPET VAULT TW 160 SET CE CO CAKEP</p>
+            </div>
+            <!-- Bigo Live Diamonds -->
+            <div class="account-item" onclick="redirectToPage('buy-account-genshin.html')">
+                <img src="https://i.ibb.co.com/Ng3grCRM/1a9eb273-1680-45c8-884e-24a8d968824d.jpg">
+                <h3 class="account-item-title">Rp 80.000</h3>
+                <p class="account-item-description">SG MAMBAH MAX 1 VAULT TW 40 SET CEWEK CAKEP PARAH</p>
+            </div>
+            <!-- WeSing -->
+            <div class="account-item" onclick="redirectToPage('buy-account-valorant.html')">
+                <img src="https://i.ibb.co.com/wFdR6PDf/d534bbbf-b977-4e57-8388-49c8179ee7bd.jpg">
+                <h3 class="account-item-title">Rp 70.000</h3>
+                <p class="account-item-description">SG MAMBAH VAULT TW 200 GAGAH JERAMI SET CE CO CAKEP</p>
+            </div>
+            <!-- Bigo Live Diamonds -->
+            <div class="account-item" onclick="redirectToPage('buy-account-genshin.html')">
+                <img src="https://i.ibb.co.com/Xk5QwGyH/986aedce-eabe-4fa5-a37a-e9d06b214583.jpg">
+                <h3 class="account-item-title">Rp 65.000</h3>
+                <p class="account-item-description">SG TEROMPET VAULT TW 50 KAKASIH HITAM SET CEWEK CAKEP</p>
+            </div>
+            <!-- Bigo Live Diamonds -->
+            <div class="account-item" onclick="redirectToPage('buy-account-genshin.html')">
+                <img src="https://i.ibb.co.com/nNRj9WNG/b005dc46-e000-4514-af72-f76848574102.jpg">
+                <h3 class="account-item-title">Rp 60.000</h3>
+                <p class="account-item-description">SG TEROMPET VAULT TW 40 KAKASIH SET CE CO CAKEP</p>
+            </div>
+            <!-- WeSing -->
+            <div class="account-item" onclick="redirectToPage('buy-account-valorant.html')">
+                <img src="https://i.ibb.co.com/hFqZKHVV/fabfdadc-e951-44bc-90c2-7818af27968c.jpg">
+                <h3 class="account-item-title">Rp 45.000</h3>
+                <p class="account-item-description">SG MAMBAH VAULT TW 70 KATANA LOBY SET CE CO CAKEP</p>
+            </div>
+            <!-- Bigo Live Diamonds -->
+            <div class="account-item" onclick="redirectToPage('buy-account-genshin.html')">
+                <img src="https://i.ibb.co.com/TqpxtpZH/95dfe804-bf84-4fbf-8309-1de8875fe14f.jpg">
+                <h3 class="account-item-title">Rp 45.000</h3>
+                <p class="account-item-description">EVO 1 GROZA LVL 3 VAULT TW 120 ZENTSU KATANA LOBY</p>
+            </div>
         </div>
-    </a>
-</section>
+    </section>
+
     <!-- Top Up Section -->
     <section class="product-section" id="top-up">
         <h2>Top Up Games🎮</h2>
@@ -415,46 +558,130 @@
                 <h3 class="game-item-title">Valorant</h3>
             </div>
             <!-- Genshin Impact -->
-            <div class="game-item" onclick="redirectToPage('game-details-genshin-impact.html')">
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-genshin.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/genshinimpact.png" alt="Genshin Impact">
                 <h3 class="game-item-title">Genshin Impact</h3>
             </div>
             <!-- Zenless Zone Zero -->
-            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
-                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/zenlesszonezero.png" alt="Zenless Zone Zero">
-                <h3 class="game-item-title">Zenless Zone Zero</h3>
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-honkaistar.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/honkaistarrail.png" alt="Zenless Zone Zero">
+                <h3 class="game-item-title">Honkai Star Rail</h3>
             </div>
             <!-- Clash of Clans -->
-            <div class="game-item" onclick="redirectToPage('game-details-valorant.html')">
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-clash.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/clashofclans.png" alt="Valorant">
                 <h3 class="game-item-title">Clash of Clans</h3>
             </div>
             <!-- FC Mobile -->
-            <div class="game-item" onclick="redirectToPage('game-details-genshin-impact.html')">
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-fcmobile.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/fcmobile.png" alt="Genshin Impact">
                 <h3 class="game-item-title">FC Mobile</h3>
             </div>
             <!-- Zepeto -->
-            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-zepeto.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/zepeto.png" alt="Zenless Zone Zero">
                 <h3 class="game-item-title">Zepeto</h3>
             </div>
             <!-- Eggy Party -->
-            <div class="game-item" onclick="redirectToPage('game-details-genshin-impact.html')">
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-eggy.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/eggyparty.png" alt="Genshin Impact">
                 <h3 class="game-item-title">Eggy Party</h3>
             </div>
             <!-- Growtopia -->
-            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
+            <div class="game-item" onclick="redirectToPage('topup-wanxx-growtopia.html')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/growtopia.png" alt="Zenless Zone Zero">
                 <h3 class="game-item-title">Growtopia</h3>
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
-    </footer>
+    
+    <!-- Account Products Section -->
+    <section class="account-products-section" id="streaming">
+        <h2>Streaming</h2>
+        <div class="account-grid">
+            <!-- Spotify -->
+            <div class="account-item" onclick="redirectToPage('buy-account-free-fire.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/spotify.svg" alt="Spotify">
+                <h3 class="account-item-title">Spotify</h3>
+            </div>
+            <!-- Viu -->
+            <div class="account-item" onclick="redirectToPage('buy-account-mobile-legends.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/viu.svg" alt="Viu">
+                <h3 class="account-item-title">Viu</h3>
+            </div>
+            <!-- We TV -->
+            <div class="account-item" onclick="redirectToPage('buy-account-pubg.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/wetv.svg" alt="We TV">
+                <h3 class="account-item-title">We TV</h3>
+            </div>
+            <!-- WeSing -->
+            <div class="account-item" onclick="redirectToPage('buy-account-valorant.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/wesing.png" alt="WeSing">
+                <h3 class="account-item-title">WeSing</h3>
+            </div>
+            <!-- Bigo Live Diamonds -->
+            <div class="account-item" onclick="redirectToPage('buy-account-genshin.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/bigolive.svg" alt="Bigo Live Diamonds">
+                <h3 class="account-item-title">Bigo Live Diamonds</h3>
+            </div>
+            <!-- Likee -->
+            <div class="account-item" onclick="redirectToPage('buy-account-valorant.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/likee.png" alt="Likee">
+                <h3 class="account-item-title">Likee</h3>
+            </div>
+            <!-- JOOX -->
+            <div class="account-item" onclick="redirectToPage('buy-account-genshin.html')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/joox.svg" alt="JOOX">
+                <h3 class="account-item-title">JOOX</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Account Products Section -->
+    <section class="account-products-section" id="plntoken">
+        <h2>PLN Token</h2>
+        <div class="account-grid">
+            <!-- Spotify -->
+            <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln20000')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="Spotify">
+                <h3 class="account-item-title">Token PLN 20.000</h3>
+            </div>
+            <!-- Viu -->
+            <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln50000')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="Viu">
+                <h3 class="account-item-title">Token PLN 50.000</h3>
+            </div>
+            <!-- We TV -->
+            <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln100000')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="We TV">
+                <h3 class="account-item-title">Token PLN 100.000</h3>
+            </div>
+            <!-- WeSing -->
+            <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln200000')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="WeSing">
+                <h3 class="account-item-title">Token PLN 200.000</h3>
+            </div>
+            <!-- Bigo Live Diamonds -->
+            <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln=500000')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="Bigo Live Diamonds">
+                <h3 class="account-item-title">Token PLN 500.000</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="tentang-kami">
+        <div class="about-content">
+            <h2>Tentang Kami</h2>
+            <p>
+                Selamat datang di <strong>Wanxxstore26</strong>, platform terpercaya untuk top up game dan jual beli akun premium. Kami hadir untuk memberikan pengalaman bermain game yang lebih menyenangkan dengan proses transaksi cepat, aman, dan mudah.
+            </p>
+            <p>
+                Dengan tim profesional yang berdedikasi, kami menjamin kepuasan pelanggan melalui layanan 24/7, harga kompetitif, dan produk berkualitas tinggi. Bergabunglah bersama ribuan gamer lainnya yang telah mempercayai kami sebagai mitra gaming mereka!
+            </p>
+            <a href="about.html" class="about-link">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
     <!-- Search Results Container -->
     <div id="searchResults" style="display: none;">
         <p>Menampilkan hasil pencarian...</p>
@@ -495,4 +722,4 @@
         }
     </script>
 </body>
-</html
+</html>
