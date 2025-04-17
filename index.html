@@ -160,77 +160,114 @@
             opacity: 1;
         }
         /* Styling untuk Populer Section */
-.populer-section {
-    margin-top: 20px;
-    padding: 10px;
-    background: linear-gradient(135deg, #000033, #000066);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-.populer-section h2 {
-    font-size: 20px; /* Mengurangi ukuran judul */
-    color: #00ffff;
-    margin-bottom: 15px;
-}
-.popular-product-link {
-    text-decoration: none; /* Menghilangkan garis bawah dari link */
-    color: inherit; /* Mewarisi warna teks dari parent */
-}
-.popular-product {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Mengurangi jarak antar elemen */
-    padding: 10px;
-    background: #000066;
-    border: 2px solid #00ffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.popular-product:hover {
-    transform: scale(1.03); /* Efek hover yang lebih halus */
-}
-.popular-product img {
-    width: 80px; /* Mengurangi ukuran gambar */
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #00ffff;
-}
-.product-details {
-    flex: 1;
-}
-.product-title {
-    font-size: 16px; /* Mengurangi ukuran judul produk */
-    margin-bottom: 5px;
-    color: #00ffff;
-}
-.product-description {
-    font-size: 12px; /* Mengurangi ukuran deskripsi */
-    color: #ffffff;
-}
-.product-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ffcc00;
-    color: #000033;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 10px; /* Mengurangi ukuran badge */
-}
-.account-products-section {
-    margin-top: 20px;
-    padding: 15px; /* Tambahkan padding untuk ruang lebih */
-    background: linear-gradient(135deg, #000033, #000066);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-.account-products-section h2 {
-    text-align: center; /* Judul section tetap di tengah */
-    margin-bottom: 15px;
-}
+        .populer-section {
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(135deg, #000033, #000066);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .populer-section h2 {
+            font-size: 20px; /* Mengurangi ukuran judul */
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+        .popular-product-link {
+            text-decoration: none; /* Menghilangkan garis bawah dari link */
+            color: inherit; /* Mewarisi warna teks dari parent */
+        }
+        .popular-product {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Mengurangi jarak antar elemen */
+            padding: 10px;
+            background: #000066;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .popular-product:hover {
+            transform: scale(1.03); /* Efek hover yang lebih halus */
+        }
+        .popular-product img {
+            width: 80px; /* Mengurangi ukuran gambar */
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #00ffff;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 16px; /* Mengurangi ukuran judul produk */
+            margin-bottom: 5px;
+            color: #00ffff;
+        }
+        .product-description {
+            font-size: 12px; /* Mengurangi ukuran deskripsi */
+            color: #ffffff;
+        }
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffcc00;
+            color: #000033;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 10px; /* Mengurangi ukuran badge */
+        }
+        /* Account Products Section */
+        .account-products-section {
+            margin-top: 40px; /* Jarak tambahan untuk section */
+            padding: 20px;
+            background: linear-gradient(135deg, #000033, #000066);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .account-products-section h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .account-item {
+            background: #000066;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            padding: 10px;
+        }
+        .account-item:hover {
+            transform: scale(1.05);
+        }
+        .account-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .account-item-title {
+            font-size: 16px;
+            color: #00ffff;
+            margin-bottom: 5px;
+        }
+        .account-item-description {
+            font-size: 12px;
+            color: #ffffff;
         }
         /* Games Section */
         .games-section {
@@ -289,14 +326,14 @@
             text-align: center;
         }
         /* Media Query for Mobile Devices */
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .menu-item {
                 font-size: 12px; /* Ukuran font lebih kecil untuk mobile */
                 padding: 8px 12px; /* Padding lebih kecil */
             }
             .game-grid,
             .account-grid {
-                grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Dua kolom untuk mobile */
+                grid-template-columns: repeat(3, 1fr); /* Tiga kolom untuk mobile */
                 gap: 15px; /* Jarak antar item */
             }
             .game-item img,
@@ -310,13 +347,6 @@
             .game-item-discount,
             .account-item-description {
                 font-size: 10px; /* Mengurangi ukuran deskripsi */
-            }
-            .flash-sale-product img {
-                width: 100px; /* Reduce image size for mobile */
-                height: 100px;
-            }
-            .flash-sale-title {
-                font-size: 16px; /* Reduce title font size */
             }
         }
         /* About Us Section */
@@ -351,70 +381,6 @@
         }
         .about-link:hover {
             transform: scale(1.05);
-        }
-        /* Account Products Section */
-        .account-products-section {
-            margin-top: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #000033, #000066);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .account-products-section h2 {
-            font-size: 24px;
-            color: #00ffff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .account-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
-        }
-        .account-item {
-            background: #000066;
-            border: 2px solid #00ffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-            padding: 10px;
-        }
-        .account-item:hover {
-            transform: scale(1.05);
-        }
-        .account-item img {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .account-item-title {
-            font-size: 16px;
-            color: #00ffff;
-            margin-bottom: 5px;
-        }
-        .account-item-description {
-            font-size: 12px;
-            color: #ffffff;
-            
-            /* Tambahkan media query untuk responsive grid */
-@media (min-width: 768px) {
-    .account-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Dua kolom */
-        gap: 20px; /* Jarak antar item */
-    }
-}
-
-/* Untuk perangkat mobile, gunakan satu kolom */
-@media (max-width: 767px) {
-    .account-grid {
-        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
-    }
         }
     </style>
 </head>
@@ -555,9 +521,9 @@
             </div>
         </div>
     </section>
-    <!-- Top Up Section -->
-    <section class="product-section" id="top-up">
-        <h2>Top Up Games🎮</h2>
+    <!-- Account Products Section -->
+    <section class="account-products-section" id="top-up">
+        <h2>Top Up Games</h2>
         <div class="game-grid">
             <!-- Free Fire MAX -->
             <div class="game-item" onclick="redirectToPage('topup-wanxx-free-fire.html')">
@@ -684,6 +650,11 @@
             <!-- WeSing -->
             <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln200000')">
                 <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="WeSing">
+                <h3 class="account-item-title">Token PLN 100.000</h3>
+            </div>
+            <!-- WeSing -->
+            <div class="account-item" onclick="redirectToPage('buylink.id/wanxx-topup-semua-games.com/share?product=hpln200000')">
+                <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/pln.svg" alt="WeSing">
                 <h3 class="account-item-title">Token PLN 200.000</h3>
             </div>
             <!-- Bigo Live Diamonds -->
@@ -693,7 +664,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Us Section -->
     <section class="about-section" id="tentang-kami">
         <div class="about-content">
