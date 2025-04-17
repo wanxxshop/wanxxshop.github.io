@@ -197,6 +197,52 @@
             border-radius: 5px;
             font-size: 12px;
         }
+        /* Games Section */
+        .games-section {
+            padding: 20px;
+            background: linear-gradient(135deg, #000033, #000066);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .games-section h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .game-item {
+            background: #000066;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            padding: 10px;
+        }
+        .game-item:hover {
+            transform: scale(1.05);
+        }
+        .game-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .game-item-title {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #00ffff;
+        }
+        .game-item-discount {
+            font-size: 12px;
+            color: #ff0000;
+            text-decoration: line-through;
+        }
         /* Footer */
         .footer {
             margin-top: 20px;
@@ -235,6 +281,7 @@
             <span></span>
         </div>
     </header>
+
     <!-- Banner Section -->
     <section class="banner-section">
         <div class="swiper banner-swiper">
@@ -245,20 +292,21 @@
                 </div>
                 <!-- Slide 2 -->
                 <div class="swiper-slide">
-                    <img src="https://example.com/banner2.jpg" alt="Banner 2">
+                    <img src="https://via.placeholder.com/800x300" alt="Banner 2">
                 </div>
                 <!-- Slide 3 -->
                 <div class="swiper-slide">
-                    <img src="https://example.com/banner3.jpg" alt="Banner 3">
+                    <img src="https://via.placeholder.com/800x300" alt="Banner 3">
                 </div>
             </div>
-            <!-- Navigation Buttons -->
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation Buttons -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <!-- Pagination Dots -->
-            <div class="swiper-pagination"></div>
         </div>
     </section>
+
     <!-- Flash Sale Section -->
     <section class="flash-sale">
         <h2>Flash Sale ⚡</h2>
@@ -273,28 +321,103 @@
             <div class="flash-sale-badge">FLASH SALE!</div>
         </div>
     </section>
+
+    <!-- Games Section -->
+    <section class="games-section">
+        <h2>Games 🎮</h2>
+        <div class="game-grid">
+            <!-- Free Fire MAX -->
+            <div class="game-item" onclick="redirectToPage('game-details-free-fire-max.html')">
+                <img src="https://via.placeholder.com/150" alt="Free Fire MAX">
+                <h3 class="game-item-title">Free Fire MAX</h3>
+                <p class="game-item-discount">-10%</p>
+            </div>
+            <!-- Mobile Legends: Bang Bang -->
+            <div class="game-item" onclick="redirectToPage('game-details-mobile-legends.html')">
+                <img src="https://via.placeholder.com/150" alt="Mobile Legends: Bang Bang">
+                <h3 class="game-item-title">Mobile Legends</h3>
+                <p class="game-item-discount">-15%</p>
+            </div>
+            <!-- PUBG Mobile -->
+            <div class="game-item" onclick="redirectToPage('game-details-pubg-mobile.html')">
+                <img src="https://via.placeholder.com/150" alt="PUBG Mobile">
+                <h3 class="game-item-title">PUBG Mobile</h3>
+                <p class="game-item-discount">-20%</p>
+            </div>
+            <!-- Call of Duty: Mobile -->
+            <div class="game-item" onclick="redirectToPage('game-details-call-of-duty.html')">
+                <img src="https://via.placeholder.com/150" alt="Call of Duty: Mobile">
+                <h3 class="game-item-title">Call of Duty</h3>
+                <p class="game-item-discount">-10%</p>
+            </div>
+            <!-- Valorant -->
+            <div class="game-item" onclick="redirectToPage('game-details-valorant.html')">
+                <img src="https://via.placeholder.com/150" alt="Valorant">
+                <h3 class="game-item-title">Valorant</h3>
+                <p class="game-item-discount">-5%</p>
+            </div>
+            <!-- Genshin Impact -->
+            <div class="game-item" onclick="redirectToPage('game-details-genshin-impact.html')">
+                <img src="https://via.placeholder.com/150" alt="Genshin Impact">
+                <h3 class="game-item-title">Genshin Impact</h3>
+                <p class="game-item-discount">-25%</p>
+            </div>
+            <!-- Zenless Zone Zero -->
+            <div class="game-item" onclick="redirectToPage('game-details-zenless-zone-zero.html')">
+                <img src="https://via.placeholder.com/150" alt="Zenless Zone Zero">
+                <h3 class="game-item-title">Zenless Zone Zero</h3>
+                <p class="game-item-discount">-10%</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
     </footer>
+
+    <!-- Search Results Container -->
+    <div id="searchResults" style="display: none;">
+        <p>Menampilkan hasil pencarian...</p>
+    </div>
+
+    <!-- Swiper.js Initialization -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // Initialize Swiper for Banner
-        const bannerSwiper = new Swiper('.banner-swiper', {
-            loop: true, // Looping slides
-            autoplay: {
-                delay: 5000, // Auto change every 5 seconds
-                disableOnInteraction: false,
-            },
+        // Initialize Swiper
+        var swiper = new Swiper(".banner-swiper", {
+            loop: true,
             pagination: {
-                el: '.swiper-pagination',
+                el: ".swiper-pagination",
                 clickable: true,
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
         });
+
+        // Fungsi untuk toggle dropdown menu
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Fungsi untuk filter hasil pencarian
+        function filterSearchResults(query) {
+            const resultsContainer = document.getElementById('searchResults');
+            if (query.trim() === '') {
+                resultsContainer.style.display = 'none';
+                return;
+            }
+            resultsContainer.style.display = 'block';
+            resultsContainer.innerHTML = `Menampilkan hasil untuk: "${query}"`;
+        }
+
+        // Fungsi untuk redirect ke halaman game
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
     </script>
 </body>
 </html>
