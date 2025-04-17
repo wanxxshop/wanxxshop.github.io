@@ -20,6 +20,7 @@
             background: linear-gradient(to bottom, #000033, #000066);
             color: #fff;
             overflow-x: hidden;
+            padding: 10px; /* Jarak umum */
         }
         /* Header */
         .header {
@@ -298,7 +299,7 @@
         /* Menu Buttons */
         .menu-section {
             display: flex;
-            justify-content: space-around; /* Menyusun menu secara merata */
+            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             background: #000033;
@@ -328,6 +329,28 @@
             .search-bar {
                 width: 150px;
             }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            .product-item img {
+                height: 120px;
+            }
+            .product-item-title {
+                font-size: 12px;
+            }
+            .product-item-price {
+                font-size: 14px;
+            }
+            /* Menu Section */
+            .menu-section {
+                flex-direction: column; /* Kembali ke vertikal untuk layar kecil */
+                align-items: stretch;
+            }
+            .menu-button {
+                margin: 5px 0; /* Jarak vertikal untuk layar kecil */
+                width: 100%; /* Penuhi seluruh lebar layar */
+            }
+            /* Games Grid */
             .game-grid {
                 flex-direction: column; /* Kembali ke vertikal untuk layar kecil */
                 align-items: stretch;
@@ -336,37 +359,82 @@
                 flex: 1 1 100%; /* Setiap item mengambil seluruh lebar layar */
                 max-width: 100%; /* Lebar maksimum 100% */
             }
-        }
-        /* Loading Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000033;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-        .loader.hidden {
-            display: none;
-        }
-        .loader span {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #00ffff;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+            .game-item img {
+                height: 100px; /* Ukuran gambar lebih kecil */
             }
         }
-        /* Scroll to Top Button */
+        /* Media Query untuk Layar Sangat Kecil */
+        @media (max-width: 500px) {
+            /* Header */
+            .header {
+                flex-direction: column; /* Atur header menjadi vertikal */
+                align-items: center;
+            }
+            .logo,
+            .search-bar,
+            .menu-burger {
+                margin-bottom: 10px; /* Jarak antar elemen */
+            }
+
+            /* Search Bar */
+            .search-bar {
+                width: 100%; /* Penuhi seluruh lebar layar */
+            }
+
+            /* Menu Section */
+            .menu-section {
+                flex-direction: column; /* Atur menu menjadi vertikal */
+                align-items: stretch;
+            }
+            .menu-button {
+                margin: 5px 0; /* Jarak vertikal untuk tombol menu */
+                width: 100%; /* Penuhi seluruh lebar layar */
+            }
+
+            /* Flash Sale Section */
+            .flash-sale-product {
+                flex-direction: column; /* Atur flash sale menjadi vertikal */
+            }
+            .flash-sale-details {
+                text-align: center; /* Sentralisasi teks */
+            }
+
+            /* Popular Products Grid */
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Satu kolom */
+            }
+            .product-item img {
+                height: 100px; /* Ukuran gambar lebih kecil */
+            }
+
+            /* Games Section */
+            .game-grid {
+                flex-direction: column; /* Atur games menjadi vertikal */
+                align-items: stretch;
+            }
+            .game-item {
+                max-width: 100%; /* Penuhi seluruh lebar layar */
+            }
+            .game-item img {
+                height: 100px; /* Ukuran gambar lebih kecil */
+            }
+
+            /* Font Size */
+            body {
+                font-size: 14px; /* Ukuran font lebih kecil */
+            }
+            .site-title {
+                font-size: 18px; /* Judul situs lebih kecil */
+            }
+            .menu-button {
+                font-size: 12px; /* Ukuran font tombol menu lebih kecil */
+            }
+            .product-item-title,
+            .game-item-title {
+                font-size: 12px; /* Judul produk lebih kecil */
+            }
+        }
+        /* Scroll-to-Top Button */
         .scroll-to-top {
             position: fixed;
             bottom: 20px;
@@ -389,10 +457,6 @@
     </style>
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div class="loader">
-        <span></span>
-    </div>
     <!-- Header -->
     <header class="header">
         <div class="logo">
@@ -501,7 +565,7 @@
     <footer class="footer">
         <p>&copy; 2025 WANXX STORE26. jual beli akun games.</p>
     </footer>
-    <!-- Tombol Scroll ke Atas -->
+    <!-- Scroll-to-Top Button -->
     <button class="scroll-to-top" onclick="scrollToTop()">&#8593;</button>
     <script>
         // Fungsi untuk toggle dropdown menu
@@ -511,15 +575,12 @@
         }
         // Fungsi untuk filter hasil pencarian
         function filterSearchResults(query) {
-            const productItems = document.querySelectorAll(".product-item, .game-item");
-            productItems.forEach(item => {
-                const title = item.querySelector(".product-item-title, .game-item-title").textContent.toLowerCase();
-                if (title.includes(query.toLowerCase())) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
+            const resultsContainer = document.getElementById('searchResults');
+            if (query.trim() === '') {
+                resultsContainer.style.display = 'none';
+                return;
+            }
+            resultsContainer.style.display = 'block';
         }
         let bannerIndex = 0;
         function gantiBanner() {
@@ -544,12 +605,6 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
-
-        // Loading Animation
-        window.addEventListener("load", () => {
-            const loader = document.querySelector(".loader");
-            loader.classList.add("hidden");
-        });
     </script>
 </body>
 </html>
