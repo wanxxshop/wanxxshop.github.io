@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Top-Up</title>
+    <title>Wanxxstore26 - Top Up & Jual Beli Akun Game</title>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <style>
         /* General Styles */
         body {
             font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(135deg, #0000ff, #0000ff);
+            background: linear-gradient(135deg, #000033, #000066);
             color: #fff;
             margin: 0;
             padding: 0;
@@ -18,53 +22,52 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(0, 0, 51, 0.9);
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            color: #000;
             overflow: hidden;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
-            color: #0000ff;
+            color: #00ffff;
             margin-bottom: 20px;
             font-size: 36px;
             animation: fadeIn 2s ease-in-out;
         }
+
         /* Header Section */
         .header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 20px;
             margin-bottom: 20px;
         }
         .header img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .header img:hover {
             transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .header .game-info {
-            flex-grow: 1;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
         }
         .header .game-info h2 {
             margin: 0;
             font-size: 28px;
-            color: #0000ff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            color: #00ffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         .header .game-info p {
             margin: 5px 0 0 0;
             font-size: 16px;
-            color: #666;
+            color: #00ccff;
         }
+
         /* Cara Beli Button */
         .cara-beli-button {
-            background: linear-gradient(135deg, #0074ff, #0000ff);
+            background: linear-gradient(135deg, #0074ff, #00ffff);
             padding: 12px 20px;
             border: none;
             border-radius: 10px;
@@ -72,46 +75,16 @@
             transition: all 0.3s ease;
             color: #fff;
             font-size: 16px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+            margin: 0 auto;
+            display: block;
         }
         .cara-beli-button:hover {
-            background: linear-gradient(135deg, #0000ff, #0074ff);
+            background: linear-gradient(135deg, #00ffff, #0074ff);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.5);
         }
-        /* Popup Cara Beli */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .popup-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            max-width: 80%;
-            overflow-y: auto;
-            max-height: 80vh;
-            animation: scaleIn 0.5s ease-in-out;
-        }
-        .popup-content h3 {
-            margin-bottom: 15px;
-            color: #0000ff;
-        }
-        .popup-content p {
-            margin: 5px 0;
-        }
+
         /* Diamond Grid */
         .diamond-grid {
             display: grid;
@@ -155,6 +128,7 @@
             font-weight: bold;
             font-size: 18px;
         }
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -164,11 +138,12 @@
             from { transform: scale(0.8); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                align-items: start;
+                align-items: center;
             }
             .header img {
                 margin: 0 auto;
@@ -202,8 +177,10 @@
                 <p>Proses Hitungan Detik</p>
             </div>
         </div>
+
         <!-- Tombol Cara Beli -->
         <button class="cara-beli-button" onclick="showPopup()">Cara Beli</button>
+
         <!-- Popup Cara Beli -->
         <div class="popup-overlay" id="popup-overlay">
             <div class="popup-content">
@@ -360,7 +337,10 @@
                 <p><span>2200 Diamond</span><br>Rp 316.162</p>
             </a>
         </div>
+            <!-- Tambahkan item lainnya sesuai kebutuhan -->
+        </div>
     </div>
+
     <script>
         // Fungsi untuk menampilkan popup
         function showPopup() {
