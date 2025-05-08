@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reseller Top Up Game</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos @2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -13,20 +17,21 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f7f9fc;
       color: #333;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
       background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px 60px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
@@ -37,28 +42,39 @@
     }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
     }
 
     h2 {
       color: #2a5298;
-      margin-bottom: 20px;
-      font-size: 2rem;
+      margin-bottom: 40px;
+      font-size: 2.4rem;
+      text-align: center;
     }
 
-    ul {
+    ul.features {
       list-style: none;
       padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    ul li::before {
-      content: "🎮";
+    ul.features li {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    ul.features li:hover {
+      transform: translateY(-5px);
+    }
+
+    ul.features li::before {
+      content: "✨";
       margin-right: 10px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
     }
 
     .packages {
@@ -70,16 +86,17 @@
 
     .package {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      flex: 1 1 calc(33% - 20px);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 30px;
+      flex: 1 1 calc(50% - 20px);
       min-width: 280px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .package:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
 
     .package h3 {
@@ -88,16 +105,17 @@
     }
 
     .package p {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .cta-button {
       display: inline-block;
       background-color: #2a5298;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
@@ -112,7 +130,46 @@
       padding: 20px;
     }
 
-    /* Responsive Design */
+    /* Tombol Floating WhatsApp */
+    .floating-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #25D366;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      animation: fadeInUp 1s ease-out;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .floating-wa:hover {
+      background-color: #128C7E;
+    }
+
+    .floating-wa i {
+      font-size: 20px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .packages {
         flex-direction: column;
@@ -121,65 +178,78 @@
 
       .package {
         width: 100%;
-        max-width: 500px;
-        margin-bottom: 20px;
-      }
-
-      header {
-        padding: 40px 20px;
       }
 
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+
+      .floating-wa {
+        padding: 14px 20px;
+        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>GABUNG RESELLER TOP UP GAMES</h1>
+<header data-aos="fade-down">
+  <h1>RESELLER TOP UP GAMES</h1>
   <p>Dapatkan keuntungan besar dengan menjadi reseller top up game favorit!</p>
 </header>
 
 <div class="container">
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Mengapa Jadi Reseller Kami?</h2>
-    <ul>
+    <ul class="features">
       <li>Harga Grosir Termurah Se-Indonesia</li>
       <li>Top Up Cepat & Aman (Auto Order)</li>
       <li>Bebas Pilih Game Favorit (MLBB, FF, PUBG, dll)</li>
       <li>Dukungan Admin & Sistem Realtime</li>
       <li>Pendapatan Pasif Setiap Hari</li>
+      <li>Laporan Penjualan Harian Otomatis</li>
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Pilih Paket</h2>
     <div class="packages">
-      <div class="package">
+      <div class="package" data-aos="zoom-in" data-aos-delay="100">
         <h3>Paket 7 Hari</h3>
         <p><strong>Harga:</strong> Rp 3,900 / Minggu</p>
         <p>Cocok untuk pemula.</p>
-        <a href="http://lynk.id/72461744623/ggqgn0llddnl/checkout" 
-           target="_blank" class="cta-button">Join Sekarang</a>
+        <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20jadi%20reseller%20-%20Paket%207%20Hari " target="_blank" class="cta-button">Join Sekarang</a>
       </div>
-      <div class="package">
+      <div class="package" data-aos="zoom-in" data-aos-delay="200">
         <h3>Paket 1 Bulan</h3>
         <p><strong>Harga:</strong> Rp 8,900 / bulan</p>
-        <p>Cocok Buat Presonal.</p>
-        <a href="http://lynk.id/72461744623/x1q1mxx553ko/checkout" 
-           target="_blank" class="cta-button">Join Sekarang</a>
+        <p>Cocok Buat Personal.</p>
+        <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20jadi%20reseller%20-%20Paket%201%20Bulan " target="_blank" class="cta-button">Join Sekarang</a>
       </div>
     </div>
   </section>
 
 </div>
 
+<!-- Tombol Floating WhatsApp -->
+<a href="https://wa.me/6281234567890?text=Saya%20tertarik%20jadi%20reseller " target="_blank" class="floating-wa">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg " alt="WA" style="height:24px;">
+  Hubungi Kami via WhatsApp
+</a>
+
 <footer>
   <p>&copy; 2025 wanxx games. Hak Cipta Dilindungi.</p>
 </footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos @2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
 
 </body>
 </html>
