@@ -23,11 +23,33 @@
       scroll-behavior: smooth;
     }
 
+    /* Header Baru */
     header {
-      background: linear-gradient(to right, #1e3c72, #2a5298);
+      background: url('https://images.unsplash.com/photo-1552674603-0e1fd9b2398e?auto=format&fit=crop&w=1600&q=80 ') no-repeat center center/cover;
       color: white;
-      padding: 100px 20px 60px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
     }
 
     header h1 {
@@ -35,14 +57,23 @@
       margin-bottom: 10px;
     }
 
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px 20px;
+      background: white;
+      border-radius: 20px;
+      margin-top: -100px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     section {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     h2 {
@@ -92,6 +123,7 @@
       flex: 1 1 calc(50% - 20px);
       min-width: 280px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
     }
 
     .package:hover {
@@ -104,8 +136,30 @@
       margin-bottom: 10px;
     }
 
-    .package p {
+    .package .price-old {
+      text-decoration: line-through;
+      color: #999;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .package .price-new {
+      color: #e67e22;
+      font-weight: bold;
       margin-bottom: 15px;
+      display: block;
+    }
+
+    .package .discount-badge {
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      background: linear-gradient(to right, #e74c3c, #c0392b);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
     .cta-button {
@@ -154,10 +208,6 @@
       background-color: #128C7E;
     }
 
-    .floating-wa i {
-      font-size: 20px;
-    }
-
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -183,34 +233,37 @@
       header h1 {
         font-size: 2.2rem;
       }
-
-      .floating-wa {
-        padding: 14px 20px;
-        font-size: 0.95rem;
-      }
     }
   </style>
 </head>
 <body>
 
+<!-- Header Baru -->
   <section data-aos="fade-up">
     <h2>Pilih Paket</h2>
     <div class="packages">
       <div class="package" data-aos="zoom-in" data-aos-delay="100">
+        <span class="discount-badge">Diskon 70%</span>
         <h3>Paket 7 Hari</h3>
-        <p><strong>Harga:</strong> Rp 3,900 / Minggu</p>
+        <span class="price-old">Rp 9,500</span>
+        <span class="price-new">Rp 4,900 / Minggu</span>
         <p>Cocok untuk pemula.</p>
         <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20jadi%20reseller%20-%20Paket%207%20Hari " target="_blank" class="cta-button">Join Sekarang</a>
       </div>
       <div class="package" data-aos="zoom-in" data-aos-delay="200">
+        <span class="discount-badge">Diskon 50%</span>
         <h3>Paket 1 Bulan</h3>
-        <p><strong>Harga:</strong> Rp 8,900 / bulan</p>
+        <span class="price-old">Rp 18,900</span>
+        <span class="price-new">Rp 9,900 / Bulan</span>
         <p>Cocok Buat Personal.</p>
         <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20jadi%20reseller%20-%20Paket%201%20Bulan " target="_blank" class="cta-button">Join Sekarang</a>
       </div>
     </div>
+    </section>
+    
+ <div class="container">
 
- <section data-aos="fade-up">
+  <section data-aos="fade-up">
     <h2>Mengapa Jadi Reseller Kami?</h2>
     <ul class="features">
       <li>Harga Grosir Termurah Se-Indonesia</li>
@@ -225,7 +278,7 @@
 </div>
 
 <!-- Tombol Floating WhatsApp -->
-<a href="https://wa.me/6283134115994?text=Saya%20tertarik%20jadi%20reseller " target="_blank" class="floating-wa">
+<a href="https://wa.me/6281234567890?text=Saya%20tertarik%20jadi%20reseller " target="_blank" class="floating-wa">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg " alt="WA" style="height:24px;">
   Hubungi Kami via WhatsApp
 </a>
@@ -244,4 +297,4 @@
 </script>
 
 </body>
-</htm
+</html>
