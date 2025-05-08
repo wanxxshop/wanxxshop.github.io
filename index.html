@@ -111,6 +111,28 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .packages {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .package {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+      }
+
+      header {
+        padding: 40px 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -137,7 +159,7 @@
     <h2>Pilih Paket</h2>
     <div class="packages">
       <div class="package">
-        <h3>Paket 7 Hari </h3>
+        <h3>Paket 7 Hari</h3>
         <p><strong>Harga:</strong> Rp 3,900 / Minggu</p>
         <p>Cocok untuk pemula.</p>
         <a href="http://lynk.id/72461744623/ggqgn0llddnl/checkout" 
